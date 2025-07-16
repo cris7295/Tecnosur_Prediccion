@@ -1,0 +1,5 @@
+[
+  { "nombre": "Paracetamol", "stock": 20, "categoria": "Analgésico" },
+  { "nombre": "Ibuprofeno", "stock": 15, "categoria": "Antiinflamatorio" },
+  { "nombre": "Amoxicilina", "stock": 8, "categoria": "Antibiótico" }
+]

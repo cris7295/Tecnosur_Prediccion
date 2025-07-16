@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba IA Académica</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .chat-area {
+            margin: 20px 0;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 12px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            width: 25%;
+            padding: 12px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        .response {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+            white-space: pre-wrap;
+        }
+        .loading {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        .error {
+            background: #ffebee;
+            border-left-color: #e74c3c;
+            color: #c0392b;
+        }
+        .quick-tests {
+            margin: 20px 0;
+        }
+        .quick-btn {
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 15px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .quick-btn:hover {
+            background: #229954;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Prueba IA Académica - Universidad Tecnosur</h1>
+        
+        <div class="quick-tests">
+            <h3>Pruebas Rápidas:</h3>
+            <button class="quick-btn" onclick="testPrompt('hola')">Saludo</button>
+            <button class="quick-btn" onclick="testPrompt('cuantos estudiantes hay?')">Total Estudiantes</button>
+            <button class="quick-btn" onclick="testPrompt('compara Medicina con Ingeniería')">Comparar Carreras</button>
+            <button class="quick-btn" onclick="testPrompt('estudiantes en riesgo')">Estudiantes en Riesgo</button>
+            <button class="quick-btn" onclick="testPrompt('dime sobre Carlos')">Buscar Estudiante</button>
+        </div>
+        
+        <div class="chat-area">
+            <input type="text" id="promptInput" placeholder="Escribe tu pregunta aquí..." onkeypress="handleEnter(event)">
+            <button onclick="sendPrompt()">Enviar</button>
+        </div>
+        
+        <div id="response" class="response" style="display: none;"></div>
+    </div>
+
+    <script>
+        async function sendPrompt() {
+            const input = document.getElementById('promptInput');
+            const responseDiv = document.getElementById('response');
+            const prompt = input.value.trim();
+            
+            if (!prompt) {
+                alert('Por favor escribe una pregunta');
+                return;
+            }
+            
+            // Mostrar loading
+            responseDiv.style.display = 'block';
+            responseDiv.className = 'response loading';
+            responseDiv.textContent = '🤖 Pensando...';
+            
+            try {
+                const response = await fetch('http://127.0.0.1:5001/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ prompt: prompt })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    responseDiv.className = 'response';
+                    responseDiv.textContent = data.respuesta || 'Sin respuesta';
+                } else {
+                    responseDiv.className = 'response error';
+                    responseDiv.textContent = `Error: ${data.error || 'Error desconocido'}`;
+                }
+                
+            } catch (error) {
+                responseDiv.className = 'response error';
+                responseDiv.textContent = `Error de conexión: ${error.message}`;
+            }
+        }
+        
+        function testPrompt(prompt) {
+            document.getElementById('promptInput').value = prompt;
+            sendPrompt();
+        }
+        
+        function handleEnter(event) {
+            if (event.key === 'Enter') {
+                sendPrompt();
+            }
+        }
+        
+        // Probar conexión al cargar
+        window.onload = async function() {
+            try {
+                const response = await fetch('http://127.0.0.1:5001/');
+                const data = await response.json();
+                console.log('Servidor conectado:', data);
+            } catch (error) {
+                console.error('Error conectando al servidor:', error);
+                alert('⚠️ No se puede conectar al servidor IA. Asegúrate de que esté corriendo en el puerto 5001');
+            }
+        };
+    </script>
+</body>
+</html>

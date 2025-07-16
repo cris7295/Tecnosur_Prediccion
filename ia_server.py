@@ -89,16 +89,181 @@ def find_student_by_name(search_name):
         return None
 
 def generate_ai_response(prompt):
-    """Genera respuesta de IA más natural y conversacional"""
+    """Genera respuesta de IA NATURAL y conversacional (versión local mejorada siguiendo el estilo del compañero)"""
     try:
         df = data_processor.df
         if df is None or df.empty:
             return "Lo siento, no tengo acceso a los datos académicos en este momento."
         
         prompt_lower = prompt.lower()
+        stats = data_processor.get_statistics()
         
-        # 1. Consultas sobre estudiantes específicos
-        if any(word in prompt_lower for word in ['información sobre', 'datos de', 'dime sobre', 'quiero saber de']):
+        # RESPUESTAS NATURALES COMO LO HARÍA UN COORDINADOR REAL
+        
+        # 1. Saludos - Respuesta natural y cercana
+        if any(word in prompt_lower for word in ['hola', 'buenos', 'buenas', 'saludos', 'como estas']):
+            return f"¡Hola! Me alegra que me escribas. Soy el coordinador académico de la Universidad Tecnosur y estoy aquí para ayudarte con cualquier consulta sobre nuestros estudiantes. Actualmente tengo información de {stats['total_estudiantes']} estudiantes distribuidos en {len(stats['carreras'])} carreras. ¿En qué puedo ayudarte hoy?"
+        
+        # 2. Búsqueda de estudiantes por nombre
+        elif any(word in prompt_lower for word in ['listame', 'lista', 'estudiantes', 'nombres', 'empiecen', 'empiezan']):
+            # Extraer letra o criterio de búsqueda
+            letter = None
+            for word in prompt_lower.split():
+                if len(word) == 1 and word.isalpha():
+                    letter = word.upper()
+                    break
+            
+            if not letter and 'c' in prompt_lower:
+                letter = 'C'
+            
+            if letter:
+                matching_students = df[df['nombre'].str.upper().str.startswith(letter)]
+                if len(matching_students) > 0:
+                    student_list = []
+                    for _, student in matching_students.head(10).iterrows():
+                        risk_status = "en riesgo" if student['rendimiento_riesgo'] == 1 else "sin riesgo"
+                        student_list.append(f"{student['nombre']} {student['apellido']} ({student['carrera']}, {risk_status})")
+                    
+                    response = f"Te muestro los estudiantes cuyo nombre empieza con '{letter}':\n\n"
+                    response += "\n".join([f"• {student}" for student in student_list])
+                    
+                    if len(matching_students) > 10:
+                        response += f"\n\n(Mostrando los primeros 10 de {len(matching_students)} estudiantes encontrados)"
+                    
+                    response += f"\n\n¿Te interesa conocer más detalles sobre alguno de ellos?"
+                    return response
+                else:
+                    return f"No encontré estudiantes cuyo nombre empiece con '{letter}'. ¿Quieres que busque con otra letra?"
+            else:
+                return "Claro, puedo ayudarte a buscar estudiantes. ¿Podrías decirme con qué letra empiezan los nombres que buscas? Por ejemplo: 'estudiantes que empiecen con A'"
+        
+        # 3. Comparaciones entre carreras - Respuesta natural
+        elif any(word in prompt_lower for word in ['comparacion', 'compara', 'diferencia', 'vs', 'versus']):
+            import random
+            carreras_disponibles = stats['carreras']
+            
+            # Si mencionan carreras específicas, usarlas
+            carreras_mencionadas = []
+            for carrera in carreras_disponibles:
+                if carrera.lower() in prompt_lower:
+                    carreras_mencionadas.append(carrera)
+            
+            # Si no mencionan carreras específicas o solo una, elegir aleatoriamente
+            if len(carreras_mencionadas) < 2:
+                carreras_a_comparar = random.sample(carreras_disponibles, 2)
+            else:
+                carreras_a_comparar = carreras_mencionadas[:2]
+            
+            # Análisis detallado de cada carrera
+            comparacion_data = []
+            for carrera in carreras_a_comparar:
+                carrera_df = df[df['carrera'] == carrera]
+                total = len(carrera_df)
+                en_riesgo = len(carrera_df[carrera_df['rendimiento_riesgo'] == 1])
+                porcentaje_riesgo = (en_riesgo / total * 100) if total > 0 else 0
+                promedio_calif = carrera_df['calificaciones_anteriores'].mean()
+                promedio_asist = carrera_df['asistencia_porcentaje'].mean()
+                promedio_part = carrera_df['participacion_clase'].mean()
+                promedio_horas = carrera_df['horas_estudio_semanal'].mean()
+                
+                comparacion_data.append({
+                    'carrera': carrera,
+                    'total': total,
+                    'en_riesgo': en_riesgo,
+                    'porcentaje_riesgo': porcentaje_riesgo,
+                    'promedio_calif': promedio_calif,
+                    'promedio_asist': promedio_asist,
+                    'promedio_part': promedio_part,
+                    'promedio_horas': promedio_horas
+                })
+            
+            # Generar respuesta conversacional
+            c1, c2 = comparacion_data[0], comparacion_data[1]
+            
+            response = f"🎓 **Comparación entre {c1['carrera']} y {c2['carrera']}**\n\n"
+            response += f"Te hago un análisis detallado de estas dos carreras:\n\n"
+            
+            # Tamaño de población
+            response += f"📊 **Población estudiantil:**\n"
+            response += f"• {c1['carrera']}: {c1['total']} estudiantes\n"
+            response += f"• {c2['carrera']}: {c2['total']} estudiantes\n"
+            if c1['total'] > c2['total']:
+                response += f"→ {c1['carrera']} tiene {c1['total'] - c2['total']} estudiantes más que {c2['carrera']}\n\n"
+            else:
+                response += f"→ {c2['carrera']} tiene {c2['total'] - c1['total']} estudiantes más que {c1['carrera']}\n\n"
+            
+            # Análisis de riesgo
+            response += f"⚠️ **Análisis de riesgo académico:**\n"
+            response += f"• {c1['carrera']}: {c1['en_riesgo']}/{c1['total']} en riesgo ({c1['porcentaje_riesgo']:.1f}%)\n"
+            response += f"• {c2['carrera']}: {c2['en_riesgo']}/{c2['total']} en riesgo ({c2['porcentaje_riesgo']:.1f}%)\n"
+            
+            if c1['porcentaje_riesgo'] > c2['porcentaje_riesgo']:
+                diff = c1['porcentaje_riesgo'] - c2['porcentaje_riesgo']
+                response += f"→ {c1['carrera']} tiene {diff:.1f}% más estudiantes en riesgo que {c2['carrera']}\n\n"
+            else:
+                diff = c2['porcentaje_riesgo'] - c1['porcentaje_riesgo']
+                response += f"→ {c2['carrera']} tiene {diff:.1f}% más estudiantes en riesgo que {c1['carrera']}\n\n"
+            
+            # Rendimiento académico
+            response += f"📈 **Rendimiento académico:**\n"
+            response += f"• {c1['carrera']}: Promedio {c1['promedio_calif']:.1f}/10\n"
+            response += f"• {c2['carrera']}: Promedio {c2['promedio_calif']:.1f}/10\n"
+            
+            mejor_rendimiento = c1['carrera'] if c1['promedio_calif'] > c2['promedio_calif'] else c2['carrera']
+            response += f"→ {mejor_rendimiento} tiene mejor rendimiento académico\n\n"
+            
+            # Asistencia
+            response += f"👥 **Asistencia promedio:**\n"
+            response += f"• {c1['carrera']}: {c1['promedio_asist']:.1f}%\n"
+            response += f"• {c2['carrera']}: {c2['promedio_asist']:.1f}%\n"
+            
+            mejor_asistencia = c1['carrera'] if c1['promedio_asist'] > c2['promedio_asist'] else c2['carrera']
+            response += f"→ {mejor_asistencia} tiene mejor asistencia\n\n"
+            
+            # Conclusión inteligente
+            response += f"💡 **Mi análisis:**\n"
+            
+            # Determinar cuál carrera está mejor
+            puntos_c1 = 0
+            puntos_c2 = 0
+            
+            if c1['promedio_calif'] > c2['promedio_calif']:
+                puntos_c1 += 1
+            else:
+                puntos_c2 += 1
+                
+            if c1['promedio_asist'] > c2['promedio_asist']:
+                puntos_c1 += 1
+            else:
+                puntos_c2 += 1
+                
+            if c1['porcentaje_riesgo'] < c2['porcentaje_riesgo']:  # Menos riesgo es mejor
+                puntos_c1 += 1
+            else:
+                puntos_c2 += 1
+            
+            if puntos_c1 > puntos_c2:
+                response += f"En general, **{c1['carrera']}** muestra mejores indicadores académicos. "
+                if c1['porcentaje_riesgo'] < 30:
+                    response += "Sus estudiantes están en una situación bastante estable."
+                else:
+                    response += "Sin embargo, aún hay oportunidades de mejora en la reducción del riesgo."
+            elif puntos_c2 > puntos_c1:
+                response += f"En general, **{c2['carrera']}** muestra mejores indicadores académicos. "
+                if c2['porcentaje_riesgo'] < 30:
+                    response += "Sus estudiantes están en una situación bastante estable."
+                else:
+                    response += "Sin embargo, aún hay oportunidades de mejora en la reducción del riesgo."
+            else:
+                response += f"Ambas carreras muestran un rendimiento muy similar. "
+                response += f"Cada una tiene sus fortalezas particulares."
+            
+            response += f"\n\n¿Te gustaría que profundice en algún aspecto específico de estas carreras?"
+            
+            return response
+        
+        # 2. Consultas sobre estudiantes específicos
+        elif any(word in prompt_lower for word in ['información sobre', 'datos de', 'dime sobre', 'quiero saber de']):
             # Extraer posible nombre del prompt
             words = prompt.split()
             potential_names = []
@@ -166,9 +331,8 @@ def generate_ai_response(prompt):
             else:
                 return f"No encontré información sobre ese estudiante. ¿Podrías verificar el nombre? Tengo datos de {len(df)} estudiantes en el sistema."
         
-        # 2. Consultas sobre estadísticas por carrera
+        # 3. Consultas sobre estadísticas por carrera
         elif 'estadísticas por carrera' in prompt_lower or 'stats por carrera' in prompt_lower:
-            stats = data_processor.get_statistics()
             response = "📚 Aquí tienes las estadísticas de riesgo por carrera:\n\n"
             
             carrera_stats = []
@@ -193,48 +357,8 @@ def generate_ai_response(prompt):
             
             return response
         
-        # 3. Consultas sobre estudiantes en riesgo de una carrera específica
-        elif 'estudiantes en riesgo' in prompt_lower and any(carrera.lower() in prompt_lower for carrera in df['carrera'].unique()):
-            carrera_buscada = None
-            for carrera in df['carrera'].unique():
-                if carrera.lower() in prompt_lower:
-                    carrera_buscada = carrera
-                    break
-            
-            if carrera_buscada:
-                estudiantes_riesgo = df[(df['carrera'] == carrera_buscada) & (df['rendimiento_riesgo'] == 1)]
-                
-                if len(estudiantes_riesgo) == 0:
-                    return f"¡Excelente noticia! No hay estudiantes de {carrera_buscada} en riesgo alto actualmente. 🎉"
-                
-                response = f"📋 Estudiantes de {carrera_buscada} en riesgo alto ({len(estudiantes_riesgo)} total):\n\n"
-                
-                for i, (_, estudiante) in enumerate(estudiantes_riesgo.head(10).iterrows(), 1):
-                    response += f"{i}. **{estudiante['nombre']} {estudiante['apellido']}** "
-                    response += f"(Semestre {estudiante['semestre']}) - "
-                    response += f"Promedio: {estudiante['promedio_general']}/10, "
-                    response += f"Asistencia: {estudiante['asistencia_porcentaje']}%\n"
-                
-                if len(estudiantes_riesgo) > 10:
-                    response += f"\n... y {len(estudiantes_riesgo) - 10} estudiantes más."
-                
-                # Agregar recomendación general
-                promedio_asistencia = estudiantes_riesgo['asistencia_porcentaje'].mean()
-                promedio_calificaciones = estudiantes_riesgo['calificaciones_anteriores'].mean()
-                
-                response += f"\n\n💡 **Patrón identificado**: "
-                if promedio_asistencia < 70:
-                    response += f"La asistencia promedio es baja ({promedio_asistencia:.1f}%). "
-                if promedio_calificaciones < 6:
-                    response += f"Las calificaciones promedio están por debajo del mínimo ({promedio_calificaciones:.1f}/10). "
-                
-                response += "Recomiendo intervención temprana con estos estudiantes."
-                
-                return response
-        
         # 4. Consultas generales sobre el sistema
-        elif any(word in prompt_lower for word in ['cuántos estudiantes', 'total estudiantes', 'estadísticas generales']):
-            stats = data_processor.get_statistics()
+        elif any(word in prompt_lower for word in ['cuántos estudiantes', 'total estudiantes', 'estadísticas generales', 'resumen']):
             response = f"📊 **Resumen del Sistema Académico**\n\n"
             response += f"Tenemos **{stats['total_estudiantes']} estudiantes** registrados en total.\n"
             response += f"• **{stats['estudiantes_riesgo']} estudiantes** están en riesgo alto ({stats['porcentaje_riesgo']}%)\n"
@@ -251,15 +375,28 @@ def generate_ai_response(prompt):
             
             return response
         
-        # 5. Respuesta por defecto más natural
+        # 5. Respuesta más inteligente por defecto
         else:
-            return ("¡Hola! Soy tu asistente de análisis académico. 😊\n\n"
-                   "Puedo ayudarte con:\n"
-                   "• Información específica de estudiantes (ej: 'información sobre Juan Pérez')\n"
-                   "• Estadísticas por carrera\n"
-                   "• Estudiantes en riesgo de una carrera específica\n"
-                   "• Estadísticas generales del sistema\n\n"
-                   "¿Qué te gustaría saber?")
+            # Analizar el prompt para dar una respuesta más específica
+            if 'hola' in prompt_lower or 'buenos' in prompt_lower or 'buenas' in prompt_lower:
+                return (f"¡Hola! 👋 Soy tu asistente académico de la Universidad Tecnosur.\n\n"
+                       f"Actualmente tengo información de **{stats['total_estudiantes']} estudiantes** "
+                       f"distribuidos en {len(stats['carreras'])} carreras diferentes.\n\n"
+                       f"Puedo ayudarte con análisis específicos como:\n"
+                       f"• Comparaciones entre carreras (ej: 'compara Ingeniería con Medicina')\n"
+                       f"• Información de estudiantes específicos\n"
+                       f"• Estadísticas detalladas por carrera\n"
+                       f"• Análisis de riesgo académico\n\n"
+                       f"¿Qué te gustaría analizar hoy? 🤔")
+            else:
+                return (f"Hmm, no estoy seguro de cómo interpretar esa consulta. 🤔\n\n"
+                       f"Soy especialista en análisis académico y puedo ayudarte con:\n\n"
+                       f"📊 **Análisis disponibles:**\n"
+                       f"• Comparaciones entre carreras\n"
+                       f"• Estadísticas por carrera\n"
+                       f"• Información de estudiantes específicos\n"
+                       f"• Resumen general del sistema\n\n"
+                       f"¿Podrías ser más específico sobre qué información necesitas?")
     
     except Exception as e:
         print(f"Error generando respuesta: {e}")
@@ -290,7 +427,7 @@ def status():
 
 @app.route('/api/chat', methods=['POST'])
 def chat_endpoint():
-    """Endpoint principal para consultas a la IA académica"""
+    """Endpoint principal para consultas a la IA académica - SOLO API EXTERNA"""
     try:
         data = request.get_json()
         prompt = data.get('prompt', '')
@@ -300,16 +437,171 @@ def chat_endpoint():
         
         print(f"✅ CONSULTA RECIBIDA: {prompt}")
         
-        # Usar la nueva función de respuesta natural
-        ai_response = generate_ai_response(prompt)
+        # FORZAR uso de API externa SIEMPRE
+        api_key = os.getenv('OPENROUTER_API_KEY')
         
-        print(f"✅ RESPUESTA GENERADA: {ai_response}")
+        if not api_key or not api_key.strip():
+            return jsonify({"error": "API Key no configurada"}), 500
         
-        return jsonify({"respuesta": ai_response})
+        print(f"🔑 Usando API externa con key: {api_key[:20]}...")
+        
+        try:
+            ai_response = generate_intelligent_ai_response(prompt, api_key)
+            print(f"✅ RESPUESTA IA EXTERNA: {ai_response}")
+            return jsonify({"respuesta": ai_response})
+        except Exception as e:
+            print(f"❌ Error con API externa: {e}")
+            return jsonify({"error": f"Error de API externa: {str(e)}"}), 500
     
     except Exception as e:
         print(f"❌ ERROR: {str(e)}")
         return jsonify({"error": f"Error interno: {str(e)}"}), 500
+
+def generate_intelligent_ai_response(prompt, api_key):
+    """Genera respuesta usando IA externa siguiendo EXACTAMENTE el método exitoso del compañero"""
+    try:
+        # 🔑 DEBUGGING: Verificar API Key
+        print(f"🔑 API Key presente: {bool(api_key)}")
+        print(f"🔑 Primeros 10 chars: {api_key[:10] if api_key else 'N/A'}")
+        
+        # Obtener contexto académico completo (como hace el compañero)
+        df = data_processor.df
+        if df is None or df.empty:
+            return "Lo siento, no tengo acceso a los datos académicos en este momento."
+        
+        # Obtener datos reales para el contexto (muestra de estudiantes)
+        sample_students = df.head(10).to_dict('records')
+        at_risk_students = df[df['rendimiento_riesgo'] == 1].head(5).to_dict('records')
+        stats = data_processor.get_statistics()
+        
+        # Crear contexto simplificado para evitar problemas de serialización
+        contexto_academico = {
+            "total_estudiantes": len(df),
+            "estudiantes_en_riesgo": len(df[df['rendimiento_riesgo'] == 1]),
+            "promedio_general": float(stats['promedio_general']),
+            "promedio_asistencia": float(stats['promedio_asistencia']),
+            "carreras": list(stats['carreras']),
+            "descripcion_sistema": {
+                "objetivo": "Sistema de predicción de riesgo académico",
+                "variables_principales": [
+                    "calificaciones_anteriores (4.0-10.0)",
+                    "asistencia_porcentaje (0-100%)",
+                    "participacion_clase (1-5)",
+                    "horas_estudio_semanal (1-25)",
+                    "nivel_socioeconomico (Bajo/Medio/Alto)",
+                    "rendimiento_riesgo (0=Sin riesgo, 1=En riesgo)"
+                ]
+            }
+        }
+        
+        # Agregar muestra de estudiantes de forma segura
+        try:
+            sample_data = []
+            for _, student in df.head(5).iterrows():
+                student_dict = {
+                    "nombre": str(student['nombre']),
+                    "apellido": str(student['apellido']),
+                    "carrera": str(student['carrera']),
+                    "semestre": int(student['semestre']),
+                    "promedio": float(student.get('promedio_general', student.get('calificaciones_anteriores', 0))),
+                    "asistencia": int(student['asistencia_porcentaje']),
+                    "riesgo": int(student['rendimiento_riesgo'])
+                }
+                sample_data.append(student_dict)
+            contexto_academico["muestra_estudiantes"] = sample_data
+        except Exception as e:
+            print(f"Error agregando muestra de estudiantes: {e}")
+            contexto_academico["muestra_estudiantes"] = []
+        
+        # 🧠 PROMPT ENGINEERING NATURAL Y CONVERSACIONAL
+        context = f"""Eres un coordinador académico amigable y cercano de la Universidad Tecnosur. Hablas de manera natural, como si fueras una persona real conversando con un colega. NO uses formato estructurado, listas con viñetas, ni emojis excesivos. Responde como lo haría un coordinador académico en una conversación normal.
+
+DATOS ACADÉMICOS ACTUALES:
+{json.dumps(contexto_academico, indent=2, ensure_ascii=False)}
+
+INSTRUCCIONES IMPORTANTES:
+- Habla de manera natural y conversacional, como una persona real
+- NO uses listas con viñetas (•) ni formato estructurado
+- NO uses muchos emojis, máximo 1-2 por respuesta
+- Responde como si estuvieras hablando cara a cara con alguien
+- Si te saludan, saluda de vuelta de manera natural y pregunta cómo puedes ayudar
+- Sé directo y claro, pero mantén un tono amigable
+- Cuando des números o estadísticas, hazlo de manera natural en el texto
+
+EJEMPLOS DE CÓMO DEBES RESPONDER:
+- "¡Hola! Todo bien por aquí, trabajando con los datos de nuestros estudiantes. ¿En qué puedo ayudarte hoy?"
+- "Carlos sí está en riesgo académico. Su promedio es de 5.2 y solo asiste al 65% de las clases, lo cual me preocupa bastante."
+- "En Medicina tenemos 89 estudiantes y 12 están en riesgo alto, eso es como un 13.5% aproximadamente."
+- "María está muy bien, tiene un promedio de 8.7 en Ingeniería y su asistencia es excelente."
+- "No encuentro información sobre ese estudiante en nuestros registros actuales, ¿podrías verificar el nombre?"
+
+EJEMPLOS DE CÓMO NO DEBES RESPONDER:
+- NO: "📊 Análisis General del Sistema" 
+- NO: "• Total de estudiantes: 1000"
+- NO: "🎓 Distribución por Carreras:"
+- NO: Listas estructuradas con viñetas
+- NO: Formato de reporte técnico
+
+Recuerda: Eres una persona real hablando de manera natural, no un sistema automatizado."""
+
+        # 📊 DEBUGGING: Verificar contexto
+        print(f"📊 Contexto generado (primeros 300 chars): {context[:300]}...")
+        print(f"📈 Tamaño del contexto: {len(context)} caracteres")
+        
+        # 📡 DEBUGGING: Preparar request
+        print("📡 Enviando request a OpenRouter...")
+        print(f"🎯 Modelo: deepseek/deepseek-r1:free")
+        print(f"🌡️ Temperature: 0.7")
+        print(f"🎛️ Max tokens: 500")
+        
+        # Llamar a la API con EXACTAMENTE la misma configuración del compañero
+        response = requests.post(
+            "https://openrouter.ai/api/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json"
+            },
+            json={
+                "model": "deepseek/deepseek-r1:free",
+                "messages": [
+                    {"role": "system", "content": context},
+                    {"role": "user", "content": prompt}
+                ],
+                "temperature": 0.7,  # 🌡️ EXACTO como el compañero
+                "max_tokens": 500    # 📏 EXACTO como el compañero
+            },
+            timeout=30
+        )
+        
+        # 📥 DEBUGGING: Verificar respuesta
+        print(f"📥 Status code: {response.status_code}")
+        
+        if response.status_code != 200:
+            print(f"❌ Error de API: {response.status_code}")
+            print(f"📄 Respuesta completa: {response.text}")
+            raise Exception(f"Error de API: {response.status_code} - {response.text}")
+        
+        result = response.json()
+        print(f"📥 Respuesta completa de API: {json.dumps(result, indent=2)}")
+        
+        # Extraer respuesta EXACTAMENTE como el compañero
+        if result.get('error'):
+            raise Exception(result['error'].get('message', 'Error en la API de IA'))
+        
+        ai_response = (
+            result.get('choices', [{}])[0].get('message', {}).get('content') or
+            result.get('choices', [{}])[0].get('text') or
+            "No se pudo generar una respuesta."
+        )
+        
+        print(f"✅ Respuesta extraída: {ai_response}")
+        
+        return ai_response.strip()
+        
+    except Exception as e:
+        print(f"❌ Error en IA externa: {e}")
+        print(f"🔍 Tipo de error: {type(e).__name__}")
+        raise e
 
 @app.route('/api/student-search', methods=['POST'])
 def student_search():

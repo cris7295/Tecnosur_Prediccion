@@ -1348,7 +1348,7 @@ def handle_reports(n_clicks_pdf, n_clicks_email):
     
     return ""
 
-# Callback para el chat IA
+# Callback para el chat IA - USANDO SERVIDOR IA EXTERNO
 @app.callback(
     [Output('chat-messages', 'children'),
      Output('chat-input', 'value')],
@@ -1362,14 +1362,14 @@ def handle_reports(n_clicks_pdf, n_clicks_email):
 def handle_chat_interaction(send_clicks, sug1_clicks, sug2_clicks, sug3_clicks, input_value, current_messages):
     ctx = callback_context
     if not ctx.triggered:
-        return current_messages, input_value
+        return current_messages or [], input_value or ""
     
     button_id = ctx.triggered[0]['prop_id'].split('.')[0]
     
     # Determinar el mensaje a enviar
     message = ""
     if button_id == 'send-chat-btn' and input_value:
-        message = input_value
+        message = str(input_value).strip()
     elif button_id == 'suggestion-1':
         message = "¿Cuántos estudiantes están en riesgo?"
     elif button_id == 'suggestion-2':
@@ -1378,28 +1378,77 @@ def handle_chat_interaction(send_clicks, sug1_clicks, sug2_clicks, sug3_clicks, 
         message = "¿Qué factores predicen mejor el riesgo?"
     
     if not message:
-        return current_messages, input_value
+        return current_messages or [], input_value or ""
     
     # Agregar mensaje del usuario
     user_message = html.Div([
-        html.Div('👤', className='chat-avatar'),
+        html.Div('👤', style={
+            'display': 'inline-block',
+            'width': '40px',
+            'height': '40px',
+            'backgroundColor': '#3498db',
+            'color': 'white',
+            'borderRadius': '50%',
+            'textAlign': 'center',
+            'lineHeight': '40px',
+            'marginLeft': '10px',
+            'fontSize': '1.2rem'
+        }),
         html.Div([
-            html.P(message),
-            html.Small(datetime.now().strftime('%H:%M'), style={'opacity': '0.7'})
-        ], className='chat-content')
-    ], className='chat-message user', style={'display': 'flex', 'alignItems': 'flex-start', 'marginBottom': '15px', 'gap': '10px', 'flexDirection': 'row-reverse'})
+            html.P(message, style={'margin': '0', 'padding': '10px'}),
+            html.Small(datetime.now().strftime('%H:%M'), style={'opacity': '0.7', 'padding': '0 10px'})
+        ], style={
+            'display': 'inline-block',
+            'backgroundColor': '#3498db',
+            'color': 'white',
+            'padding': '10px',
+            'borderRadius': '15px',
+            'maxWidth': '70%',
+            'marginRight': '10px'
+        })
+    ], style={'display': 'flex', 'alignItems': 'flex-start', 'marginBottom': '15px', 'justifyContent': 'flex-end'})
     
-    # Generar respuesta de la IA basada en los datos
-    ai_response = generate_ai_response(message)
+    # USAR SERVIDOR IA EXTERNO EN LUGAR DE FUNCIÓN LOCAL
+    try:
+        import requests
+        response = requests.post('http://127.0.0.1:5001/api/chat', 
+                               json={'prompt': message}, 
+                               timeout=30)
+        if response.status_code == 200:
+            ai_response = response.json().get('respuesta', 'Error: No se pudo obtener respuesta')
+        else:
+            ai_response = f"Error del servidor IA: {response.status_code}"
+    except Exception as e:
+        # Fallback a respuesta local solo en caso de error
+        ai_response = f"Error conectando con IA: {str(e)}. Usando respuesta local."
+        ai_response += "\n\n" + generate_ai_response_fallback(message)
     
     # Agregar respuesta de la IA
     ai_message = html.Div([
-        html.Div('🤖', className='chat-avatar'),
+        html.Div('🤖', style={
+            'display': 'inline-block',
+            'width': '40px',
+            'height': '40px',
+            'backgroundColor': '#2ecc71',
+            'color': 'white',
+            'borderRadius': '50%',
+            'textAlign': 'center',
+            'lineHeight': '40px',
+            'marginRight': '10px',
+            'fontSize': '1.2rem'
+        }),
         html.Div([
-            dcc.Markdown(ai_response),
-            html.Small(datetime.now().strftime('%H:%M'), style={'opacity': '0.7'})
-        ], className='chat-content')
-    ], className='chat-message ai', style={'display': 'flex', 'alignItems': 'flex-start', 'marginBottom': '15px', 'gap': '10px'})
+            html.P(ai_response, style={'margin': '0', 'padding': '10px', 'whiteSpace': 'pre-wrap'}),
+            html.Small(datetime.now().strftime('%H:%M'), style={'opacity': '0.7', 'padding': '0 10px'})
+        ], style={
+            'display': 'inline-block',
+            'backgroundColor': 'white',
+            'padding': '10px',
+            'borderRadius': '15px',
+            'border': '1px solid #e0e0e0',
+            'maxWidth': '70%'
+        })
+    ], style={'display': 'flex', 'alignItems': 'flex-start', 'marginBottom': '15px'})
     
     # Actualizar mensajes
     if current_messages is None:
@@ -1408,6 +1457,10 @@ def handle_chat_interaction(send_clicks, sug1_clicks, sug2_clicks, sug3_clicks, 
     new_messages = current_messages + [user_message, ai_message]
     
     return new_messages, ""
+
+def generate_ai_response_fallback(message):
+    """Función de fallback para respuestas locales en caso de error del servidor IA"""
+    return f"Respuesta local de emergencia: {message}"
 
 def generate_ai_response(message):
     """Genera respuestas de IA basadas en los datos del sistema"""

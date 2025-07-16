@@ -521,12 +521,12 @@ DATOS ACADÉMICOS ACTUALES:
 
 INSTRUCCIONES IMPORTANTES:
 - Habla de manera natural y conversacional, como una persona real
-- NO uses listas con viñetas (•) ni formato estructurado
 - NO uses muchos emojis, máximo 1-2 por respuesta
 - Responde como si estuvieras hablando cara a cara con alguien
 - Si te saludan, saluda de vuelta de manera natural y pregunta cómo puedes ayudar
 - Sé directo y claro, pero mantén un tono amigable
 - Cuando des números o estadísticas, hazlo de manera natural en el texto
+- Si te preguntan por un estudiante, busca en los datos y responde de manera natural y ofreciendo recomendaciones en base a su situación
 
 EJEMPLOS DE CÓMO DEBES RESPONDER:
 - "¡Hola! Todo bien por aquí, trabajando con los datos de nuestros estudiantes. ¿En qué puedo ayudarte hoy?"
@@ -567,8 +567,8 @@ Recuerda: Eres una persona real hablando de manera natural, no un sistema automa
                     {"role": "system", "content": context},
                     {"role": "user", "content": prompt}
                 ],
-                "temperature": 0.7,  # 🌡️ EXACTO como el compañero
-                "max_tokens": 500    # 📏 EXACTO como el compañero
+                "temperature": 0.7,  # 🌡️ Temperatura para respuestas naturales
+                "max_tokens": 1500   # 📏 Aumentado para respuestas más completas
             },
             timeout=30
         )

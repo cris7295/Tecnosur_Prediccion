@@ -17,7 +17,7 @@
 ### 2. 🛡️ Protección de Archivos
 - **`.gitignore` actualizado** con patrones de seguridad robustos
 - **Archivo `.env` protegido** contra commits accidentales
-- **Múltiples patrones** de exclusión configurados
+- **Múltiples patrones** de exclusión configurados xd
 
 ### 3. 🔍 Herramientas de Verificación
 - **Script de seguridad** (`security_check.py`) creado

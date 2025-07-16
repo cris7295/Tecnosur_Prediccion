@@ -34,7 +34,7 @@ pytz>=2022.1
 joblib>=1.1.0
 
 # Optional: For PDF generation (if needed later)
-# reportlab>=3.6.0
+reportlab>=3.6.0
 # weasyprint>=56.0
 
 # IA Conversational Assistant

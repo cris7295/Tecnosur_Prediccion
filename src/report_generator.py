@@ -233,7 +233,7 @@ class ReportGenerator:
         return charts
     
     def generate_general_report(self, students_df, statistics):
-        """Genera reporte general del sistema"""
+        """Genera reporte general del sistema y crea archivo PDF en memoria"""
         report = {
             'summary': self._generate_general_summary(statistics),
             'risk_distribution': self._generate_risk_distribution(students_df),
@@ -244,7 +244,336 @@ class ReportGenerator:
             'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         }
         
+        # Generar PDF en memoria para descarga
+        pdf_buffer = self._create_pdf_in_memory(report, students_df)
+        report['pdf_buffer'] = pdf_buffer
+        report['pdf_filename'] = f"reporte_general_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"
+        
         return report
+    
+    def _create_pdf_in_memory(self, report_data, students_df):
+        """Crea PDF en memoria para descarga directa"""
+        try:
+            from reportlab.lib.pagesizes import A4
+            from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
+            from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+            from reportlab.lib import colors
+            import io
+            
+            # Crear buffer en memoria
+            buffer = io.BytesIO()
+            
+            # Crear documento PDF en memoria
+            doc = SimpleDocTemplate(buffer, pagesize=A4)
+            styles = getSampleStyleSheet()
+            story = []
+            
+            # Título
+            title_style = ParagraphStyle(
+                'CustomTitle',
+                parent=styles['Heading1'],
+                fontSize=18,
+                spaceAfter=30,
+                alignment=1  # Centrado
+            )
+            story.append(Paragraph("📊 REPORTE GENERAL DEL SISTEMA ACADÉMICO", title_style))
+            story.append(Spacer(1, 20))
+            
+            # Fecha de generación
+            story.append(Paragraph(f"<b>Fecha de Generación:</b> {report_data['timestamp']}", styles['Normal']))
+            story.append(Spacer(1, 20))
+            
+            # Resumen Ejecutivo
+            story.append(Paragraph("🎯 RESUMEN EJECUTIVO", styles['Heading2']))
+            summary = report_data['summary']
+            
+            summary_data = [
+                ['Métrica', 'Valor'],
+                ['Total de Estudiantes', str(summary['total_estudiantes'])],
+                ['Estudiantes en Riesgo', str(summary['estudiantes_riesgo'])],
+                ['Porcentaje en Riesgo', f"{summary['porcentaje_riesgo']}%"],
+                ['Promedio General', f"{summary['promedio_general']:.2f}"],
+                ['Promedio de Asistencia', f"{summary['promedio_asistencia']:.1f}%"],
+                ['Total de Carreras', str(summary['total_carreras'])],
+                ['Semestres Activos', str(summary['semestres_activos'])]
+            ]
+            
+            summary_table = Table(summary_data)
+            summary_table.setStyle(TableStyle([
+                ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
+                ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+                ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+                ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+                ('FONTSIZE', (0, 0), (-1, 0), 12),
+                ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+                ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
+                ('GRID', (0, 0), (-1, -1), 1, colors.black)
+            ]))
+            
+            story.append(summary_table)
+            story.append(Spacer(1, 30))
+            
+            # Distribución de Riesgo por Carrera
+            story.append(Paragraph("📚 DISTRIBUCIÓN DE RIESGO POR CARRERA", styles['Heading2']))
+            
+            risk_by_career = report_data['risk_distribution']['por_carrera']
+            career_data = [['Carrera', 'Total Estudiantes', 'En Riesgo', '% Riesgo']]
+            
+            for carrera, stats in risk_by_career.items():
+                total = int(stats['count'])
+                en_riesgo = int(stats['sum'])
+                porcentaje = f"{stats['mean']*100:.1f}%"
+                career_data.append([carrera, str(total), str(en_riesgo), porcentaje])
+            
+            career_table = Table(career_data)
+            career_table.setStyle(TableStyle([
+                ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
+                ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+                ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+                ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+                ('FONTSIZE', (0, 0), (-1, 0), 10),
+                ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+                ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
+                ('GRID', (0, 0), (-1, -1), 1, colors.black)
+            ]))
+            
+            story.append(career_table)
+            story.append(Spacer(1, 30))
+            
+            # Recomendaciones Institucionales
+            story.append(Paragraph("💡 RECOMENDACIONES INSTITUCIONALES", styles['Heading2']))
+            
+            for i, rec in enumerate(report_data['recommendations'], 1):
+                story.append(Paragraph(f"<b>{i}. {rec['titulo']}</b>", styles['Heading3']))
+                story.append(Paragraph(f"<b>Categoría:</b> {rec['categoria']}", styles['Normal']))
+                story.append(Paragraph(f"<b>Descripción:</b> {rec['descripcion']}", styles['Normal']))
+                
+                if 'acciones' in rec:
+                    story.append(Paragraph("<b>Acciones Recomendadas:</b>", styles['Normal']))
+                    for accion in rec['acciones']:
+                        story.append(Paragraph(f"• {accion}", styles['Normal']))
+                
+                story.append(Spacer(1, 15))
+            
+            # Estadísticas Adicionales
+            story.append(Paragraph("📈 ESTADÍSTICAS DETALLADAS", styles['Heading2']))
+            
+            # Top 5 estudiantes en riesgo
+            students_at_risk = students_df[students_df['rendimiento_riesgo'] == 1].head(5)
+            if not students_at_risk.empty:
+                story.append(Paragraph("<b>Estudiantes que Requieren Atención Inmediata:</b>", styles['Heading3']))
+                
+                risk_students_data = [['Nombre', 'Carrera', 'Semestre', 'Promedio', 'Asistencia']]
+                for _, student in students_at_risk.iterrows():
+                    nombre = f"{student['nombre']} {student['apellido']}"
+                    carrera = student['carrera']
+                    semestre = str(student['semestre'])
+                    promedio = f"{student['calificaciones_anteriores']:.2f}"
+                    asistencia = f"{student['asistencia_porcentaje']:.1f}%"
+                    risk_students_data.append([nombre, carrera, semestre, promedio, asistencia])
+                
+                risk_table = Table(risk_students_data)
+                risk_table.setStyle(TableStyle([
+                    ('BACKGROUND', (0, 0), (-1, 0), colors.red),
+                    ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+                    ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+                    ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+                    ('FONTSIZE', (0, 0), (-1, 0), 9),
+                    ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+                    ('BACKGROUND', (0, 1), (-1, -1), colors.lightcoral),
+                    ('GRID', (0, 0), (-1, -1), 1, colors.black)
+                ]))
+                
+                story.append(risk_table)
+            
+            # Generar PDF en memoria
+            doc.build(story)
+            
+            # Obtener contenido del buffer
+            buffer.seek(0)
+            return buffer.getvalue()
+            
+        except Exception as e:
+            print(f"Error generando PDF en memoria: {e}")
+            return None
+    
+    def _create_pdf_report(self, report_data, students_df):
+        """Crea archivo PDF físico del reporte"""
+        import os
+        from reportlab.lib.pagesizes import letter, A4
+        from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
+        from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+        from reportlab.lib.units import inch
+        from reportlab.lib import colors
+        
+        # Crear directorio de reportes si no existe
+        reports_dir = 'reportes'
+        os.makedirs(reports_dir, exist_ok=True)
+        
+        # Nombre del archivo con timestamp
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        filename = f'reporte_general_{timestamp}.pdf'
+        filepath = os.path.join(reports_dir, filename)
+        
+        try:
+            # Crear documento PDF
+            doc = SimpleDocTemplate(filepath, pagesize=A4)
+            styles = getSampleStyleSheet()
+            story = []
+            
+            # Título
+            title_style = ParagraphStyle(
+                'CustomTitle',
+                parent=styles['Heading1'],
+                fontSize=18,
+                spaceAfter=30,
+                alignment=1  # Centrado
+            )
+            story.append(Paragraph("📊 REPORTE GENERAL DEL SISTEMA ACADÉMICO", title_style))
+            story.append(Spacer(1, 20))
+            
+            # Fecha de generación
+            story.append(Paragraph(f"<b>Fecha de Generación:</b> {report_data['timestamp']}", styles['Normal']))
+            story.append(Spacer(1, 20))
+            
+            # Resumen Ejecutivo
+            story.append(Paragraph("🎯 RESUMEN EJECUTIVO", styles['Heading2']))
+            summary = report_data['summary']
+            
+            summary_data = [
+                ['Métrica', 'Valor'],
+                ['Total de Estudiantes', str(summary['total_estudiantes'])],
+                ['Estudiantes en Riesgo', str(summary['estudiantes_riesgo'])],
+                ['Porcentaje en Riesgo', f"{summary['porcentaje_riesgo']}%"],
+                ['Promedio General', f"{summary['promedio_general']:.2f}"],
+                ['Promedio de Asistencia', f"{summary['promedio_asistencia']:.1f}%"],
+                ['Total de Carreras', str(summary['total_carreras'])],
+                ['Semestres Activos', str(summary['semestres_activos'])]
+            ]
+            
+            summary_table = Table(summary_data)
+            summary_table.setStyle(TableStyle([
+                ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
+                ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+                ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+                ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+                ('FONTSIZE', (0, 0), (-1, 0), 12),
+                ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+                ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
+                ('GRID', (0, 0), (-1, -1), 1, colors.black)
+            ]))
+            
+            story.append(summary_table)
+            story.append(Spacer(1, 30))
+            
+            # Distribución de Riesgo por Carrera
+            story.append(Paragraph("📚 DISTRIBUCIÓN DE RIESGO POR CARRERA", styles['Heading2']))
+            
+            risk_by_career = report_data['risk_distribution']['por_carrera']
+            career_data = [['Carrera', 'Total Estudiantes', 'En Riesgo', '% Riesgo']]
+            
+            for carrera, stats in risk_by_career.items():
+                total = int(stats['count'])
+                en_riesgo = int(stats['sum'])
+                porcentaje = f"{stats['mean']*100:.1f}%"
+                career_data.append([carrera, str(total), str(en_riesgo), porcentaje])
+            
+            career_table = Table(career_data)
+            career_table.setStyle(TableStyle([
+                ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
+                ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+                ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+                ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+                ('FONTSIZE', (0, 0), (-1, 0), 10),
+                ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+                ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
+                ('GRID', (0, 0), (-1, -1), 1, colors.black)
+            ]))
+            
+            story.append(career_table)
+            story.append(Spacer(1, 30))
+            
+            # Recomendaciones Institucionales
+            story.append(Paragraph("💡 RECOMENDACIONES INSTITUCIONALES", styles['Heading2']))
+            
+            for i, rec in enumerate(report_data['recommendations'], 1):
+                story.append(Paragraph(f"<b>{i}. {rec['titulo']}</b>", styles['Heading3']))
+                story.append(Paragraph(f"<b>Categoría:</b> {rec['categoria']}", styles['Normal']))
+                story.append(Paragraph(f"<b>Descripción:</b> {rec['descripcion']}", styles['Normal']))
+                
+                if 'acciones' in rec:
+                    story.append(Paragraph("<b>Acciones Recomendadas:</b>", styles['Normal']))
+                    for accion in rec['acciones']:
+                        story.append(Paragraph(f"• {accion}", styles['Normal']))
+                
+                story.append(Spacer(1, 15))
+            
+            # Estadísticas Adicionales
+            story.append(Paragraph("📈 ESTADÍSTICAS DETALLADAS", styles['Heading2']))
+            
+            # Top 5 estudiantes en riesgo
+            students_at_risk = students_df[students_df['rendimiento_riesgo'] == 1].head(5)
+            if not students_at_risk.empty:
+                story.append(Paragraph("<b>Estudiantes que Requieren Atención Inmediata:</b>", styles['Heading3']))
+                
+                risk_students_data = [['Nombre', 'Carrera', 'Semestre', 'Promedio', 'Asistencia']]
+                for _, student in students_at_risk.iterrows():
+                    nombre = f"{student['nombre']} {student['apellido']}"
+                    carrera = student['carrera']
+                    semestre = str(student['semestre'])
+                    promedio = f"{student['calificaciones_anteriores']:.2f}"
+                    asistencia = f"{student['asistencia_porcentaje']:.1f}%"
+                    risk_students_data.append([nombre, carrera, semestre, promedio, asistencia])
+                
+                risk_table = Table(risk_students_data)
+                risk_table.setStyle(TableStyle([
+                    ('BACKGROUND', (0, 0), (-1, 0), colors.red),
+                    ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+                    ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+                    ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+                    ('FONTSIZE', (0, 0), (-1, 0), 9),
+                    ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+                    ('BACKGROUND', (0, 1), (-1, -1), colors.lightcoral),
+                    ('GRID', (0, 0), (-1, -1), 1, colors.black)
+                ]))
+                
+                story.append(risk_table)
+            
+            # Generar PDF
+            doc.build(story)
+            
+            return filepath
+            
+        except ImportError:
+            # Si reportlab no está disponible, crear un archivo de texto simple
+            with open(filepath.replace('.pdf', '.txt'), 'w', encoding='utf-8') as f:
+                f.write("REPORTE GENERAL DEL SISTEMA ACADÉMICO\n")
+                f.write("="*50 + "\n\n")
+                f.write(f"Fecha de Generación: {report_data['timestamp']}\n\n")
+                
+                f.write("RESUMEN EJECUTIVO:\n")
+                f.write(f"- Total de Estudiantes: {summary['total_estudiantes']}\n")
+                f.write(f"- Estudiantes en Riesgo: {summary['estudiantes_riesgo']}\n")
+                f.write(f"- Porcentaje en Riesgo: {summary['porcentaje_riesgo']}%\n")
+                f.write(f"- Promedio General: {summary['promedio_general']:.2f}\n")
+                f.write(f"- Promedio de Asistencia: {summary['promedio_asistencia']:.1f}%\n\n")
+                
+                f.write("RECOMENDACIONES:\n")
+                for i, rec in enumerate(report_data['recommendations'], 1):
+                    f.write(f"{i}. {rec['titulo']}\n")
+                    f.write(f"   {rec['descripcion']}\n\n")
+            
+            return filepath.replace('.pdf', '.txt')
+        
+        except Exception as e:
+            print(f"Error generando PDF: {e}")
+            # Crear archivo de texto como fallback
+            txt_filepath = filepath.replace('.pdf', '.txt')
+            with open(txt_filepath, 'w', encoding='utf-8') as f:
+                f.write(f"REPORTE GENERAL - {report_data['timestamp']}\n")
+                f.write(f"Total Estudiantes: {summary['total_estudiantes']}\n")
+                f.write(f"En Riesgo: {summary['estudiantes_riesgo']}\n")
+            return txt_filepath
     
     def _generate_general_summary(self, statistics):
         """Genera resumen general"""

@@ -148,6 +148,24 @@ class AlertSystem:
         """Obtiene alertas de un estudiante específico"""
         return [alert for alert in self.alerts if alert['student_id'] == student_id]
     
+    def get_filtered_alerts(self, alert_type=None, priority=None, limit=50):
+        """Obtiene alertas filtradas por tipo y/o prioridad"""
+        filtered_alerts = self.alerts.copy()
+        
+        # Filtrar por tipo si se especifica
+        if alert_type:
+            filtered_alerts = [alert for alert in filtered_alerts if alert['type'] == alert_type]
+        
+        # Filtrar por prioridad si se especifica
+        if priority:
+            filtered_alerts = [alert for alert in filtered_alerts if alert['priority'] == priority]
+        
+        # Ordenar por timestamp descendente (más recientes primero)
+        filtered_alerts.sort(key=lambda x: x['timestamp'], reverse=True)
+        
+        # Limitar resultados
+        return filtered_alerts[:limit]
+    
     def mark_alert_read(self, alert_id):
         """Marca una alerta como leída"""
         for alert in self.alerts:

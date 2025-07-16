@@ -10,6 +10,12 @@
 *.pem
 secrets/
 config/secrets.json
+.secrets.baseline
+
+# Archivos de seguridad sensibles (mantener los de configuración)
+# NOTA: Los archivos README_SEGURIDAD.md, SECURITY_CHECKLIST.md, 
+# security_check.py y .pre-commit-config.yaml SÍ deben subirse al repo
+# ya que no contienen secretos, solo configuración de seguridad
 
 # Archivos de Python
 __pycache__/

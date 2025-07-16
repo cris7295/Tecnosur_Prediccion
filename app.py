@@ -1214,7 +1214,7 @@ def handle_reports(n_clicks_pdf, n_clicks_email):
             email_result = alert_system.simulate_email_alerts(students_at_risk.to_dict('records'))
             
             return html.Div([
-                html.H4("📧 Simulación de Envío de Emails", style={'color': '#f39c12'}),
+                html.H4("📧 Simulación de de Envío de Emails", style={'color': '#f39c12'}),
                 html.P(f"Emails enviados: {email_result['emails_sent']}"),
                 html.P(f"Estudiantes notificados: {email_result['students_notified']}"),
                 html.Ul([

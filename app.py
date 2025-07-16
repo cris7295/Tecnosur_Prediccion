@@ -53,6 +53,34 @@ server = app.server
 # ======================
 # 🚀 API Simple (sin modificar el código existente)
 # ======================
+@server.route('/download-pdf/<filename>')
+def download_pdf(filename):
+    """Endpoint para descargar PDF generado"""
+    try:
+        # Obtener el PDF del almacenamiento temporal (en una implementación real usarías Redis o similar)
+        if hasattr(server, 'temp_pdf_storage') and filename in server.temp_pdf_storage:
+            pdf_data = server.temp_pdf_storage[filename]
+            
+            from flask import Response
+            response = Response(
+                pdf_data,
+                mimetype='application/pdf',
+                headers={
+                    'Content-Disposition': f'attachment; filename={filename}',
+                    'Content-Type': 'application/pdf'
+                }
+            )
+            
+            # Limpiar el almacenamiento temporal después de la descarga
+            del server.temp_pdf_storage[filename]
+            
+            return response
+        else:
+            return "Archivo no encontrado", 404
+            
+    except Exception as e:
+        return f"Error descargando archivo: {str(e)}", 500
+
 @server.route('/api/predict', methods=['POST'])
 def api_predict():
     """Endpoint para predicciones via API"""
@@ -414,9 +442,6 @@ app.layout = html.Div(className='container', children=[
                     html.Div(style={'display': 'flex', 'gap': '15px'}, children=[
                         html.Button('📄 Reporte General PDF', id='btn-reporte-general', n_clicks=0,
                                   style={'padding': '10px 20px', 'backgroundColor': '#27ae60', 'color': 'white', 
-                                        'border': 'none', 'borderRadius': '5px', 'cursor': 'pointer'}),
-                        html.Button('📧 Simular Envío Email', id='btn-simular-email', n_clicks=0,
-                                  style={'padding': '10px 20px', 'backgroundColor': '#f39c12', 'color': 'white', 
                                         'border': 'none', 'borderRadius': '5px', 'cursor': 'pointer'})
                     ])
                 ]),
@@ -1272,7 +1297,7 @@ def update_alerts_list(n_clicks, active_tab, tipo_filtro, prioridad_filtro):
                         html.Span(f" ({alert['priority']})", style={'marginLeft': '10px', 'fontSize': '12px', 'color': color})
                     ], style={'marginBottom': '5px'}),
                     html.P(alert['message'], style={'margin': '0', 'color': '#7f8c8d', 'fontSize': '13px'}),
-                    html.Small(f"Creada: {alert['created_at']}", style={'color': '#95a5a6'})
+                    html.Small(f"Creada: {alert['timestamp']}", style={'color': '#95a5a6'})
                 ], style={
                     'padding': '15px', 
                     'border': f'1px solid {color}', 
@@ -1289,64 +1314,94 @@ def update_alerts_list(n_clicks, active_tab, tipo_filtro, prioridad_filtro):
 # Callback para generar reportes
 @app.callback(
     Output('resultado-reportes', 'children'),
-    [Input('btn-reporte-general', 'n_clicks'),
-     Input('btn-simular-email', 'n_clicks')]
+    [Input('btn-reporte-general', 'n_clicks')]
 )
-def handle_reports(n_clicks_pdf, n_clicks_email):
-    ctx = callback_context
-    if not ctx.triggered:
+def handle_reports(n_clicks_pdf):
+    if not n_clicks_pdf:
         return ""
     
-    button_id = ctx.triggered[0]['prop_id'].split('.')[0]
-    
-    if button_id == 'btn-reporte-general':
-        try:
-            # Generar reporte general
-            report_data = {
-                'total_students': len(df),
-                'at_risk_students': len(df[df['rendimiento_riesgo'] == 1]),
-                'average_grade': df['calificaciones_anteriores'].mean(),
-                'average_attendance': df['asistencia_porcentaje'].mean(),
-                'generated_at': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            }
-            
-            # Simular generación de PDF
-            pdf_path = report_generator.generate_general_report(report_data)
-            
-            return html.Div([
-                html.H4("✅ Reporte PDF Generado", style={'color': '#27ae60'}),
-                html.P(f"Archivo: {pdf_path}"),
-                html.P(f"Total estudiantes: {report_data['total_students']}"),
-                html.P(f"Estudiantes en riesgo: {report_data['at_risk_students']}"),
-                html.P(f"Promedio general: {report_data['average_grade']:.2f}"),
-                html.Small(f"Generado: {report_data['generated_at']}")
-            ], style={'padding': '15px', 'backgroundColor': '#d5f4e6', 'borderRadius': '8px'})
-            
-        except Exception as e:
-            return html.Div(f"❌ Error generando reporte: {str(e)}", 
-                           style={'color': '#e74c3c', 'padding': '15px', 'backgroundColor': '#fadbd8', 'borderRadius': '8px'})
-    
-    elif button_id == 'btn-simular-email':
-        try:
-            # Simular envío de email
-            students_at_risk = df[df['rendimiento_riesgo'] == 1].head(5)
-            email_result = alert_system.simulate_email_alerts(students_at_risk.to_dict('records'))
-            
-            return html.Div([
-                html.H4("📧 Simulación de Envío de Emails", style={'color': '#f39c12'}),
-                html.P(f"Emails enviados: {email_result['emails_sent']}"),
-                html.P(f"Estudiantes notificados: {email_result['students_notified']}"),
-                html.Ul([
-                    html.Li(f"{student['nombre']} {student['apellido']} - {student['email']}")
-                    for student in email_result['recipients']
-                ])
-            ], style={'padding': '15px', 'backgroundColor': '#fef9e7', 'borderRadius': '8px'})
-            
-        except Exception as e:
-            return html.Div(f"❌ Error simulando emails: {str(e)}", 
-                           style={'color': '#e74c3c', 'padding': '15px', 'backgroundColor': '#fadbd8', 'borderRadius': '8px'})
-    
-    return ""
+    try:
+        # Obtener estadísticas del sistema
+        stats = data_processor.get_statistics()
+        
+        # Generar reporte general con PDF en memoria
+        report = report_generator.generate_general_report(df, stats)
+        
+        # Verificar si se generó el PDF correctamente
+        if report.get('pdf_buffer') is None:
+            raise Exception("No se pudo generar el PDF en memoria")
+        
+        # Inicializar almacenamiento temporal si no existe
+        if not hasattr(server, 'temp_pdf_storage'):
+            server.temp_pdf_storage = {}
+        
+        # Almacenar el PDF en memoria temporalmente
+        filename = report['pdf_filename']
+        server.temp_pdf_storage[filename] = report['pdf_buffer']
+        
+        # Crear enlace de descarga
+        download_url = f"/download-pdf/{filename}"
+        
+        return html.Div([
+            html.H4("✅ Reporte PDF Generado Exitosamente", style={'color': '#27ae60', 'marginBottom': '15px'}),
+            html.Div([
+                html.P([
+                    html.Strong("📄 Archivo generado: "), 
+                    html.Code(filename)
+                ], style={'marginBottom': '15px'}),
+                
+                # Botón de descarga
+                html.Div([
+                    html.A(
+                        "📥 Descargar PDF",
+                        href=download_url,
+                        download=filename,
+                        style={
+                            'display': 'inline-block',
+                            'padding': '12px 25px',
+                            'backgroundColor': '#3498db',
+                            'color': 'white',
+                            'textDecoration': 'none',
+                            'borderRadius': '5px',
+                            'fontWeight': 'bold',
+                            'fontSize': '16px'
+                        }
+                    )
+                ], style={'textAlign': 'center', 'marginBottom': '20px'}),
+                
+                html.Hr(),
+                html.H5("📊 Resumen del Reporte:", style={'color': '#2c3e50', 'marginBottom': '10px'}),
+                html.P(f"• Total de estudiantes: {report['summary']['total_estudiantes']}"),
+                html.P(f"• Estudiantes en riesgo: {report['summary']['estudiantes_riesgo']} ({report['summary']['porcentaje_riesgo']}%)"),
+                html.P(f"• Promedio general: {report['summary']['promedio_general']:.2f}"),
+                html.P(f"• Promedio de asistencia: {report['summary']['promedio_asistencia']:.1f}%"),
+                html.P(f"• Total de carreras: {report['summary']['total_carreras']}"),
+                html.Hr(),
+                html.P([
+                    html.Strong("🕒 Generado: "), 
+                    report['timestamp']
+                ], style={'fontSize': '14px', 'color': '#7f8c8d'}),
+                html.Div([
+                    html.P("💡 Instrucciones:", style={'fontWeight': 'bold', 'marginBottom': '5px'}),
+                    html.P("1. Haz clic en el botón 'Descargar PDF' de arriba"),
+                    html.P("2. El archivo se descargará automáticamente a tu carpeta de descargas"),
+                    html.P("3. Abre el archivo PDF descargado para ver el reporte completo")
+                ], style={'backgroundColor': '#f8f9fa', 'padding': '10px', 'borderRadius': '5px', 'marginTop': '10px'})
+            ])
+        ], style={'padding': '20px', 'backgroundColor': '#d5f4e6', 'borderRadius': '8px', 'border': '1px solid #27ae60'})
+        
+    except Exception as e:
+        return html.Div([
+            html.H4("❌ Error Generando Reporte", style={'color': '#e74c3c', 'marginBottom': '10px'}),
+            html.P(f"Detalles del error: {str(e)}"),
+            html.P("Posibles causas:"),
+            html.Ul([
+                html.Li("Falta la librería reportlab"),
+                html.Li("Error en los datos del sistema"),
+                html.Li("Problema de memoria insuficiente")
+            ]),
+            html.P("Por favor, verifica que reportlab esté instalado correctamente.")
+        ], style={'color': '#e74c3c', 'padding': '15px', 'backgroundColor': '#fadbd8', 'borderRadius': '8px'})
 
 # Callback para el chat IA - USANDO SERVIDOR IA EXTERNO
 @app.callback(
@@ -1408,7 +1463,7 @@ def handle_chat_interaction(send_clicks, sug1_clicks, sug2_clicks, sug3_clicks, 
         })
     ], style={'display': 'flex', 'alignItems': 'flex-start', 'marginBottom': '15px', 'justifyContent': 'flex-end'})
     
-    # USAR SERVIDOR IA EXTERNO EN LUGAR DE FUNCIÓN LOCAL
+    # USAR SERVIDOR IA EXTERNO
     try:
         import requests
         response = requests.post('http://127.0.0.1:5001/api/chat', 
@@ -1419,9 +1474,7 @@ def handle_chat_interaction(send_clicks, sug1_clicks, sug2_clicks, sug3_clicks, 
         else:
             ai_response = f"Error del servidor IA: {response.status_code}"
     except Exception as e:
-        # Fallback a respuesta local solo en caso de error
-        ai_response = f"Error conectando con IA: {str(e)}. Usando respuesta local."
-        ai_response += "\n\n" + generate_ai_response_fallback(message)
+        ai_response = f"Error conectando con IA: {str(e)}. Asegúrate de que el servidor IA esté ejecutándose en el puerto 5001 con 'python ia_server.py'."
     
     # Agregar respuesta de la IA
     ai_message = html.Div([

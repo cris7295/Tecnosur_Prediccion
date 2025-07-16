@@ -1,51 +1,1001 @@
 id_estudiante,nombre,apellido,edad,genero,carrera,semestre,email,telefono,calificaciones_anteriores,asistencia_porcentaje,participacion_clase,horas_estudio_semanal,nivel_socioeconomico,rendimiento_riesgo,nota_matematicas,nota_ciencias,nota_lenguaje,nota_historia,promedio_general,creditos_aprobados,creditos_totales,fecha_ingreso,estado_academico,motivo_riesgo
-1,Ana,García,20,F,Ingeniería,3,ana.garcia@universidad.edu,555-0101,6.25,96,5,17,Medio,0,6.5,6.0,6.8,5.9,6.3,45,60,2022-02-15,Activo,
-2,Carlos,Rodríguez,22,M,Medicina,5,carlos.rodriguez@universidad.edu,555-0102,9.7,61,2,13,Medio,0,9.8,9.5,9.9,9.6,9.7,75,80,2021-02-15,Activo,
-3,María,López,19,F,Derecho,2,maria.lopez@universidad.edu,555-0103,8.39,65,3,18,Medio,0,8.2,8.6,8.4,8.3,8.4,30,40,2023-02-15,Activo,
-4,José,Martínez,21,M,Psicología,4,jose.martinez@universidad.edu,555-0104,7.59,73,2,5,Bajo,0,7.8,7.4,7.6,7.5,7.6,50,65,2022-08-15,Activo,
-5,Laura,Hernández,20,F,Ingeniería,3,laura.hernandez@universidad.edu,555-0105,4.94,68,4,24,Medio,1,4.8,5.1,4.9,5.0,4.9,35,60,2022-02-15,En Riesgo,Bajo rendimiento académico
-6,Diego,González,23,M,Administración,6,diego.gonzalez@universidad.edu,555-0106,4.94,57,2,24,Alto,1,4.7,5.2,4.8,5.1,4.9,60,90,2020-02-15,En Riesgo,Baja asistencia
-7,Carmen,Pérez,19,F,Arte,1,carmen.perez@universidad.edu,555-0107,4.35,80,1,3,Alto,1,4.2,4.5,4.3,4.4,4.4,15,20,2023-08-15,En Riesgo,Baja participación
-8,Roberto,Sánchez,22,M,Ingeniería,5,roberto.sanchez@universidad.edu,555-0108,9.2,70,3,11,Bajo,0,9.3,9.1,9.2,9.0,9.2,70,80,2021-02-15,Activo,
-9,Patricia,Ramírez,20,F,Medicina,3,patricia.ramirez@universidad.edu,555-0109,7.61,66,2,13,Bajo,0,7.7,7.5,7.6,7.6,7.6,45,60,2022-02-15,Activo,
-10,Fernando,Torres,21,M,Derecho,4,fernando.torres@universidad.edu,555-0110,8.25,72,4,4,Alto,0,8.3,8.2,8.1,8.3,8.2,55,65,2022-08-15,Activo,
-11,Sofía,Flores,19,F,Psicología,2,sofia.flores@universidad.edu,555-0111,4.12,86,4,14,Medio,1,4.0,4.3,4.1,4.0,4.1,25,40,2023-02-15,En Riesgo,Bajo rendimiento académico
-12,Andrés,Morales,24,M,Administración,7,andres.morales@universidad.edu,555-0112,9.82,65,2,22,Alto,0,9.9,9.7,9.8,9.9,9.8,85,100,2019-02-15,Activo,
-13,Valentina,Jiménez,20,F,Arte,3,valentina.jimenez@universidad.edu,555-0113,8.99,55,4,11,Bajo,0,9.1,8.9,9.0,8.9,9.0,40,60,2022-02-15,Activo,
-14,Miguel,Vargas,22,M,Ingeniería,5,miguel.vargas@universidad.edu,555-0114,5.27,57,5,10,Medio,1,5.1,5.4,5.3,5.2,5.3,60,80,2021-02-15,En Riesgo,Baja asistencia
-15,Isabella,Castro,19,F,Medicina,2,isabella.castro@universidad.edu,555-0115,5.09,74,5,19,Medio,1,5.2,4.9,5.1,5.0,5.1,30,40,2023-02-15,En Riesgo,Bajo rendimiento académico
-16,Alejandro,Ortega,21,M,Derecho,4,alejandro.ortega@universidad.edu,555-0116,5.1,67,5,18,Medio,1,5.0,5.2,5.1,5.1,5.1,50,65,2022-08-15,En Riesgo,Bajo rendimiento académico
-17,Camila,Ruiz,20,F,Psicología,3,camila.ruiz@universidad.edu,555-0117,5.83,74,1,6,Medio,1,5.9,5.8,5.7,5.9,5.8,40,60,2022-02-15,En Riesgo,Baja participación
-18,Sebastián,Mendoza,23,M,Administración,6,sebastian.mendoza@universidad.edu,555-0118,7.15,61,2,15,Bajo,1,7.2,7.1,7.0,7.2,7.1,75,90,2020-02-15,En Riesgo,Baja asistencia
-19,Natalia,Herrera,19,F,Arte,1,natalia.herrera@universidad.edu,555-0119,6.59,64,1,21,Medio,0,6.6,6.5,6.6,6.5,6.6,15,20,2023-08-15,Activo,
-20,Gabriel,Silva,22,M,Ingeniería,5,gabriel.silva@universidad.edu,555-0120,5.75,75,4,10,Bajo,1,5.8,5.7,5.7,5.8,5.8,65,80,2021-02-15,En Riesgo,Bajo rendimiento académico
-21,Daniela,Rojas,20,F,Medicina,3,daniela.rojas@universidad.edu,555-0121,7.67,90,1,5,Medio,0,7.7,7.6,7.7,7.6,7.7,50,60,2022-02-15,Activo,
-22,Mateo,Guerrero,21,M,Derecho,4,mateo.guerrero@universidad.edu,555-0122,4.84,94,4,5,Alto,1,4.9,4.8,4.8,4.8,4.8,55,65,2022-08-15,En Riesgo,Bajo rendimiento académico
-23,Valeria,Medina,19,F,Psicología,2,valeria.medina@universidad.edu,555-0123,5.75,75,4,10,Medio,1,5.8,5.7,5.7,5.8,5.8,30,40,2023-02-15,En Riesgo,Bajo rendimiento académico
-24,Nicolás,Romero,24,M,Administración,7,nicolas.romero@universidad.edu,555-0124,6.2,96,3,5,Alto,0,6.3,6.1,6.2,6.2,6.2,90,100,2019-02-15,Activo,
-25,Mariana,Aguilar,20,F,Arte,3,mariana.aguilar@universidad.edu,555-0125,6.74,81,5,3,Bajo,1,6.8,6.7,6.7,6.8,6.8,45,60,2022-02-15,En Riesgo,Pocas horas de estudio
-26,Santiago,Vega,22,M,Ingeniería,5,santiago.vega@universidad.edu,555-0126,8.71,59,4,23,Medio,0,8.8,8.6,8.7,8.7,8.7,70,80,2021-02-15,Activo,
-27,Lucía,Moreno,19,F,Medicina,2,lucia.moreno@universidad.edu,555-0127,5.2,65,3,6,Alto,1,5.3,5.1,5.2,5.2,5.2,25,40,2023-02-15,En Riesgo,Pocas horas de estudio
-28,Emilio,Castillo,21,M,Derecho,4,emilio.castillo@universidad.edu,555-0128,7.09,56,5,4,Bajo,1,7.1,7.0,7.1,7.1,7.1,50,65,2022-08-15,En Riesgo,Baja asistencia
-29,Regina,Ramos,20,F,Psicología,3,regina.ramos@universidad.edu,555-0129,7.55,66,4,18,Bajo,1,7.6,7.5,7.5,7.6,7.6,45,60,2022-02-15,En Riesgo,Baja asistencia
-30,Joaquín,Delgado,23,M,Administración,6,joaquin.delgado@universidad.edu,555-0130,4.28,72,4,9,Medio,1,4.3,4.2,4.3,4.3,4.3,70,90,2020-02-15,En Riesgo,Bajo rendimiento académico
-31,Antonella,Peña,19,F,Arte,1,antonella.pena@universidad.edu,555-0131,7.65,75,1,17,Bajo,0,7.7,7.6,7.6,7.7,7.7,18,20,2023-08-15,Activo,
-32,Maximiliano,Cortés,22,M,Ingeniería,5,maximiliano.cortes@universidad.edu,555-0132,5.02,70,1,13,Medio,1,5.1,5.0,5.0,5.0,5.0,65,80,2021-02-15,En Riesgo,Baja participación
-33,Renata,Núñez,20,F,Medicina,3,renata.nunez@universidad.edu,555-0133,4.39,71,5,15,Alto,1,4.4,4.3,4.4,4.4,4.4,40,60,2022-02-15,En Riesgo,Bajo rendimiento académico
-34,Tomás,Espinoza,21,M,Derecho,4,tomas.espinoza@universidad.edu,555-0134,9.69,56,4,20,Medio,0,9.7,9.7,9.6,9.7,9.7,60,65,2022-08-15,Activo,
-35,Julieta,Paredes,19,F,Psicología,2,julieta.paredes@universidad.edu,555-0135,9.79,63,2,17,Bajo,0,9.8,9.8,9.7,9.8,9.8,35,40,2023-02-15,Activo,
-36,Ignacio,Soto,24,M,Administración,7,ignacio.soto@universidad.edu,555-0136,8.85,64,1,13,Medio,0,8.9,8.8,8.8,8.9,8.9,85,100,2019-02-15,Activo,
-37,Constanza,Figueroa,20,F,Arte,3,constanza.figueroa@universidad.edu,555-0137,5.83,56,5,16,Medio,0,5.9,5.8,5.8,5.8,5.8,45,60,2022-02-15,Activo,
-38,Benjamín,Carrasco,22,M,Ingeniería,5,benjamin.carrasco@universidad.edu,555-0138,4.59,58,4,22,Bajo,1,4.6,4.5,4.6,4.6,4.6,60,80,2021-02-15,En Riesgo,Bajo rendimiento académico
-39,Florencia,Ponce,19,F,Medicina,2,florencia.ponce@universidad.edu,555-0139,8.11,100,4,4,Medio,0,8.2,8.0,8.1,8.1,8.1,40,40,2023-02-15,Activo,
-40,Rodrigo,Maldonado,21,M,Derecho,4,rodrigo.maldonado@universidad.edu,555-0140,6.64,97,2,5,Medio,0,6.7,6.6,6.6,6.6,6.6,63,65,2022-08-15,Activo,
-41,Esperanza,Contreras,20,F,Psicología,3,esperanza.contreras@universidad.edu,555-0141,4.73,57,5,5,Medio,1,4.8,4.7,4.7,4.7,4.7,40,60,2022-02-15,En Riesgo,Bajo rendimiento académico
-42,Esteban,Sandoval,23,M,Administración,6,esteban.sandoval@universidad.edu,555-0142,6.97,99,4,9,Bajo,0,7.0,6.9,7.0,7.0,7.0,88,90,2020-02-15,Activo,
-43,Amparo,Ibáñez,19,F,Arte,1,amparo.ibanez@universidad.edu,555-0143,4.21,72,1,17,Medio,1,4.2,4.2,4.2,4.2,4.2,15,20,2023-08-15,En Riesgo,Baja participación
-44,Cristóbal,Muñoz,22,M,Ingeniería,5,cristobal.munoz@universidad.edu,555-0144,9.46,78,2,13,Bajo,0,9.5,9.4,9.5,9.4,9.5,75,80,2021-02-15,Activo,
-45,Isidora,Cáceres,20,F,Medicina,3,isidora.caceres@universidad.edu,555-0145,5.55,67,5,2,Bajo,1,5.6,5.5,5.5,5.6,5.6,45,60,2022-02-15,En Riesgo,Pocas horas de estudio
-46,Vicente,Fuentes,21,M,Derecho,4,vicente.fuentes@universidad.edu,555-0146,7.98,80,2,13,Alto,0,8.0,7.9,8.0,8.0,8.0,60,65,2022-08-15,Activo,
-47,Magdalena,Campos,19,F,Psicología,2,magdalena.campos@universidad.edu,555-0147,5.87,79,1,22,Medio,0,5.9,5.8,5.9,5.9,5.9,35,40,2023-02-15,Activo,
-48,Agustín,Bravo,24,M,Administración,7,agustin.bravo@universidad.edu,555-0148,7.12,88,5,21,Bajo,0,7.2,7.1,7.1,7.1,7.1,95,100,2019-02-15,Activo,
-49,Javiera,Gallardo,20,F,Arte,3,javiera.gallardo@universidad.edu,555-0149,7.28,84,2,23,Bajo,1,7.3,7.2,7.3,7.3,7.3,50,60,2022-02-15,En Riesgo,Baja participación
-50,Matías,Vera,22,M,Ingeniería,5,matias.vera@universidad.edu,555-0150,5.11,67,3,19,Bajo,1,5.2,5.1,5.1,5.1,5.1,65,80,2021-02-15,En Riesgo,Bajo rendimiento académico
+1,Natalia,Jiménez,19,F,Ingeniería,5,natalia.jiménez@universidad.edu,555-0001,6.84,93,1,5,Bajo,0,7.0,7.2,6.8,6.6,6.9,75,100,2023-07-17,Condicional,
+2,Ana,Guerrero,26,F,Psicología,6,ana.guerrero@universidad.edu,555-0002,6.34,57,2,12,Medio,1,6.2,6.4,6.6,6.6,6.5,90,120,2023-01-18,En Riesgo,Bajo rendimiento académico
+3,Isidora,Morales,19,F,Enfermería,4,isidora.morales@universidad.edu,555-0003,4.42,76,1,22,Bajo,1,4.3,4.4,4.0,4.2,4.2,60,80,2024-01-18,En Riesgo,
+4,Valentina,Romero,19,F,Ingeniería,6,valentina.romero@universidad.edu,555-0004,7.96,68,1,18,Bajo,1,8.3,8.1,8.0,8.4,8.2,90,120,2023-01-18,En Riesgo,Baja asistencia
+5,Camila,López,21,F,Economía,7,camila.lópez@universidad.edu,555-0005,5.64,80,5,21,Medio,0,6.1,5.5,5.2,5.5,5.6,105,140,2022-07-17,Activo,
+6,Agustín,Guerrero,19,M,Enfermería,4,agustín.guerrero@universidad.edu,555-0006,9.38,52,3,9,Bajo,0,9.8,9.5,9.6,9.5,9.6,40,80,2024-01-18,Activo,
+7,Daniela,González,19,F,Arquitectura,6,daniela.gonzález@universidad.edu,555-0007,6.08,56,2,7,Bajo,1,6.4,6.5,6.0,6.0,6.2,82,120,2023-01-18,En Riesgo,Problemas familiares
+8,Florencia,Hernández,23,F,Economía,7,florencia.hernández@universidad.edu,555-0008,6.68,70,2,20,Bajo,0,7.1,7.1,7.1,6.3,6.9,88,140,2022-07-17,Activo,
+9,Ignacio,Ramos,23,M,Educación,7,ignacio.ramos@universidad.edu,555-0009,5.05,87,3,17,Bajo,0,4.7,4.9,5.1,4.6,4.8,105,140,2022-07-17,Condicional,
+10,Andrés,Aguilar,22,M,Psicología,5,andrés.aguilar@universidad.edu,555-0010,8.57,73,5,21,Medio,0,8.7,8.5,8.6,8.4,8.5,66,100,2023-07-17,Activo,
+11,Julieta,Sánchez,21,F,Enfermería,8,julieta.sánchez@universidad.edu,555-0011,5.37,70,5,7,Medio,1,5.3,5.8,5.2,4.9,5.3,120,160,2022-01-18,En Riesgo,Baja asistencia
+12,Julieta,Vargas,24,F,Educación,7,julieta.vargas@universidad.edu,555-0012,5.41,74,2,16,Medio,1,5.4,5.5,5.8,5.7,5.6,105,140,2022-07-17,En Riesgo,Problemas familiares
+13,Miguel,Aguilar,20,M,Arte,8,miguel.aguilar@universidad.edu,555-0013,7.06,76,3,18,Bajo,0,7.1,7.4,7.4,7.0,7.2,86,160,2022-01-18,Condicional,
+14,Magdalena,López,24,F,Administración,4,magdalena.lópez@universidad.edu,555-0014,8.14,83,2,2,Alto,0,8.6,7.7,7.9,8.3,8.1,45,80,2024-01-18,Activo,
+15,Esperanza,Flores,23,F,Arquitectura,6,esperanza.flores@universidad.edu,555-0015,5.28,58,5,1,Alto,1,5.7,4.9,5.0,4.8,5.1,90,120,2023-01-18,En Riesgo,
+16,Vicente,Aguilar,25,M,Enfermería,1,vicente.aguilar@universidad.edu,555-0016,7.51,82,1,18,Bajo,0,7.7,7.9,8.0,8.0,7.9,15,20,2025-07-16,Activo,
+17,Magdalena,Aguilar,24,F,Medicina,1,magdalena.aguilar@universidad.edu,555-0017,9.65,74,2,8,Bajo,0,9.9,9.4,9.9,9.2,9.6,15,20,2025-07-16,Activo,
+18,Santiago,Herrera,18,M,Psicología,7,santiago.herrera@universidad.edu,555-0018,6.18,82,5,4,Alto,0,5.8,6.5,6.3,6.7,6.3,105,140,2022-07-17,Activo,
+19,Matías,Medina,22,M,Arquitectura,5,matías.medina@universidad.edu,555-0019,9.89,92,2,23,Alto,0,9.4,9.5,9.8,10.0,9.7,52,100,2023-07-17,Condicional,
+20,Daniela,Moreno,26,F,Economía,8,daniela.moreno@universidad.edu,555-0020,5.55,95,3,13,Medio,0,5.7,5.3,5.3,5.6,5.5,120,160,2022-01-18,Activo,
+21,Regina,Herrera,23,F,Arquitectura,6,regina.herrera@universidad.edu,555-0021,6.97,100,5,15,Bajo,0,7.3,6.5,7.5,6.8,7.0,90,120,2023-01-18,Activo,
+22,Santiago,López,21,M,Medicina,8,santiago.lópez@universidad.edu,555-0022,6.62,61,4,11,Alto,0,6.2,6.4,6.8,6.2,6.4,120,160,2022-01-18,Activo,
+23,Ignacio,Rojas,18,M,Arquitectura,7,ignacio.rojas@universidad.edu,555-0023,9.32,99,5,20,Alto,0,9.8,9.7,9.1,9.2,9.4,105,140,2022-07-17,Activo,
+24,Nicolás,Jiménez,18,M,Economía,8,nicolás.jiménez@universidad.edu,555-0024,4.98,89,5,9,Medio,0,4.8,4.5,5.3,4.7,4.8,120,160,2022-01-18,Condicional,
+25,Patricia,Rojas,26,F,Arte,8,patricia.rojas@universidad.edu,555-0025,4.51,63,5,24,Bajo,1,4.5,4.1,4.7,4.1,4.3,120,160,2022-01-18,En Riesgo,Baja asistencia
+26,Julieta,Torres,24,F,Administración,2,julieta.torres@universidad.edu,555-0026,8.47,51,3,6,Bajo,1,8.4,8.8,8.1,8.2,8.4,30,40,2025-01-17,En Riesgo,Problemas económicos
+27,Isidora,Vargas,18,F,Derecho,7,isidora.vargas@universidad.edu,555-0027,9.19,85,5,21,Alto,0,8.7,9.3,9.0,9.2,9.1,105,140,2022-07-17,Condicional,
+28,Tomás,Medina,21,M,Arte,8,tomás.medina@universidad.edu,555-0028,6.19,62,1,10,Bajo,1,6.1,6.6,6.5,6.4,6.4,120,160,2022-01-18,En Riesgo,
+29,Gabriel,Vega,22,M,Administración,8,gabriel.vega@universidad.edu,555-0029,5.14,93,4,10,Alto,0,5.1,4.9,4.8,4.8,4.9,106,160,2022-01-18,Activo,
+30,Florencia,Ramos,25,F,Arte,6,florencia.ramos@universidad.edu,555-0030,8.76,72,5,7,Bajo,0,8.8,8.4,8.3,8.3,8.5,75,120,2023-01-18,Activo,
+31,Daniela,Moreno,19,F,Administración,8,daniela.moreno@universidad.edu,555-0031,8.85,65,4,16,Bajo,0,8.9,8.9,8.4,8.9,8.8,120,160,2022-01-18,Activo,
+32,Natalia,Ramírez,22,F,Arquitectura,8,natalia.ramírez@universidad.edu,555-0032,5.68,88,4,21,Medio,0,5.9,6.0,5.6,6.1,5.9,120,160,2022-01-18,Activo,
+33,Florencia,García,22,F,Derecho,5,florencia.garcía@universidad.edu,555-0033,4.05,71,2,25,Medio,1,4.0,4.0,4.4,4.0,4.1,75,100,2023-07-17,En Riesgo,Pocas horas de estudio
+34,Magdalena,Vega,22,F,Derecho,1,magdalena.vega@universidad.edu,555-0034,5.96,95,3,5,Medio,1,6.1,5.9,5.6,5.6,5.8,15,20,2025-07-16,En Riesgo,
+35,Emilio,González,25,M,Economía,4,emilio.gonzález@universidad.edu,555-0035,7.14,54,2,19,Bajo,1,6.7,7.5,6.6,7.4,7.0,56,80,2024-01-18,En Riesgo,Problemas familiares
+36,Javiera,Herrera,23,F,Educación,8,javiera.herrera@universidad.edu,555-0036,8.73,50,2,11,Alto,1,8.5,8.2,9.1,8.9,8.7,120,160,2022-01-18,En Riesgo,Problemas económicos
+37,Esperanza,Castillo,19,F,Psicología,5,esperanza.castillo@universidad.edu,555-0037,5.26,86,2,14,Alto,1,5.7,5.2,5.6,5.0,5.4,57,100,2023-07-17,En Riesgo,Pocas horas de estudio
+38,Amparo,Moreno,19,F,Arte,1,amparo.moreno@universidad.edu,555-0038,6.99,50,1,24,Medio,1,6.9,7.2,6.5,7.3,7.0,15,20,2025-07-16,En Riesgo,Problemas económicos
+39,Magdalena,Morales,18,F,Enfermería,8,magdalena.morales@universidad.edu,555-0039,5.45,65,1,18,Bajo,1,5.4,5.8,5.5,5.0,5.4,111,160,2022-01-18,En Riesgo,Problemas económicos
+40,Santiago,Rojas,21,M,Ingeniería,8,santiago.rojas@universidad.edu,555-0040,7.9,85,2,6,Alto,0,7.8,7.6,7.7,7.6,7.7,97,160,2022-01-18,Activo,
+41,Carlos,Medina,19,M,Enfermería,4,carlos.medina@universidad.edu,555-0041,9.63,82,5,22,Bajo,0,9.5,9.8,9.8,9.2,9.6,58,80,2024-01-18,Condicional,
+42,Maximiliano,Pérez,20,M,Derecho,3,maximiliano.pérez@universidad.edu,555-0042,6.3,70,1,21,Bajo,0,6.0,6.5,6.0,6.6,6.3,45,60,2024-07-16,Activo,
+43,Roberto,Moreno,22,M,Arte,5,roberto.moreno@universidad.edu,555-0043,4.1,73,4,18,Medio,0,4.1,4.0,4.5,4.0,4.2,75,100,2023-07-17,Activo,
+44,Patricia,Ramírez,25,F,Economía,7,patricia.ramírez@universidad.edu,555-0044,4.31,81,4,12,Medio,0,4.3,4.0,4.4,4.5,4.3,105,140,2022-07-17,Activo,
+45,Tomás,Moreno,25,M,Medicina,4,tomás.moreno@universidad.edu,555-0045,4.86,79,1,18,Medio,1,5.2,4.4,4.8,4.5,4.7,55,80,2024-01-18,En Riesgo,
+46,Valentina,Sánchez,20,F,Ingeniería,7,valentina.sánchez@universidad.edu,555-0046,6.31,58,1,19,Bajo,1,6.7,6.3,6.0,6.5,6.4,105,140,2022-07-17,En Riesgo,Bajo rendimiento académico
+47,Matías,Guerrero,25,M,Medicina,6,matías.guerrero@universidad.edu,555-0047,7.22,56,5,24,Medio,0,7.5,7.7,6.9,7.1,7.3,88,120,2023-01-18,Activo,
+48,Gabriel,Morales,22,M,Medicina,3,gabriel.morales@universidad.edu,555-0048,5.64,100,3,18,Alto,0,6.0,5.4,5.2,5.4,5.5,40,60,2024-07-16,Activo,
+49,Mariana,Morales,23,F,Administración,5,mariana.morales@universidad.edu,555-0049,4.53,78,5,4,Alto,1,4.0,4.1,5.0,4.4,4.4,50,100,2023-07-17,En Riesgo,
+50,Sofía,Ramos,20,F,Economía,4,sofía.ramos@universidad.edu,555-0050,9.22,95,1,17,Alto,0,9.2,9.0,9.0,9.7,9.2,44,80,2024-01-18,Activo,
+51,Patricia,López,24,F,Enfermería,2,patricia.lópez@universidad.edu,555-0051,6.81,68,3,5,Medio,1,6.8,7.2,6.9,7.1,7.0,21,40,2025-01-17,En Riesgo,Baja asistencia
+52,Maximiliano,Rojas,19,M,Economía,5,maximiliano.rojas@universidad.edu,555-0052,5.32,55,3,25,Medio,1,5.5,5.7,4.9,5.5,5.4,69,100,2023-07-17,En Riesgo,Problemas familiares
+53,Alejandro,Morales,26,M,Arte,3,alejandro.morales@universidad.edu,555-0053,4.73,81,2,17,Medio,1,4.8,5.0,5.2,4.7,4.9,45,60,2024-07-16,En Riesgo,Baja participación
+54,Lucía,Delgado,23,F,Educación,4,lucía.delgado@universidad.edu,555-0054,6.16,50,2,22,Alto,1,6.2,6.0,6.4,5.9,6.1,45,80,2024-01-18,En Riesgo,Problemas económicos
+55,Vicente,Herrera,25,M,Arte,5,vicente.herrera@universidad.edu,555-0055,7.13,55,3,16,Bajo,0,7.4,6.8,6.9,7.3,7.1,67,100,2023-07-17,Condicional,
+56,Mariana,Ruiz,20,F,Derecho,7,mariana.ruiz@universidad.edu,555-0056,5.98,85,4,10,Bajo,0,6.2,6.2,6.4,6.4,6.3,85,140,2022-07-17,Condicional,
+57,José,Aguilar,22,M,Medicina,5,josé.aguilar@universidad.edu,555-0057,7.44,90,3,17,Bajo,0,7.3,7.4,7.1,7.5,7.3,75,100,2023-07-17,Condicional,
+58,Emilio,Herrera,25,M,Arquitectura,6,emilio.herrera@universidad.edu,555-0058,9.13,51,4,6,Medio,1,9.6,9.2,8.9,9.0,9.2,90,120,2023-01-18,En Riesgo,
+59,Ignacio,González,24,M,Administración,1,ignacio.gonzález@universidad.edu,555-0059,8.58,91,3,8,Bajo,0,8.3,8.6,9.1,8.4,8.6,14,20,2025-07-16,Activo,
+60,Fernando,González,23,M,Economía,2,fernando.gonzález@universidad.edu,555-0060,7.53,78,2,1,Alto,0,7.7,8.0,7.8,7.7,7.8,26,40,2025-01-17,Condicional,
+61,Carmen,Ruiz,25,F,Derecho,4,carmen.ruiz@universidad.edu,555-0061,8.57,73,1,2,Alto,0,8.1,8.9,8.7,8.4,8.5,60,80,2024-01-18,Activo,
+62,Maximiliano,García,20,M,Derecho,7,maximiliano.garcía@universidad.edu,555-0062,6.11,55,2,9,Medio,1,6.2,5.6,5.6,6.5,6.0,105,140,2022-07-17,En Riesgo,Pocas horas de estudio
+63,Benjamín,Vargas,21,M,Ingeniería,4,benjamín.vargas@universidad.edu,555-0063,9.68,86,2,12,Medio,0,10.0,9.9,10.0,10.0,10.0,43,80,2024-01-18,Condicional,
+64,Carmen,Medina,22,F,Psicología,1,carmen.medina@universidad.edu,555-0064,7.78,82,1,14,Bajo,0,7.5,7.9,7.9,8.3,7.9,10,20,2025-07-16,Activo,
+65,Emilio,Torres,18,M,Arte,3,emilio.torres@universidad.edu,555-0065,4.64,82,3,4,Bajo,1,5.0,4.2,4.1,4.7,4.5,35,60,2024-07-16,En Riesgo,Bajo rendimiento académico
+66,Mariana,Ortega,24,F,Educación,7,mariana.ortega@universidad.edu,555-0066,9.88,85,1,12,Alto,0,9.4,9.5,10.0,10.0,9.7,105,140,2022-07-17,Condicional,
+67,Natalia,García,25,F,Arquitectura,3,natalia.garcía@universidad.edu,555-0067,8.53,66,4,11,Medio,0,8.9,8.9,8.4,8.3,8.6,34,60,2024-07-16,Condicional,
+68,Miguel,Ruiz,23,M,Ingeniería,3,miguel.ruiz@universidad.edu,555-0068,7.96,77,4,19,Bajo,0,8.1,8.0,7.9,8.0,8.0,36,60,2024-07-16,Activo,
+69,Esperanza,Herrera,23,F,Educación,8,esperanza.herrera@universidad.edu,555-0069,9.53,61,3,4,Alto,1,9.5,9.1,9.4,9.2,9.3,120,160,2022-01-18,En Riesgo,
+70,Magdalena,Aguilar,20,F,Arte,7,magdalena.aguilar@universidad.edu,555-0070,4.1,77,5,15,Bajo,0,4.0,4.0,4.5,4.4,4.2,77,140,2022-07-17,Activo,
+71,Lucía,Silva,19,F,Arquitectura,1,lucía.silva@universidad.edu,555-0071,7.63,86,3,8,Alto,0,8.1,7.9,7.3,7.9,7.8,15,20,2025-07-16,Activo,
+72,Laura,Moreno,23,F,Economía,4,laura.moreno@universidad.edu,555-0072,5.54,95,2,19,Bajo,1,5.8,5.5,5.3,6.0,5.7,60,80,2024-01-18,En Riesgo,Pocas horas de estudio
+73,Vicente,Medina,26,M,Economía,4,vicente.medina@universidad.edu,555-0073,8.09,58,5,16,Bajo,0,8.5,8.0,7.7,7.8,8.0,60,80,2024-01-18,Activo,
+74,Benjamín,García,18,M,Psicología,7,benjamín.garcía@universidad.edu,555-0074,5.7,65,1,20,Medio,1,5.7,6.1,5.6,6.1,5.9,105,140,2022-07-17,En Riesgo,Baja participación
+75,Cristóbal,Morales,22,M,Educación,2,cristóbal.morales@universidad.edu,555-0075,9.58,89,4,9,Bajo,0,9.4,9.3,9.8,9.2,9.4,30,40,2025-01-17,Activo,
+76,Andrés,López,24,M,Enfermería,1,andrés.lópez@universidad.edu,555-0076,5.79,66,5,20,Medio,1,5.9,5.6,5.7,5.8,5.8,15,20,2025-07-16,En Riesgo,Problemas familiares
+77,Emilio,Rojas,23,M,Ingeniería,4,emilio.rojas@universidad.edu,555-0077,4.31,51,2,23,Bajo,1,4.7,4.8,4.0,4.0,4.4,49,80,2024-01-18,En Riesgo,Baja asistencia
+78,Florencia,Mendoza,21,F,Educación,5,florencia.mendoza@universidad.edu,555-0078,8.36,84,3,5,Bajo,0,8.7,8.2,7.9,8.5,8.3,75,100,2023-07-17,Activo,
+79,Mateo,Castro,20,M,Enfermería,3,mateo.castro@universidad.edu,555-0079,7.08,86,1,8,Medio,0,6.7,7.2,7.2,7.1,7.1,45,60,2024-07-16,Activo,
+80,Mateo,Delgado,26,M,Administración,4,mateo.delgado@universidad.edu,555-0080,6.51,87,2,25,Bajo,0,7.0,6.8,6.8,6.7,6.8,56,80,2024-01-18,Activo,
+81,Laura,Guerrero,20,F,Economía,7,laura.guerrero@universidad.edu,555-0081,8.52,67,1,8,Bajo,1,8.9,8.3,8.1,8.5,8.5,84,140,2022-07-17,En Riesgo,Pocas horas de estudio
+82,Laura,Vega,21,F,Educación,6,laura.vega@universidad.edu,555-0082,8.89,63,4,9,Medio,0,8.8,9.1,8.6,8.9,8.8,90,120,2023-01-18,Condicional,
+83,Daniela,García,24,F,Psicología,1,daniela.garcía@universidad.edu,555-0083,5.74,51,5,13,Medio,1,5.4,5.6,5.7,5.7,5.6,15,20,2025-07-16,En Riesgo,Baja participación
+84,Javiera,Jiménez,25,F,Ingeniería,6,javiera.jiménez@universidad.edu,555-0084,5.46,76,2,8,Alto,1,5.1,5.9,5.9,5.8,5.7,90,120,2023-01-18,En Riesgo,Pocas horas de estudio
+85,Daniela,Mendoza,22,F,Arquitectura,8,daniela.mendoza@universidad.edu,555-0085,5.64,71,5,14,Alto,0,5.3,5.2,5.4,5.8,5.4,81,160,2022-01-18,Activo,
+86,José,García,20,M,Arte,4,josé.garcía@universidad.edu,555-0086,4.38,99,3,16,Medio,0,4.0,4.7,4.0,4.5,4.3,60,80,2024-01-18,Activo,
+87,Isidora,Rodríguez,24,F,Ingeniería,5,isidora.rodríguez@universidad.edu,555-0087,7.24,89,2,7,Bajo,0,7.2,7.2,6.8,7.0,7.0,75,100,2023-07-17,Activo,
+88,Isabella,Rodríguez,26,F,Administración,4,isabella.rodríguez@universidad.edu,555-0088,5.78,55,1,11,Medio,1,5.6,5.7,6.0,6.0,5.8,54,80,2024-01-18,En Riesgo,Pocas horas de estudio
+89,Magdalena,Flores,26,F,Enfermería,1,magdalena.flores@universidad.edu,555-0089,7.43,96,2,3,Bajo,0,7.3,7.0,7.9,7.8,7.5,15,20,2025-07-16,Condicional,
+90,Natalia,López,26,F,Arte,8,natalia.lópez@universidad.edu,555-0090,9.03,53,5,22,Alto,0,9.5,8.7,8.7,9.0,9.0,120,160,2022-01-18,Activo,
+91,Miguel,Silva,20,M,Arquitectura,1,miguel.silva@universidad.edu,555-0091,9.68,63,4,7,Medio,1,9.9,10.0,9.8,9.2,9.7,12,20,2025-07-16,En Riesgo,Problemas familiares
+92,Alejandro,Moreno,26,M,Arte,1,alejandro.moreno@universidad.edu,555-0092,9.07,88,2,13,Medio,0,9.5,9.4,9.1,9.2,9.3,12,20,2025-07-16,Activo,
+93,Isidora,Romero,25,F,Medicina,4,isidora.romero@universidad.edu,555-0093,9.46,59,3,10,Bajo,0,9.7,9.2,9.8,9.0,9.4,60,80,2024-01-18,Activo,
+94,Andrés,Herrera,21,M,Educación,7,andrés.herrera@universidad.edu,555-0094,6.85,92,2,10,Medio,0,7.1,6.9,7.1,7.1,7.1,105,140,2022-07-17,Activo,
+95,Ana,Vargas,19,F,Administración,5,ana.vargas@universidad.edu,555-0095,5.56,85,2,1,Bajo,1,5.7,5.3,5.6,5.3,5.5,57,100,2023-07-17,En Riesgo,
+96,Esteban,García,23,M,Derecho,2,esteban.garcía@universidad.edu,555-0096,6.18,50,5,14,Bajo,0,6.3,6.0,6.0,6.5,6.2,30,40,2025-01-17,Activo,
+97,Daniela,Rodríguez,21,F,Enfermería,7,daniela.rodríguez@universidad.edu,555-0097,7.99,60,3,8,Alto,0,8.3,7.6,7.8,7.6,7.8,105,140,2022-07-17,Activo,
+98,Esteban,Flores,21,M,Economía,8,esteban.flores@universidad.edu,555-0098,8.34,84,2,25,Medio,0,8.6,8.3,8.0,8.7,8.4,120,160,2022-01-18,Activo,
+99,Nicolás,Sánchez,22,M,Psicología,5,nicolás.sánchez@universidad.edu,555-0099,5.26,90,4,9,Medio,0,5.7,5.7,5.4,5.5,5.6,69,100,2023-07-17,Activo,
+100,Javiera,Jiménez,18,F,Psicología,2,javiera.jiménez@universidad.edu,555-0100,6.7,77,2,24,Alto,0,6.8,6.4,6.9,7.1,6.8,26,40,2025-01-17,Activo,
+101,Amparo,Jiménez,19,F,Ingeniería,3,amparo.jiménez@universidad.edu,555-0101,8.42,74,5,11,Bajo,0,8.2,8.7,8.7,8.9,8.6,45,60,2024-07-16,Activo,
+102,Roberto,Silva,19,M,Arte,6,roberto.silva@universidad.edu,555-0102,5.13,64,5,10,Medio,1,4.8,4.8,5.5,5.4,5.1,90,120,2023-01-18,En Riesgo,Baja asistencia
+103,Daniela,Delgado,25,F,Medicina,8,daniela.delgado@universidad.edu,555-0103,6.28,93,1,21,Alto,0,5.8,6.2,6.0,6.3,6.1,120,160,2022-01-18,Activo,
+104,Tomás,Castillo,24,M,Arte,1,tomás.castillo@universidad.edu,555-0104,6.6,52,3,8,Bajo,0,6.7,7.0,6.4,7.1,6.8,15,20,2025-07-16,Activo,
+105,Rodrigo,Romero,20,M,Arquitectura,1,rodrigo.romero@universidad.edu,555-0105,8.15,69,1,21,Bajo,1,8.3,8.6,7.8,8.6,8.3,12,20,2025-07-16,En Riesgo,Bajo rendimiento académico
+106,Fernando,García,21,M,Educación,4,fernando.garcía@universidad.edu,555-0106,4.51,75,3,20,Bajo,0,4.9,5.0,4.1,4.6,4.7,49,80,2024-01-18,Activo,
+107,Renata,Rojas,24,F,Enfermería,2,renata.rojas@universidad.edu,555-0107,8.05,100,2,14,Bajo,0,8.0,7.7,7.7,7.8,7.8,30,40,2025-01-17,Activo,
+108,Tomás,Silva,25,M,Economía,4,tomás.silva@universidad.edu,555-0108,7.02,53,3,18,Alto,0,7.1,7.4,7.0,6.9,7.1,47,80,2024-01-18,Condicional,
+109,Andrés,Ruiz,18,M,Ingeniería,6,andrés.ruiz@universidad.edu,555-0109,7.4,53,3,4,Alto,1,7.6,7.7,7.6,7.5,7.6,90,120,2023-01-18,En Riesgo,Baja asistencia
+110,Lucía,López,24,F,Economía,7,lucía.lópez@universidad.edu,555-0110,8.73,64,3,12,Medio,0,9.1,8.9,9.1,9.0,9.0,105,140,2022-07-17,Condicional,
+111,Nicolás,Medina,26,M,Arquitectura,5,nicolás.medina@universidad.edu,555-0111,4.74,73,3,9,Medio,0,5.1,4.8,4.9,5.2,5.0,52,100,2023-07-17,Activo,
+112,Andrés,Ramos,18,M,Enfermería,1,andrés.ramos@universidad.edu,555-0112,5.16,95,3,10,Bajo,0,5.4,4.8,5.1,5.2,5.1,14,20,2025-07-16,Activo,
+113,Carmen,Sánchez,19,F,Arte,6,carmen.sánchez@universidad.edu,555-0113,5.63,57,1,12,Medio,1,5.7,5.2,5.2,5.8,5.5,77,120,2023-01-18,En Riesgo,Baja participación
+114,Alejandro,González,20,M,Derecho,8,alejandro.gonzález@universidad.edu,555-0114,9.06,99,3,15,Alto,0,9.1,9.0,8.9,8.7,8.9,119,160,2022-01-18,Activo,
+115,Santiago,Delgado,26,M,Arquitectura,6,santiago.delgado@universidad.edu,555-0115,4.94,78,4,11,Medio,0,4.7,5.1,5.3,4.5,4.9,90,120,2023-01-18,Activo,
+116,Fernando,Moreno,21,M,Psicología,3,fernando.moreno@universidad.edu,555-0116,7.31,82,1,22,Medio,0,7.5,7.2,7.1,7.3,7.3,45,60,2024-07-16,Activo,
+117,Julieta,Moreno,18,F,Educación,8,julieta.moreno@universidad.edu,555-0117,7.38,68,2,2,Bajo,1,7.5,7.5,7.9,7.5,7.6,102,160,2022-01-18,En Riesgo,Baja asistencia
+118,Maximiliano,García,24,M,Educación,8,maximiliano.garcía@universidad.edu,555-0118,5.74,85,3,14,Medio,0,6.2,5.6,5.4,5.7,5.7,104,160,2022-01-18,Activo,
+119,José,Silva,19,M,Enfermería,7,josé.silva@universidad.edu,555-0119,6.8,79,2,20,Medio,0,6.4,6.6,6.8,6.3,6.5,105,140,2022-07-17,Activo,
+120,Emilio,Ramírez,20,M,Arte,8,emilio.ramírez@universidad.edu,555-0120,9.78,50,5,22,Medio,0,10.0,9.9,9.6,9.9,9.8,120,160,2022-01-18,Activo,
+121,Isidora,Vega,24,F,Ingeniería,4,isidora.vega@universidad.edu,555-0121,5.42,94,2,10,Alto,1,5.0,5.9,5.4,5.3,5.4,51,80,2024-01-18,En Riesgo,Pocas horas de estudio
+122,Maximiliano,Rojas,22,M,Administración,2,maximiliano.rojas@universidad.edu,555-0122,9.5,83,2,10,Bajo,0,9.9,10.0,9.4,9.2,9.6,30,40,2025-01-17,Activo,
+123,Antonella,Ortega,21,F,Economía,3,antonella.ortega@universidad.edu,555-0123,5.0,89,1,18,Alto,1,4.7,4.9,5.2,5.2,5.0,41,60,2024-07-16,En Riesgo,Baja participación
+124,Benjamín,Morales,23,M,Educación,5,benjamín.morales@universidad.edu,555-0124,9.33,95,1,20,Alto,0,9.2,9.5,9.0,9.5,9.3,58,100,2023-07-17,Condicional,
+125,Carlos,Rodríguez,23,M,Enfermería,8,carlos.rodríguez@universidad.edu,555-0125,6.95,69,4,7,Alto,1,7.3,7.3,6.7,7.2,7.1,120,160,2022-01-18,En Riesgo,Baja participación
+126,Laura,López,21,F,Ingeniería,4,laura.lópez@universidad.edu,555-0126,8.16,56,3,8,Bajo,0,8.3,8.5,8.6,8.3,8.4,60,80,2024-01-18,Condicional,
+127,Maximiliano,Delgado,22,M,Arquitectura,5,maximiliano.delgado@universidad.edu,555-0127,9.22,61,3,3,Medio,1,8.8,9.4,8.8,8.8,9.0,73,100,2023-07-17,En Riesgo,
+128,Ignacio,González,25,M,Medicina,7,ignacio.gonzález@universidad.edu,555-0128,4.59,90,1,22,Bajo,1,4.7,4.9,4.8,4.9,4.8,105,140,2022-07-17,En Riesgo,Baja asistencia
+129,Regina,Vargas,21,F,Derecho,4,regina.vargas@universidad.edu,555-0129,5.56,78,1,14,Alto,1,5.2,6.0,5.3,5.4,5.5,52,80,2024-01-18,En Riesgo,Problemas familiares
+130,María,Castillo,25,F,Economía,4,maría.castillo@universidad.edu,555-0130,7.92,87,5,22,Bajo,0,8.0,8.1,8.0,8.4,8.1,54,80,2024-01-18,Activo,
+131,Fernando,Rodríguez,20,M,Enfermería,5,fernando.rodríguez@universidad.edu,555-0131,9.06,86,5,23,Alto,0,9.1,8.8,9.1,9.4,9.1,66,100,2023-07-17,Activo,
+132,Laura,Ortega,18,F,Psicología,2,laura.ortega@universidad.edu,555-0132,5.26,52,3,22,Medio,1,5.7,5.6,5.7,5.6,5.7,30,40,2025-01-17,En Riesgo,Pocas horas de estudio
+133,Regina,Hernández,18,F,Administración,4,regina.hernández@universidad.edu,555-0133,9.17,97,5,21,Medio,0,8.7,9.6,9.0,9.2,9.1,60,80,2024-01-18,Activo,
+134,Andrés,Medina,26,M,Derecho,3,andrés.medina@universidad.edu,555-0134,6.49,90,5,13,Medio,0,6.0,6.0,6.9,6.9,6.4,45,60,2024-07-16,Activo,
+135,Sofía,Mendoza,25,F,Medicina,1,sofía.mendoza@universidad.edu,555-0135,8.05,99,4,21,Alto,0,8.1,8.4,8.2,8.3,8.2,15,20,2025-07-16,Condicional,
+136,Constanza,Morales,19,F,Derecho,8,constanza.morales@universidad.edu,555-0136,4.87,80,1,22,Medio,1,5.1,4.4,5.0,5.2,4.9,89,160,2022-01-18,En Riesgo,Baja asistencia
+137,Antonella,Aguilar,18,F,Medicina,4,antonella.aguilar@universidad.edu,555-0137,9.0,58,5,23,Medio,0,8.8,8.8,8.6,8.7,8.7,60,80,2024-01-18,Condicional,
+138,Cristóbal,Herrera,21,M,Arte,6,cristóbal.herrera@universidad.edu,555-0138,7.4,69,4,3,Alto,1,7.6,7.4,7.5,7.4,7.5,90,120,2023-01-18,En Riesgo,Baja asistencia
+139,Julieta,Aguilar,25,F,Administración,5,julieta.aguilar@universidad.edu,555-0139,9.73,63,4,25,Alto,0,9.4,9.9,10.0,9.4,9.7,75,100,2023-07-17,Condicional,
+140,Florencia,Aguilar,21,F,Arte,2,florencia.aguilar@universidad.edu,555-0140,6.48,54,2,25,Medio,1,6.8,6.3,6.1,6.0,6.3,30,40,2025-01-17,En Riesgo,Bajo rendimiento académico
+141,Laura,García,18,F,Educación,1,laura.garcía@universidad.edu,555-0141,5.51,100,2,4,Alto,1,5.1,5.7,5.5,5.8,5.5,15,20,2025-07-16,En Riesgo,Baja asistencia
+142,Mariana,Morales,26,F,Arte,8,mariana.morales@universidad.edu,555-0142,4.01,99,5,22,Bajo,0,4.0,4.5,4.1,4.0,4.2,120,160,2022-01-18,Activo,
+143,Benjamín,Vargas,24,M,Educación,8,benjamín.vargas@universidad.edu,555-0143,9.27,79,3,21,Bajo,0,9.7,9.4,8.8,9.4,9.3,88,160,2022-01-18,Activo,
+144,Ignacio,Martínez,24,M,Enfermería,1,ignacio.martínez@universidad.edu,555-0144,9.75,65,5,24,Bajo,0,9.6,10.0,9.6,9.6,9.7,10,20,2025-07-16,Activo,
+145,Mateo,Moreno,23,M,Enfermería,1,mateo.moreno@universidad.edu,555-0145,7.21,92,3,9,Alto,0,7.5,7.2,7.7,6.7,7.3,15,20,2025-07-16,Activo,
+146,Diego,Vega,23,M,Enfermería,3,diego.vega@universidad.edu,555-0146,5.7,74,5,21,Medio,0,6.1,5.3,5.3,5.7,5.6,37,60,2024-07-16,Condicional,
+147,Isabella,Ortega,26,F,Medicina,4,isabella.ortega@universidad.edu,555-0147,7.4,51,2,9,Bajo,1,7.8,7.5,7.3,7.0,7.4,60,80,2024-01-18,En Riesgo,Problemas familiares
+148,Amparo,Vargas,26,F,Arte,3,amparo.vargas@universidad.edu,555-0148,8.13,55,5,4,Alto,1,8.0,8.2,8.6,8.1,8.2,33,60,2024-07-16,En Riesgo,Baja participación
+149,Antonella,Jiménez,21,F,Arte,1,antonella.jiménez@universidad.edu,555-0149,5.62,74,4,22,Alto,0,5.3,5.5,5.8,5.7,5.6,11,20,2025-07-16,Activo,
+150,Fernando,Torres,18,M,Enfermería,4,fernando.torres@universidad.edu,555-0150,5.17,66,3,22,Medio,1,5.5,5.6,4.9,4.9,5.2,60,80,2024-01-18,En Riesgo,Baja participación
+151,Roberto,Hernández,24,M,Administración,6,roberto.hernández@universidad.edu,555-0151,4.98,92,3,12,Bajo,0,5.2,5.0,5.3,5.5,5.2,90,120,2023-01-18,Activo,
+152,Alejandro,Jiménez,24,M,Ingeniería,8,alejandro.jiménez@universidad.edu,555-0152,7.11,98,4,4,Alto,0,6.6,7.1,6.6,7.4,6.9,120,160,2022-01-18,Activo,
+153,Amparo,Morales,21,F,Administración,1,amparo.morales@universidad.edu,555-0153,4.74,80,1,2,Medio,1,4.7,4.8,4.7,4.8,4.8,15,20,2025-07-16,En Riesgo,Bajo rendimiento académico
+154,Camila,Flores,19,F,Psicología,5,camila.flores@universidad.edu,555-0154,9.2,54,4,24,Bajo,0,9.6,9.0,9.4,9.2,9.3,71,100,2023-07-17,Activo,
+155,Emilio,Mendoza,18,M,Medicina,3,emilio.mendoza@universidad.edu,555-0155,8.1,56,4,3,Alto,1,8.1,8.3,7.9,7.9,8.0,30,60,2024-07-16,En Riesgo,Baja participación
+156,Ana,Romero,18,F,Psicología,4,ana.romero@universidad.edu,555-0156,7.7,87,1,3,Bajo,0,7.9,8.2,7.6,8.0,7.9,41,80,2024-01-18,Activo,
+157,Benjamín,Moreno,21,M,Ingeniería,3,benjamín.moreno@universidad.edu,555-0157,8.29,72,2,5,Alto,0,8.4,8.4,8.7,8.5,8.5,33,60,2024-07-16,Condicional,
+158,Alejandro,García,19,M,Derecho,6,alejandro.garcía@universidad.edu,555-0158,9.53,91,3,18,Alto,0,9.6,9.2,9.8,9.7,9.6,90,120,2023-01-18,Activo,
+159,Regina,Vega,23,F,Educación,3,regina.vega@universidad.edu,555-0159,7.97,92,3,4,Medio,0,8.2,8.4,8.2,8.3,8.3,45,60,2024-07-16,Activo,
+160,Miguel,López,18,M,Educación,3,miguel.lópez@universidad.edu,555-0160,5.4,77,1,21,Alto,1,5.6,5.8,5.7,5.7,5.7,30,60,2024-07-16,En Riesgo,Baja asistencia
+161,Isabella,Morales,18,F,Medicina,1,isabella.morales@universidad.edu,555-0161,5.47,98,4,16,Medio,0,5.3,5.3,5.0,5.2,5.2,15,20,2025-07-16,Activo,
+162,Tomás,González,26,M,Economía,2,tomás.gonzález@universidad.edu,555-0162,7.71,71,4,8,Bajo,0,7.7,7.6,7.8,8.0,7.8,24,40,2025-01-17,Activo,
+163,Javiera,Flores,24,F,Economía,5,javiera.flores@universidad.edu,555-0163,7.68,63,4,17,Medio,0,7.7,7.7,7.3,7.4,7.5,53,100,2023-07-17,Activo,
+164,Sofía,Rodríguez,26,F,Enfermería,8,sofía.rodríguez@universidad.edu,555-0164,8.32,93,3,14,Medio,0,8.8,8.5,8.3,8.7,8.6,110,160,2022-01-18,Activo,
+165,Natalia,García,19,F,Ingeniería,6,natalia.garcía@universidad.edu,555-0165,8.26,92,4,13,Medio,0,8.6,8.5,8.3,7.9,8.3,90,120,2023-01-18,Condicional,
+166,Matías,González,22,M,Arquitectura,2,matías.gonzález@universidad.edu,555-0166,7.68,98,2,16,Medio,0,8.0,7.5,7.5,7.3,7.6,30,40,2025-01-17,Activo,
+167,Constanza,Castro,19,F,Arte,3,constanza.castro@universidad.edu,555-0167,7.61,88,2,13,Medio,0,7.4,7.1,7.9,7.3,7.4,30,60,2024-07-16,Condicional,
+168,Esperanza,Hernández,18,F,Educación,8,esperanza.hernández@universidad.edu,555-0168,7.33,64,4,8,Bajo,0,7.0,7.7,7.5,7.1,7.3,100,160,2022-01-18,Activo,
+169,Isabella,Ramírez,25,F,Arquitectura,3,isabella.ramírez@universidad.edu,555-0169,7.17,97,2,24,Bajo,0,7.4,7.5,7.6,7.5,7.5,37,60,2024-07-16,Condicional,
+170,Nicolás,González,19,M,Educación,7,nicolás.gonzález@universidad.edu,555-0170,9.42,95,5,20,Bajo,0,9.1,9.5,9.9,9.2,9.4,105,140,2022-07-17,Condicional,
+171,Matías,González,24,M,Derecho,3,matías.gonzález@universidad.edu,555-0171,7.53,60,4,18,Medio,0,7.6,7.4,7.9,7.3,7.5,30,60,2024-07-16,Condicional,
+172,Esteban,González,20,M,Arte,8,esteban.gonzález@universidad.edu,555-0172,4.82,98,2,20,Bajo,1,5.1,4.4,4.9,4.8,4.8,120,160,2022-01-18,En Riesgo,Problemas familiares
+173,Isidora,Torres,20,F,Medicina,4,isidora.torres@universidad.edu,555-0173,7.86,98,5,23,Medio,0,8.3,7.7,8.1,8.0,8.0,48,80,2024-01-18,Activo,
+174,Andrés,Castro,26,M,Enfermería,6,andrés.castro@universidad.edu,555-0174,4.73,92,1,12,Alto,1,4.4,5.1,4.7,4.3,4.6,90,120,2023-01-18,En Riesgo,Baja asistencia
+175,Matías,Ramírez,25,M,Arte,8,matías.ramírez@universidad.edu,555-0175,8.93,78,5,3,Medio,0,8.7,8.9,9.1,8.8,8.9,120,160,2022-01-18,Activo,
+176,Benjamín,García,25,M,Administración,7,benjamín.garcía@universidad.edu,555-0176,7.98,81,5,22,Medio,0,7.6,8.2,8.1,7.7,7.9,99,140,2022-07-17,Activo,
+177,Daniela,González,20,F,Enfermería,1,daniela.gonzález@universidad.edu,555-0177,9.97,69,1,15,Alto,1,9.5,10.0,10.0,10.0,9.9,15,20,2025-07-16,En Riesgo,Baja asistencia
+178,Santiago,Martínez,26,M,Enfermería,2,santiago.martínez@universidad.edu,555-0178,8.84,71,5,25,Bajo,0,9.0,8.5,9.3,8.5,8.8,24,40,2025-01-17,Activo,
+179,Joaquín,Ramos,18,M,Arte,5,joaquín.ramos@universidad.edu,555-0179,4.62,62,1,21,Medio,1,5.1,5.0,4.6,4.6,4.8,72,100,2023-07-17,En Riesgo,Problemas familiares
+180,Regina,Aguilar,23,F,Medicina,1,regina.aguilar@universidad.edu,555-0180,8.49,95,2,12,Bajo,0,8.6,8.2,8.3,8.1,8.3,15,20,2025-07-16,Condicional,
+181,Isabella,Moreno,20,F,Economía,8,isabella.moreno@universidad.edu,555-0181,8.01,59,2,13,Bajo,1,8.2,8.0,7.8,8.4,8.1,120,160,2022-01-18,En Riesgo,Bajo rendimiento académico
+182,Matías,Vargas,20,M,Administración,3,matías.vargas@universidad.edu,555-0182,4.92,93,5,8,Medio,0,5.0,4.9,4.4,4.7,4.8,45,60,2024-07-16,Condicional,
+183,Isabella,Morales,26,F,Arte,4,isabella.morales@universidad.edu,555-0183,8.37,67,2,15,Bajo,1,8.0,7.9,8.8,8.2,8.2,60,80,2024-01-18,En Riesgo,
+184,Mariana,Hernández,21,F,Ingeniería,1,mariana.hernández@universidad.edu,555-0184,6.27,56,5,19,Medio,0,6.0,5.9,6.6,6.1,6.2,15,20,2025-07-16,Activo,
+185,Andrés,Romero,21,M,Psicología,3,andrés.romero@universidad.edu,555-0185,9.86,95,4,10,Alto,0,9.5,9.5,9.7,9.6,9.6,38,60,2024-07-16,Activo,
+186,María,Delgado,18,F,Administración,6,maría.delgado@universidad.edu,555-0186,5.25,97,2,19,Alto,1,5.4,5.3,5.2,5.0,5.2,90,120,2023-01-18,En Riesgo,Pocas horas de estudio
+187,Santiago,Delgado,26,M,Arte,1,santiago.delgado@universidad.edu,555-0187,6.79,82,4,10,Medio,0,6.9,7.0,6.4,6.7,6.8,15,20,2025-07-16,Activo,
+188,Miguel,Guerrero,19,M,Medicina,7,miguel.guerrero@universidad.edu,555-0188,7.17,70,1,16,Alto,0,7.1,7.0,6.7,6.8,6.9,105,140,2022-07-17,Activo,
+189,Mariana,Hernández,25,F,Medicina,2,mariana.hernández@universidad.edu,555-0189,6.67,80,1,23,Bajo,0,6.6,6.6,6.3,6.7,6.5,24,40,2025-01-17,Activo,
+190,Daniela,Flores,19,F,Enfermería,2,daniela.flores@universidad.edu,555-0190,9.99,96,4,20,Bajo,0,9.6,10.0,9.8,10.0,9.9,27,40,2025-01-17,Condicional,
+191,Gabriel,Silva,19,M,Ingeniería,3,gabriel.silva@universidad.edu,555-0191,4.02,59,2,1,Medio,1,4.2,4.4,4.0,4.0,4.2,45,60,2024-07-16,En Riesgo,Bajo rendimiento académico
+192,Constanza,Hernández,26,F,Psicología,7,constanza.hernández@universidad.edu,555-0192,8.89,57,1,16,Bajo,1,8.6,8.8,8.9,8.5,8.7,81,140,2022-07-17,En Riesgo,Pocas horas de estudio
+193,Patricia,Moreno,21,F,Psicología,6,patricia.moreno@universidad.edu,555-0193,6.81,57,3,7,Medio,1,6.5,7.0,7.2,6.6,6.8,69,120,2023-01-18,En Riesgo,Pocas horas de estudio
+194,Sofía,Castillo,19,F,Psicología,2,sofía.castillo@universidad.edu,555-0194,9.58,89,4,15,Medio,0,9.7,9.4,9.4,9.2,9.4,30,40,2025-01-17,Condicional,
+195,Gabriel,Aguilar,20,M,Administración,3,gabriel.aguilar@universidad.edu,555-0195,9.82,63,3,14,Alto,0,10.0,9.5,10.0,10.0,9.9,45,60,2024-07-16,Activo,
+196,Valentina,García,18,F,Enfermería,5,valentina.garcía@universidad.edu,555-0196,7.04,77,5,15,Alto,0,6.6,7.4,6.7,7.1,6.9,75,100,2023-07-17,Activo,
+197,Antonella,González,21,F,Administración,1,antonella.gonzález@universidad.edu,555-0197,6.98,91,3,10,Medio,0,6.8,7.0,6.8,6.5,6.8,14,20,2025-07-16,Activo,
+198,Valentina,García,20,F,Derecho,6,valentina.garcía@universidad.edu,555-0198,4.03,81,3,19,Medio,0,4.0,4.0,4.0,4.2,4.0,90,120,2023-01-18,Activo,
+199,Maximiliano,Delgado,26,M,Enfermería,8,maximiliano.delgado@universidad.edu,555-0199,4.16,86,4,24,Bajo,0,4.0,4.0,4.0,4.2,4.0,120,160,2022-01-18,Activo,
+200,Vicente,Ramos,21,M,Ingeniería,1,vicente.ramos@universidad.edu,555-0200,8.8,69,3,24,Bajo,0,9.2,8.4,8.5,8.7,8.7,15,20,2025-07-16,Activo,
+201,Renata,Vega,20,F,Psicología,4,renata.vega@universidad.edu,555-0201,9.71,91,1,24,Bajo,0,10.0,9.4,10.0,9.5,9.7,60,80,2024-01-18,Condicional,
+202,Camila,Castro,22,F,Derecho,5,camila.castro@universidad.edu,555-0202,5.0,50,4,17,Medio,1,4.7,4.6,4.9,5.3,4.9,75,100,2023-07-17,En Riesgo,Pocas horas de estudio
+203,Ignacio,Ramírez,20,M,Psicología,2,ignacio.ramírez@universidad.edu,555-0203,6.83,81,4,25,Bajo,0,6.3,6.4,6.7,6.6,6.5,22,40,2025-01-17,Condicional,
+204,Ana,Martínez,21,F,Arte,7,ana.martínez@universidad.edu,555-0204,5.17,73,4,5,Alto,1,5.6,5.5,5.6,5.1,5.4,105,140,2022-07-17,En Riesgo,Pocas horas de estudio
+205,Carmen,Silva,26,F,Psicología,7,carmen.silva@universidad.edu,555-0205,9.39,92,1,10,Medio,0,9.1,9.8,9.3,9.6,9.4,84,140,2022-07-17,Activo,
+206,Ana,Vega,24,F,Arte,7,ana.vega@universidad.edu,555-0206,6.5,77,3,16,Bajo,0,6.5,6.2,6.6,6.4,6.4,105,140,2022-07-17,Condicional,
+207,Constanza,Ramos,21,F,Economía,5,constanza.ramos@universidad.edu,555-0207,9.96,61,1,10,Medio,1,10.0,9.8,10.0,10.0,9.9,75,100,2023-07-17,En Riesgo,Baja asistencia
+208,Maximiliano,Rojas,23,M,Administración,1,maximiliano.rojas@universidad.edu,555-0208,4.53,100,5,9,Medio,0,4.2,4.2,4.4,5.0,4.5,15,20,2025-07-16,Activo,
+209,Valentina,Ramos,22,F,Derecho,3,valentina.ramos@universidad.edu,555-0209,7.59,54,3,7,Bajo,1,8.1,7.3,7.7,8.1,7.8,38,60,2024-07-16,En Riesgo,
+210,Agustín,Martínez,23,M,Medicina,7,agustín.martínez@universidad.edu,555-0210,5.83,65,2,6,Bajo,1,5.7,5.9,6.3,6.0,6.0,105,140,2022-07-17,En Riesgo,
+211,Regina,Flores,24,F,Economía,2,regina.flores@universidad.edu,555-0211,9.48,97,1,5,Medio,0,9.9,9.6,9.2,9.6,9.6,30,40,2025-01-17,Activo,
+212,Miguel,López,23,M,Enfermería,3,miguel.lópez@universidad.edu,555-0212,8.83,96,4,15,Bajo,0,8.4,8.9,8.7,9.0,8.8,36,60,2024-07-16,Activo,
+213,Andrés,Romero,20,M,Enfermería,1,andrés.romero@universidad.edu,555-0213,6.07,74,3,16,Bajo,0,6.5,6.3,6.3,6.4,6.4,15,20,2025-07-16,Activo,
+214,Maximiliano,Ramos,23,M,Arquitectura,6,maximiliano.ramos@universidad.edu,555-0214,4.68,65,3,22,Bajo,1,5.1,5.1,5.2,4.3,4.9,62,120,2023-01-18,En Riesgo,Problemas económicos
+215,Constanza,López,23,F,Administración,8,constanza.lópez@universidad.edu,555-0215,9.22,69,1,23,Medio,1,8.8,9.0,9.5,8.9,9.1,83,160,2022-01-18,En Riesgo,Baja asistencia
+216,Matías,Guerrero,26,M,Economía,3,matías.guerrero@universidad.edu,555-0216,6.46,54,3,19,Bajo,0,6.1,6.1,7.0,6.1,6.3,43,60,2024-07-16,Activo,
+217,Valentina,Aguilar,26,F,Administración,1,valentina.aguilar@universidad.edu,555-0217,6.34,62,2,23,Medio,1,6.7,6.1,6.2,6.8,6.5,15,20,2025-07-16,En Riesgo,Problemas familiares
+218,Laura,López,19,F,Derecho,8,laura.lópez@universidad.edu,555-0218,5.92,77,2,7,Medio,1,5.8,6.0,5.8,5.6,5.8,120,160,2022-01-18,En Riesgo,Problemas familiares
+219,Patricia,Castro,18,F,Educación,7,patricia.castro@universidad.edu,555-0219,8.57,90,5,2,Medio,0,8.8,8.1,8.6,8.7,8.6,105,140,2022-07-17,Activo,
+220,Miguel,Morales,21,M,Administración,2,miguel.morales@universidad.edu,555-0220,8.23,73,1,13,Medio,0,8.1,7.9,7.8,8.3,8.0,26,40,2025-01-17,Activo,
+221,Renata,Delgado,23,F,Medicina,1,renata.delgado@universidad.edu,555-0221,4.66,77,1,24,Alto,1,5.0,4.6,4.6,4.9,4.8,15,20,2025-07-16,En Riesgo,Bajo rendimiento académico
+222,Constanza,Flores,21,F,Economía,2,constanza.flores@universidad.edu,555-0222,7.31,92,3,25,Medio,0,7.5,7.1,7.0,7.3,7.2,25,40,2025-01-17,Activo,
+223,Sebastián,Castro,26,M,Derecho,6,sebastián.castro@universidad.edu,555-0223,7.99,54,1,23,Alto,1,8.3,7.8,8.2,7.5,8.0,90,120,2023-01-18,En Riesgo,Bajo rendimiento académico
+224,Vicente,Castro,21,M,Derecho,1,vicente.castro@universidad.edu,555-0224,5.96,91,3,20,Alto,0,6.2,5.6,5.9,6.1,6.0,12,20,2025-07-16,Activo,
+225,Javiera,Moreno,20,F,Economía,6,javiera.moreno@universidad.edu,555-0225,8.86,68,5,12,Bajo,0,9.2,8.9,9.2,9.1,9.1,71,120,2023-01-18,Activo,
+226,Cristóbal,Vega,26,M,Psicología,5,cristóbal.vega@universidad.edu,555-0226,7.32,98,3,6,Alto,0,7.4,7.5,7.7,7.5,7.5,70,100,2023-07-17,Condicional,
+227,Agustín,Sánchez,19,M,Arquitectura,5,agustín.sánchez@universidad.edu,555-0227,4.5,50,3,14,Medio,1,4.3,4.1,4.2,4.1,4.2,75,100,2023-07-17,En Riesgo,
+228,Andrés,Ruiz,18,M,Economía,5,andrés.ruiz@universidad.edu,555-0228,9.59,53,4,2,Medio,1,9.9,9.1,9.4,9.4,9.4,73,100,2023-07-17,En Riesgo,Bajo rendimiento académico
+229,Magdalena,Jiménez,26,F,Arte,6,magdalena.jiménez@universidad.edu,555-0229,5.74,97,3,13,Medio,0,5.3,6.2,5.6,5.8,5.7,90,120,2023-01-18,Condicional,
+230,José,Ortega,18,M,Arquitectura,5,josé.ortega@universidad.edu,555-0230,8.59,68,4,25,Alto,0,8.6,8.6,8.4,8.5,8.5,75,100,2023-07-17,Activo,
+231,Benjamín,Morales,22,M,Arquitectura,3,benjamín.morales@universidad.edu,555-0231,5.92,88,1,18,Medio,1,5.9,6.0,5.8,5.8,5.9,45,60,2024-07-16,En Riesgo,Baja participación
+232,Mateo,Aguilar,19,M,Psicología,1,mateo.aguilar@universidad.edu,555-0232,5.2,68,2,11,Medio,1,5.6,5.7,5.7,5.0,5.5,10,20,2025-07-16,En Riesgo,Baja asistencia
+233,Camila,Ramírez,21,F,Arte,2,camila.ramírez@universidad.edu,555-0233,4.91,71,5,18,Medio,0,4.9,4.7,5.3,4.8,4.9,28,40,2025-01-17,Activo,
+234,Gabriel,Jiménez,20,M,Administración,4,gabriel.jiménez@universidad.edu,555-0234,7.34,72,4,3,Medio,0,7.1,7.4,7.2,7.8,7.4,54,80,2024-01-18,Activo,
+235,Isabella,Ortega,26,F,Ingeniería,7,isabella.ortega@universidad.edu,555-0235,5.72,88,4,5,Alto,1,5.7,5.3,6.2,5.6,5.7,98,140,2022-07-17,En Riesgo,Problemas económicos
+236,Maximiliano,García,26,M,Economía,7,maximiliano.garcía@universidad.edu,555-0236,5.39,78,5,9,Medio,0,5.4,5.2,5.4,5.0,5.2,105,140,2022-07-17,Activo,
+237,Fernando,Vargas,20,M,Enfermería,7,fernando.vargas@universidad.edu,555-0237,5.71,63,4,9,Medio,1,5.4,5.7,5.4,5.3,5.5,91,140,2022-07-17,En Riesgo,Bajo rendimiento académico
+238,Natalia,Pérez,18,F,Arquitectura,5,natalia.pérez@universidad.edu,555-0238,8.09,87,2,8,Alto,0,8.5,8.2,8.5,8.2,8.3,75,100,2023-07-17,Activo,
+239,Gabriel,Flores,24,M,Ingeniería,2,gabriel.flores@universidad.edu,555-0239,4.13,73,5,19,Medio,0,4.0,4.3,4.5,4.0,4.2,30,40,2025-01-17,Condicional,
+240,Alejandro,Castillo,22,M,Arte,1,alejandro.castillo@universidad.edu,555-0240,5.97,64,5,20,Bajo,1,6.5,5.7,5.6,5.9,5.9,15,20,2025-07-16,En Riesgo,Problemas económicos
+241,Mateo,Pérez,23,M,Economía,4,mateo.pérez@universidad.edu,555-0241,6.51,74,4,19,Medio,0,6.9,6.5,6.3,6.1,6.4,60,80,2024-01-18,Condicional,
+242,Esteban,Rojas,26,M,Ingeniería,7,esteban.rojas@universidad.edu,555-0242,9.63,66,3,14,Bajo,0,9.9,10.0,9.2,10.0,9.8,105,140,2022-07-17,Activo,
+243,Mariana,Rodríguez,18,F,Administración,5,mariana.rodríguez@universidad.edu,555-0243,4.94,62,3,11,Medio,1,4.9,5.0,5.1,5.4,5.1,59,100,2023-07-17,En Riesgo,Bajo rendimiento académico
+244,Constanza,Delgado,19,F,Medicina,6,constanza.delgado@universidad.edu,555-0244,6.32,98,3,16,Bajo,0,6.8,6.6,6.6,6.6,6.7,90,120,2023-01-18,Activo,
+245,María,Hernández,23,F,Ingeniería,1,maría.hernández@universidad.edu,555-0245,8.58,83,4,5,Medio,0,8.3,9.0,8.8,9.0,8.8,15,20,2025-07-16,Activo,
+246,Sofía,Vargas,26,F,Psicología,4,sofía.vargas@universidad.edu,555-0246,7.83,87,1,22,Bajo,0,8.3,7.8,8.3,8.3,8.2,60,80,2024-01-18,Condicional,
+247,Valeria,Ortega,20,F,Ingeniería,7,valeria.ortega@universidad.edu,555-0247,7.42,68,2,12,Medio,1,7.4,7.2,7.6,7.6,7.5,105,140,2022-07-17,En Riesgo,Baja asistencia
+248,Daniela,Silva,19,F,Derecho,7,daniela.silva@universidad.edu,555-0248,6.46,67,5,18,Alto,0,6.1,6.9,6.8,6.7,6.6,105,140,2022-07-17,Activo,
+249,Rodrigo,Castillo,22,M,Derecho,3,rodrigo.castillo@universidad.edu,555-0249,9.89,83,3,14,Bajo,0,9.9,9.7,10.0,9.8,9.9,45,60,2024-07-16,Condicional,
+250,Matías,Ortega,22,M,Enfermería,7,matías.ortega@universidad.edu,555-0250,4.53,59,1,21,Bajo,1,4.3,4.9,5.0,4.2,4.6,91,140,2022-07-17,En Riesgo,Pocas horas de estudio
+251,Natalia,Herrera,25,F,Derecho,6,natalia.herrera@universidad.edu,555-0251,8.01,94,3,16,Alto,0,8.4,8.2,8.0,8.0,8.2,90,120,2023-01-18,Activo,
+252,Andrés,López,22,M,Arquitectura,5,andrés.lópez@universidad.edu,555-0252,6.17,59,5,3,Bajo,1,6.3,6.3,6.3,5.8,6.2,75,100,2023-07-17,En Riesgo,Problemas económicos
+253,Carmen,Hernández,22,F,Medicina,1,carmen.hernández@universidad.edu,555-0253,4.84,84,5,1,Bajo,1,5.1,4.4,5.3,4.8,4.9,10,20,2025-07-16,En Riesgo,Problemas familiares
+254,Constanza,Aguilar,22,F,Educación,1,constanza.aguilar@universidad.edu,555-0254,7.15,55,3,6,Medio,1,7.5,7.1,7.6,7.4,7.4,15,20,2025-07-16,En Riesgo,Problemas familiares
+255,Natalia,Torres,18,F,Derecho,5,natalia.torres@universidad.edu,555-0255,5.78,58,3,15,Medio,1,6.2,5.7,5.7,5.4,5.8,55,100,2023-07-17,En Riesgo,Baja participación
+256,Regina,Ortega,20,F,Medicina,6,regina.ortega@universidad.edu,555-0256,8.63,77,2,8,Bajo,0,9.0,8.7,8.7,8.9,8.8,86,120,2023-01-18,Activo,
+257,Gabriel,Castro,24,M,Medicina,3,gabriel.castro@universidad.edu,555-0257,8.6,100,4,4,Bajo,0,8.3,8.8,8.4,8.5,8.5,38,60,2024-07-16,Activo,
+258,Cristóbal,Hernández,20,M,Psicología,6,cristóbal.hernández@universidad.edu,555-0258,7.91,100,4,16,Alto,0,7.8,7.9,8.3,8.3,8.1,90,120,2023-01-18,Activo,
+259,Benjamín,Ortega,25,M,Arte,7,benjamín.ortega@universidad.edu,555-0259,9.21,62,1,3,Alto,1,9.1,9.1,9.2,9.1,9.1,103,140,2022-07-17,En Riesgo,Problemas familiares
+260,Valentina,Delgado,20,F,Arquitectura,7,valentina.delgado@universidad.edu,555-0260,4.91,51,4,20,Bajo,1,4.6,5.3,5.3,4.8,5.0,97,140,2022-07-17,En Riesgo,Bajo rendimiento académico
+261,Isabella,Castillo,22,F,Psicología,3,isabella.castillo@universidad.edu,555-0261,7.36,50,4,21,Medio,0,7.3,7.6,7.6,7.1,7.4,36,60,2024-07-16,Activo,
+262,Ana,Vargas,22,F,Administración,6,ana.vargas@universidad.edu,555-0262,7.72,96,2,11,Bajo,0,8.0,7.6,7.5,7.5,7.7,78,120,2023-01-18,Activo,
+263,Emilio,Torres,25,M,Derecho,4,emilio.torres@universidad.edu,555-0263,8.32,100,1,10,Alto,0,8.4,8.1,8.2,8.2,8.2,44,80,2024-01-18,Activo,
+264,Cristóbal,Rojas,24,M,Medicina,2,cristóbal.rojas@universidad.edu,555-0264,8.1,72,4,3,Medio,0,8.4,8.0,7.6,7.9,8.0,28,40,2025-01-17,Activo,
+265,Carmen,Rodríguez,21,F,Economía,6,carmen.rodríguez@universidad.edu,555-0265,7.55,92,4,20,Bajo,0,7.8,7.3,7.8,7.1,7.5,90,120,2023-01-18,Activo,
+266,Mateo,Castro,19,M,Economía,7,mateo.castro@universidad.edu,555-0266,5.92,63,5,9,Medio,1,5.5,6.3,5.6,6.1,5.9,105,140,2022-07-17,En Riesgo,Problemas familiares
+267,Laura,Aguilar,21,F,Medicina,8,laura.aguilar@universidad.edu,555-0267,7.13,78,3,1,Alto,0,7.2,6.8,6.7,6.8,6.9,120,160,2022-01-18,Condicional,
+268,Sebastián,Torres,24,M,Arquitectura,3,sebastián.torres@universidad.edu,555-0268,9.85,61,3,14,Bajo,0,10.0,9.4,9.6,9.9,9.7,39,60,2024-07-16,Activo,
+269,Sebastián,Delgado,19,M,Ingeniería,1,sebastián.delgado@universidad.edu,555-0269,9.48,64,3,13,Alto,0,9.5,9.2,9.2,9.0,9.2,15,20,2025-07-16,Activo,
+270,Mariana,Rodríguez,26,F,Arquitectura,6,mariana.rodríguez@universidad.edu,555-0270,7.83,68,1,21,Medio,1,7.9,7.9,7.8,8.0,7.9,90,120,2023-01-18,En Riesgo,Pocas horas de estudio
+271,Matías,González,19,M,Administración,8,matías.gonzález@universidad.edu,555-0271,5.35,97,3,8,Medio,0,5.8,4.9,5.0,5.8,5.4,120,160,2022-01-18,Activo,
+272,Carlos,Vargas,21,M,Economía,5,carlos.vargas@universidad.edu,555-0272,5.39,56,5,17,Medio,1,5.6,5.4,5.1,5.4,5.4,52,100,2023-07-17,En Riesgo,Problemas económicos
+273,Constanza,García,22,F,Economía,7,constanza.garcía@universidad.edu,555-0273,7.37,97,1,13,Medio,0,7.2,7.2,7.6,7.8,7.5,74,140,2022-07-17,Activo,
+274,Maximiliano,Flores,18,M,Economía,1,maximiliano.flores@universidad.edu,555-0274,8.76,86,3,16,Alto,0,9.1,8.9,8.5,8.9,8.8,15,20,2025-07-16,Activo,
+275,Isabella,López,21,F,Economía,5,isabella.lópez@universidad.edu,555-0275,6.58,93,1,12,Medio,0,6.9,6.8,6.7,6.7,6.8,75,100,2023-07-17,Condicional,
+276,Daniela,Delgado,21,F,Arte,5,daniela.delgado@universidad.edu,555-0276,7.1,56,1,15,Bajo,1,7.1,7.1,7.1,6.7,7.0,70,100,2023-07-17,En Riesgo,Problemas económicos
+277,Benjamín,Medina,18,M,Economía,1,benjamín.medina@universidad.edu,555-0277,4.48,51,2,4,Medio,1,4.9,4.1,4.3,4.1,4.3,15,20,2025-07-16,En Riesgo,Problemas familiares
+278,Diego,Mendoza,26,M,Arquitectura,3,diego.mendoza@universidad.edu,555-0278,6.37,78,3,2,Bajo,0,6.3,5.9,6.7,6.5,6.3,37,60,2024-07-16,Activo,
+279,Benjamín,Flores,20,M,Ingeniería,5,benjamín.flores@universidad.edu,555-0279,5.44,87,5,12,Alto,0,5.3,5.8,5.0,5.3,5.4,55,100,2023-07-17,Activo,
+280,Julieta,Vega,18,F,Administración,2,julieta.vega@universidad.edu,555-0280,4.32,64,2,22,Medio,1,4.0,4.2,4.0,4.6,4.2,20,40,2025-01-17,En Riesgo,Problemas familiares
+281,Benjamín,Castillo,19,M,Enfermería,5,benjamín.castillo@universidad.edu,555-0281,5.87,71,4,10,Alto,0,5.5,5.6,5.9,5.7,5.7,62,100,2023-07-17,Activo,
+282,Ana,Aguilar,26,F,Enfermería,3,ana.aguilar@universidad.edu,555-0282,4.27,55,1,1,Alto,1,4.0,4.1,4.7,4.8,4.4,33,60,2024-07-16,En Riesgo,
+283,Andrés,González,22,M,Medicina,8,andrés.gonzález@universidad.edu,555-0283,4.56,75,5,15,Medio,0,4.1,4.4,4.8,4.7,4.5,120,160,2022-01-18,Activo,
+284,Patricia,García,21,F,Economía,6,patricia.garcía@universidad.edu,555-0284,5.95,71,5,8,Bajo,0,5.5,6.4,5.5,6.4,5.9,90,120,2023-01-18,Activo,
+285,Andrés,Aguilar,23,M,Ingeniería,1,andrés.aguilar@universidad.edu,555-0285,7.85,63,5,6,Bajo,1,8.2,8.2,8.3,7.9,8.2,12,20,2025-07-16,En Riesgo,Problemas económicos
+286,Benjamín,Ramírez,24,M,Arte,3,benjamín.ramírez@universidad.edu,555-0286,5.72,71,2,18,Alto,1,6.2,6.0,5.5,6.1,5.9,33,60,2024-07-16,En Riesgo,Problemas familiares
+287,Daniela,Martínez,21,F,Psicología,7,daniela.martínez@universidad.edu,555-0287,4.84,54,4,13,Alto,1,5.2,4.6,4.8,5.2,5.0,105,140,2022-07-17,En Riesgo,
+288,Constanza,Delgado,18,F,Economía,4,constanza.delgado@universidad.edu,555-0288,6.23,65,5,4,Alto,1,6.6,6.5,6.7,6.6,6.6,54,80,2024-01-18,En Riesgo,Baja participación
+289,Andrés,Moreno,24,M,Psicología,8,andrés.moreno@universidad.edu,555-0289,7.37,72,2,17,Bajo,0,7.3,7.8,7.2,6.9,7.3,89,160,2022-01-18,Activo,
+290,Isabella,Mendoza,24,F,Administración,6,isabella.mendoza@universidad.edu,555-0290,8.64,95,2,6,Medio,0,8.7,9.1,8.2,9.1,8.8,80,120,2023-01-18,Condicional,
+291,Sofía,Moreno,25,F,Arte,8,sofía.moreno@universidad.edu,555-0291,4.95,75,3,1,Medio,1,4.7,4.8,4.7,5.0,4.8,111,160,2022-01-18,En Riesgo,Problemas económicos
+292,Patricia,Herrera,21,F,Psicología,1,patricia.herrera@universidad.edu,555-0292,5.82,53,2,21,Bajo,1,5.7,5.5,6.0,5.9,5.8,15,20,2025-07-16,En Riesgo,Baja participación
+293,Carmen,Romero,18,F,Derecho,2,carmen.romero@universidad.edu,555-0293,5.19,92,3,18,Bajo,0,5.1,4.8,5.0,4.8,4.9,27,40,2025-01-17,Activo,
+294,Carmen,Torres,26,F,Psicología,5,carmen.torres@universidad.edu,555-0294,8.42,74,5,5,Medio,0,8.1,8.4,8.0,8.2,8.2,75,100,2023-07-17,Activo,
+295,Mariana,Aguilar,20,F,Arquitectura,3,mariana.aguilar@universidad.edu,555-0295,5.91,66,5,2,Medio,1,6.1,5.7,5.7,6.1,5.9,45,60,2024-07-16,En Riesgo,Pocas horas de estudio
+296,Javiera,Silva,26,F,Ingeniería,8,javiera.silva@universidad.edu,555-0296,6.22,88,2,24,Alto,0,6.5,6.0,6.3,6.0,6.2,120,160,2022-01-18,Activo,
+297,Esperanza,Vargas,22,F,Arte,2,esperanza.vargas@universidad.edu,555-0297,7.8,86,5,6,Medio,0,7.4,8.3,7.5,7.8,7.8,30,40,2025-01-17,Activo,
+298,Isidora,Jiménez,25,F,Economía,7,isidora.jiménez@universidad.edu,555-0298,6.87,84,5,20,Medio,0,6.5,6.9,6.8,6.7,6.7,105,140,2022-07-17,Activo,
+299,María,Torres,25,F,Arquitectura,2,maría.torres@universidad.edu,555-0299,8.31,78,4,13,Medio,0,8.1,8.0,8.4,7.9,8.1,30,40,2025-01-17,Activo,
+300,Mariana,Ramos,23,F,Arquitectura,8,mariana.ramos@universidad.edu,555-0300,8.96,68,2,4,Bajo,1,9.2,9.1,8.7,9.1,9.0,120,160,2022-01-18,En Riesgo,Pocas horas de estudio
+301,Agustín,Romero,18,M,Derecho,5,agustín.romero@universidad.edu,555-0301,7.37,59,4,10,Alto,0,7.6,7.8,7.0,7.0,7.3,72,100,2023-07-17,Activo,
+302,Sebastián,Silva,24,M,Educación,1,sebastián.silva@universidad.edu,555-0302,7.3,62,1,17,Medio,1,6.8,7.6,7.2,7.6,7.3,10,20,2025-07-16,En Riesgo,Problemas económicos
+303,Valeria,González,20,F,Arte,4,valeria.gonzález@universidad.edu,555-0303,4.77,82,1,14,Bajo,1,4.7,5.0,5.0,4.5,4.8,60,80,2024-01-18,En Riesgo,Bajo rendimiento académico
+304,Cristóbal,Torres,24,M,Ingeniería,7,cristóbal.torres@universidad.edu,555-0304,7.1,51,1,3,Bajo,1,7.6,7.3,7.4,7.2,7.4,105,140,2022-07-17,En Riesgo,Baja asistencia
+305,Gabriel,Hernández,25,M,Educación,1,gabriel.hernández@universidad.edu,555-0305,7.18,71,4,19,Medio,0,6.9,6.8,6.8,6.7,6.8,15,20,2025-07-16,Activo,
+306,Isidora,Mendoza,26,F,Economía,1,isidora.mendoza@universidad.edu,555-0306,9.2,57,1,1,Bajo,1,9.0,9.6,9.0,9.2,9.2,15,20,2025-07-16,En Riesgo,Problemas familiares
+307,Isabella,Ruiz,26,F,Enfermería,1,isabella.ruiz@universidad.edu,555-0307,5.29,64,3,7,Medio,1,5.3,5.0,5.6,5.4,5.3,11,20,2025-07-16,En Riesgo,Pocas horas de estudio
+308,Nicolás,Sánchez,18,M,Derecho,8,nicolás.sánchez@universidad.edu,555-0308,9.9,63,3,12,Medio,0,10.0,9.6,9.4,10.0,9.8,120,160,2022-01-18,Condicional,
+309,Rodrigo,Jiménez,19,M,Administración,8,rodrigo.jiménez@universidad.edu,555-0309,8.48,99,4,7,Bajo,0,8.9,8.6,8.0,8.3,8.4,120,160,2022-01-18,Condicional,
+310,Santiago,López,23,M,Enfermería,7,santiago.lópez@universidad.edu,555-0310,7.08,73,4,17,Alto,0,6.8,6.6,7.5,6.8,6.9,102,140,2022-07-17,Activo,
+311,Amparo,Ramos,18,F,Derecho,8,amparo.ramos@universidad.edu,555-0311,9.8,62,5,9,Alto,0,9.7,9.7,9.9,9.6,9.7,116,160,2022-01-18,Condicional,
+312,Magdalena,Jiménez,24,F,Arte,1,magdalena.jiménez@universidad.edu,555-0312,7.31,83,4,6,Alto,0,7.4,7.5,7.6,7.3,7.5,15,20,2025-07-16,Condicional,
+313,Renata,Delgado,21,F,Arquitectura,5,renata.delgado@universidad.edu,555-0313,6.2,98,3,8,Alto,0,6.2,6.5,6.4,6.4,6.4,75,100,2023-07-17,Activo,
+314,Laura,Jiménez,21,F,Arte,4,laura.jiménez@universidad.edu,555-0314,6.65,98,2,15,Medio,0,6.4,6.3,6.3,6.3,6.3,57,80,2024-01-18,Activo,
+315,Diego,Ruiz,26,M,Medicina,1,diego.ruiz@universidad.edu,555-0315,7.34,64,3,18,Alto,0,7.6,7.6,7.7,7.1,7.5,15,20,2025-07-16,Condicional,
+316,Ignacio,Guerrero,20,M,Enfermería,7,ignacio.guerrero@universidad.edu,555-0316,7.94,91,5,18,Bajo,0,7.5,8.2,7.9,8.2,8.0,105,140,2022-07-17,Activo,
+317,Rodrigo,Mendoza,19,M,Economía,7,rodrigo.mendoza@universidad.edu,555-0317,8.46,52,1,6,Alto,1,8.2,8.9,8.8,8.0,8.5,80,140,2022-07-17,En Riesgo,Baja asistencia
+318,Camila,López,20,F,Administración,2,camila.lópez@universidad.edu,555-0318,7.27,59,2,25,Medio,1,7.3,6.8,7.1,7.6,7.2,30,40,2025-01-17,En Riesgo,Bajo rendimiento académico
+319,Andrés,Silva,26,M,Ingeniería,2,andrés.silva@universidad.edu,555-0319,6.33,100,3,14,Bajo,0,6.8,6.3,6.5,6.2,6.5,30,40,2025-01-17,Activo,
+320,Carlos,Vega,22,M,Ingeniería,4,carlos.vega@universidad.edu,555-0320,5.63,87,3,10,Medio,0,6.0,5.5,5.9,5.8,5.8,42,80,2024-01-18,Activo,
+321,Sebastián,Ramos,24,M,Psicología,1,sebastián.ramos@universidad.edu,555-0321,8.09,73,1,11,Alto,0,7.9,8.5,8.2,8.5,8.3,15,20,2025-07-16,Activo,
+322,Emilio,Rojas,22,M,Psicología,2,emilio.rojas@universidad.edu,555-0322,5.85,98,2,10,Bajo,1,6.3,6.2,5.7,5.9,6.0,27,40,2025-01-17,En Riesgo,Bajo rendimiento académico
+323,Fernando,Silva,21,M,Derecho,6,fernando.silva@universidad.edu,555-0323,5.93,79,3,23,Medio,0,5.5,5.6,5.8,5.6,5.6,80,120,2023-01-18,Activo,
+324,Constanza,González,21,F,Educación,3,constanza.gonzález@universidad.edu,555-0324,6.53,64,1,24,Alto,1,6.9,6.9,6.9,6.6,6.8,45,60,2024-07-16,En Riesgo,Bajo rendimiento académico
+325,Andrés,Ruiz,21,M,Medicina,4,andrés.ruiz@universidad.edu,555-0325,9.71,98,3,1,Bajo,0,9.7,9.8,9.4,9.9,9.7,60,80,2024-01-18,Activo,
+326,Natalia,Sánchez,26,F,Enfermería,6,natalia.sánchez@universidad.edu,555-0326,9.81,70,1,18,Bajo,0,9.3,10.0,9.4,9.5,9.6,66,120,2023-01-18,Activo,
+327,Esperanza,Delgado,24,F,Administración,6,esperanza.delgado@universidad.edu,555-0327,8.08,73,5,5,Alto,0,7.8,8.5,7.8,8.2,8.1,90,120,2023-01-18,Condicional,
+328,Renata,Jiménez,20,F,Arte,3,renata.jiménez@universidad.edu,555-0328,7.61,97,4,6,Medio,0,7.2,7.9,8.0,7.3,7.6,43,60,2024-07-16,Activo,
+329,Amparo,García,19,F,Enfermería,8,amparo.garcía@universidad.edu,555-0329,4.42,91,1,14,Medio,1,4.4,4.1,4.6,4.6,4.4,117,160,2022-01-18,En Riesgo,Pocas horas de estudio
+330,Patricia,Castillo,22,F,Psicología,4,patricia.castillo@universidad.edu,555-0330,6.12,84,2,3,Bajo,0,6.3,5.8,6.6,5.9,6.2,60,80,2024-01-18,Activo,
+331,Lucía,Torres,26,F,Medicina,8,lucía.torres@universidad.edu,555-0331,6.44,89,5,10,Medio,0,6.4,6.1,6.4,6.5,6.3,109,160,2022-01-18,Activo,
+332,Diego,Herrera,18,M,Arquitectura,4,diego.herrera@universidad.edu,555-0332,9.4,52,2,14,Alto,1,9.8,9.2,8.9,9.4,9.3,60,80,2024-01-18,En Riesgo,Problemas económicos
+333,Julieta,Ramírez,18,F,Arte,4,julieta.ramírez@universidad.edu,555-0333,7.81,86,4,18,Bajo,0,7.4,7.3,7.8,7.8,7.6,56,80,2024-01-18,Activo,
+334,Florencia,Rodríguez,19,F,Enfermería,5,florencia.rodríguez@universidad.edu,555-0334,8.96,71,3,3,Medio,0,9.2,8.7,9.4,9.1,9.1,61,100,2023-07-17,Activo,
+335,Ana,Delgado,19,F,Arte,3,ana.delgado@universidad.edu,555-0335,4.32,57,5,11,Medio,1,4.5,4.4,4.0,4.8,4.4,42,60,2024-07-16,En Riesgo,Problemas familiares
+336,María,Mendoza,21,F,Administración,1,maría.mendoza@universidad.edu,555-0336,5.61,69,2,20,Medio,1,5.4,6.1,5.3,5.4,5.6,15,20,2025-07-16,En Riesgo,Problemas familiares
+337,Maximiliano,Castillo,25,M,Arquitectura,1,maximiliano.castillo@universidad.edu,555-0337,7.24,70,3,3,Medio,0,7.3,6.8,7.4,6.9,7.1,11,20,2025-07-16,Activo,
+338,Santiago,Ruiz,24,M,Ingeniería,2,santiago.ruiz@universidad.edu,555-0338,8.28,75,5,18,Medio,0,7.9,8.2,7.8,8.7,8.2,30,40,2025-01-17,Activo,
+339,Natalia,Delgado,25,F,Enfermería,4,natalia.delgado@universidad.edu,555-0339,9.24,73,2,13,Bajo,0,9.7,9.0,9.6,9.6,9.5,44,80,2024-01-18,Condicional,
+340,Diego,González,21,M,Medicina,3,diego.gonzález@universidad.edu,555-0340,4.39,91,5,13,Bajo,0,4.0,4.8,4.6,4.6,4.5,36,60,2024-07-16,Activo,
+341,Miguel,Guerrero,22,M,Medicina,5,miguel.guerrero@universidad.edu,555-0341,6.33,80,2,20,Bajo,0,6.3,6.4,6.3,6.0,6.2,66,100,2023-07-17,Activo,
+342,Valentina,Jiménez,23,F,Arquitectura,8,valentina.jiménez@universidad.edu,555-0342,8.91,60,5,21,Alto,0,8.4,8.5,8.5,9.1,8.6,94,160,2022-01-18,Activo,
+343,Daniela,Guerrero,19,F,Administración,6,daniela.guerrero@universidad.edu,555-0343,6.48,71,5,20,Bajo,0,6.2,6.6,6.3,6.1,6.3,88,120,2023-01-18,Activo,
+344,Alejandro,Ramírez,24,M,Economía,5,alejandro.ramírez@universidad.edu,555-0344,5.6,73,5,15,Alto,0,5.3,5.2,6.1,5.5,5.5,75,100,2023-07-17,Activo,
+345,Ana,Flores,22,F,Administración,5,ana.flores@universidad.edu,555-0345,7.5,82,2,3,Bajo,0,7.8,7.7,8.0,8.0,7.9,68,100,2023-07-17,Activo,
+346,José,Vega,19,M,Ingeniería,7,josé.vega@universidad.edu,555-0346,6.01,52,5,13,Bajo,0,6.4,6.2,5.6,5.8,6.0,76,140,2022-07-17,Condicional,
+347,Agustín,Medina,23,M,Administración,6,agustín.medina@universidad.edu,555-0347,6.44,95,4,13,Bajo,0,6.6,6.7,6.8,6.0,6.5,85,120,2023-01-18,Activo,
+348,Alejandro,Rojas,20,M,Arquitectura,1,alejandro.rojas@universidad.edu,555-0348,4.21,90,1,4,Medio,1,4.3,4.2,4.0,4.6,4.3,15,20,2025-07-16,En Riesgo,Bajo rendimiento académico
+349,Fernando,López,24,M,Enfermería,8,fernando.lópez@universidad.edu,555-0349,9.89,81,4,17,Bajo,0,10.0,9.6,9.8,9.9,9.8,120,160,2022-01-18,Activo,
+350,María,Martínez,22,F,Administración,2,maría.martínez@universidad.edu,555-0350,7.71,95,4,9,Medio,0,7.2,7.4,8.2,7.3,7.5,23,40,2025-01-17,Condicional,
+351,Sebastián,Ramírez,21,M,Enfermería,4,sebastián.ramírez@universidad.edu,555-0351,4.06,67,5,21,Medio,1,4.0,4.1,4.0,4.3,4.1,60,80,2024-01-18,En Riesgo,Problemas económicos
+352,Rodrigo,Morales,19,M,Medicina,8,rodrigo.morales@universidad.edu,555-0352,7.59,51,4,15,Bajo,0,7.6,8.0,8.0,7.3,7.7,90,160,2022-01-18,Activo,
+353,Fernando,Ramos,19,M,Ingeniería,3,fernando.ramos@universidad.edu,555-0353,6.77,92,2,6,Bajo,0,6.5,6.7,6.9,6.5,6.7,42,60,2024-07-16,Activo,
+354,Sofía,Sánchez,21,F,Psicología,7,sofía.sánchez@universidad.edu,555-0354,7.88,62,5,18,Medio,0,8.2,8.2,8.1,8.2,8.2,85,140,2022-07-17,Activo,
+355,José,Morales,21,M,Educación,4,josé.morales@universidad.edu,555-0355,9.22,92,3,16,Medio,0,9.2,9.5,9.0,9.3,9.2,40,80,2024-01-18,Activo,
+356,Mariana,Pérez,23,F,Economía,2,mariana.pérez@universidad.edu,555-0356,9.69,69,4,14,Medio,0,9.4,9.6,10.0,9.9,9.7,30,40,2025-01-17,Activo,
+357,María,Sánchez,25,F,Psicología,1,maría.sánchez@universidad.edu,555-0357,9.59,61,3,12,Alto,0,9.5,9.7,10.0,9.9,9.8,12,20,2025-07-16,Activo,
+358,Roberto,Martínez,19,M,Derecho,6,roberto.martínez@universidad.edu,555-0358,4.55,56,4,12,Alto,1,4.7,4.4,4.5,4.3,4.5,65,120,2023-01-18,En Riesgo,Problemas familiares
+359,Cristóbal,Herrera,26,M,Arte,8,cristóbal.herrera@universidad.edu,555-0359,6.9,67,2,25,Medio,1,7.4,7.1,6.4,6.9,6.9,80,160,2022-01-18,En Riesgo,Bajo rendimiento académico
+360,Regina,Moreno,22,F,Economía,4,regina.moreno@universidad.edu,555-0360,7.07,65,4,20,Bajo,0,7.3,7.1,6.7,7.4,7.1,60,80,2024-01-18,Activo,
+361,José,Ortega,23,M,Enfermería,4,josé.ortega@universidad.edu,555-0361,4.56,83,3,3,Medio,1,4.8,4.3,4.2,4.6,4.5,60,80,2024-01-18,En Riesgo,Problemas económicos
+362,Matías,Jiménez,20,M,Arquitectura,7,matías.jiménez@universidad.edu,555-0362,6.79,62,4,18,Alto,0,7.0,6.6,6.9,6.4,6.7,105,140,2022-07-17,Activo,
+363,Antonella,López,25,F,Medicina,2,antonella.lópez@universidad.edu,555-0363,5.52,90,1,16,Bajo,1,5.3,5.6,5.9,5.5,5.6,22,40,2025-01-17,En Riesgo,Bajo rendimiento académico
+364,Ana,Aguilar,26,F,Economía,3,ana.aguilar@universidad.edu,555-0364,6.17,53,4,14,Bajo,0,6.0,6.2,5.9,6.4,6.1,42,60,2024-07-16,Activo,
+365,Carmen,Ramírez,19,F,Psicología,6,carmen.ramírez@universidad.edu,555-0365,5.16,75,4,22,Medio,0,4.7,5.4,5.1,4.7,5.0,90,120,2023-01-18,Activo,
+366,Antonella,Jiménez,23,F,Arte,5,antonella.jiménez@universidad.edu,555-0366,5.08,94,4,23,Medio,0,4.6,5.6,5.2,5.1,5.1,50,100,2023-07-17,Condicional,
+367,Carlos,Romero,19,M,Administración,4,carlos.romero@universidad.edu,555-0367,4.59,59,5,4,Alto,1,5.1,4.7,5.0,4.4,4.8,59,80,2024-01-18,En Riesgo,Baja participación
+368,Joaquín,Torres,22,M,Derecho,8,joaquín.torres@universidad.edu,555-0368,9.11,56,5,7,Bajo,1,9.6,9.2,9.6,9.6,9.5,120,160,2022-01-18,En Riesgo,Pocas horas de estudio
+369,Antonella,Ramos,19,F,Medicina,5,antonella.ramos@universidad.edu,555-0369,9.08,73,4,3,Alto,0,9.0,8.6,9.2,8.6,8.8,72,100,2023-07-17,Condicional,
+370,Roberto,Delgado,18,M,Enfermería,5,roberto.delgado@universidad.edu,555-0370,6.13,82,4,25,Alto,0,6.5,6.2,6.5,6.4,6.4,57,100,2023-07-17,Activo,
+371,Javiera,Jiménez,19,F,Enfermería,1,javiera.jiménez@universidad.edu,555-0371,6.31,96,1,11,Bajo,0,6.7,5.8,6.6,6.1,6.3,15,20,2025-07-16,Condicional,
+372,María,Herrera,20,F,Economía,6,maría.herrera@universidad.edu,555-0372,6.5,89,1,13,Bajo,0,6.0,6.8,6.1,6.6,6.4,77,120,2023-01-18,Activo,
+373,Isabella,Guerrero,18,F,Economía,4,isabella.guerrero@universidad.edu,555-0373,8.98,95,4,12,Alto,0,8.9,8.9,8.8,8.8,8.9,60,80,2024-01-18,Activo,
+374,Andrés,Ramírez,18,M,Arte,2,andrés.ramírez@universidad.edu,555-0374,8.58,98,5,20,Bajo,0,8.3,8.7,8.3,8.7,8.5,28,40,2025-01-17,Activo,
+375,Magdalena,Castillo,22,F,Enfermería,2,magdalena.castillo@universidad.edu,555-0375,5.09,65,4,5,Alto,1,5.3,5.0,4.9,5.2,5.1,30,40,2025-01-17,En Riesgo,Pocas horas de estudio
+376,Renata,Castro,21,F,Educación,7,renata.castro@universidad.edu,555-0376,5.22,50,2,15,Alto,1,5.2,5.7,5.3,5.3,5.4,79,140,2022-07-17,En Riesgo,Bajo rendimiento académico
+377,Joaquín,Ramos,19,M,Derecho,4,joaquín.ramos@universidad.edu,555-0377,4.76,95,5,1,Alto,1,4.7,5.1,4.4,4.4,4.7,55,80,2024-01-18,En Riesgo,
+378,Roberto,Jiménez,25,M,Educación,6,roberto.jiménez@universidad.edu,555-0378,4.19,55,3,19,Bajo,1,4.5,4.5,4.4,4.0,4.3,90,120,2023-01-18,En Riesgo,Baja participación
+379,Natalia,Moreno,18,F,Economía,7,natalia.moreno@universidad.edu,555-0379,4.48,96,5,7,Medio,1,4.9,4.4,4.5,4.9,4.7,92,140,2022-07-17,En Riesgo,Problemas económicos
+380,Santiago,Rodríguez,23,M,Arte,1,santiago.rodríguez@universidad.edu,555-0380,8.82,70,1,4,Medio,0,9.2,8.6,9.2,8.8,8.9,15,20,2025-07-16,Activo,
+381,Matías,Jiménez,21,M,Medicina,1,matías.jiménez@universidad.edu,555-0381,9.15,54,3,21,Bajo,0,9.6,9.2,9.6,9.1,9.4,10,20,2025-07-16,Activo,
+382,Carmen,Vargas,26,F,Administración,3,carmen.vargas@universidad.edu,555-0382,6.52,79,3,25,Alto,0,7.0,6.8,6.7,6.7,6.8,45,60,2024-07-16,Activo,
+383,Mateo,Medina,21,M,Derecho,5,mateo.medina@universidad.edu,555-0383,8.26,59,5,22,Medio,0,8.6,7.9,8.4,8.1,8.2,54,100,2023-07-17,Activo,
+384,Benjamín,Morales,23,M,Educación,2,benjamín.morales@universidad.edu,555-0384,8.26,75,1,22,Medio,0,7.8,8.0,8.1,8.6,8.1,30,40,2025-01-17,Activo,
+385,Javiera,García,23,F,Arquitectura,6,javiera.garcía@universidad.edu,555-0385,8.29,81,5,19,Alto,0,8.1,7.9,8.2,7.9,8.0,61,120,2023-01-18,Activo,
+386,Valentina,Silva,26,F,Derecho,7,valentina.silva@universidad.edu,555-0386,9.4,91,1,14,Alto,0,9.0,9.1,9.1,9.1,9.1,72,140,2022-07-17,Activo,
+387,Isabella,Castro,26,F,Ingeniería,3,isabella.castro@universidad.edu,555-0387,8.28,88,5,12,Alto,0,7.9,8.6,8.0,8.8,8.3,31,60,2024-07-16,Activo,
+388,Lucía,Rodríguez,21,F,Enfermería,3,lucía.rodríguez@universidad.edu,555-0388,8.03,73,4,6,Medio,0,8.4,8.3,7.6,8.3,8.2,45,60,2024-07-16,Condicional,
+389,Esteban,Morales,26,M,Derecho,8,esteban.morales@universidad.edu,555-0389,7.85,70,1,19,Medio,0,8.2,7.6,7.7,7.8,7.8,120,160,2022-01-18,Activo,
+390,Magdalena,Guerrero,19,F,Educación,5,magdalena.guerrero@universidad.edu,555-0390,5.06,83,5,16,Bajo,0,4.8,4.6,4.8,5.0,4.8,75,100,2023-07-17,Activo,
+391,Emilio,Aguilar,22,M,Arte,8,emilio.aguilar@universidad.edu,555-0391,5.69,66,1,7,Bajo,1,5.4,5.2,6.0,5.4,5.5,119,160,2022-01-18,En Riesgo,Baja asistencia
+392,Isidora,Silva,19,F,Ingeniería,3,isidora.silva@universidad.edu,555-0392,8.63,85,2,16,Alto,0,8.9,9.0,8.5,8.7,8.8,45,60,2024-07-16,Activo,
+393,Maximiliano,Moreno,21,M,Arte,2,maximiliano.moreno@universidad.edu,555-0393,7.8,53,3,20,Alto,0,7.6,7.4,8.2,7.6,7.7,25,40,2025-01-17,Activo,
+394,Esperanza,Martínez,25,F,Arquitectura,4,esperanza.martínez@universidad.edu,555-0394,7.37,64,1,18,Medio,1,7.7,7.9,7.5,7.3,7.6,60,80,2024-01-18,En Riesgo,Baja asistencia
+395,Santiago,Pérez,19,M,Arquitectura,2,santiago.pérez@universidad.edu,555-0395,8.65,95,5,3,Medio,0,8.9,8.6,8.9,8.5,8.7,30,40,2025-01-17,Condicional,
+396,Constanza,Ramos,20,F,Arquitectura,5,constanza.ramos@universidad.edu,555-0396,7.59,56,3,22,Bajo,0,7.6,7.9,7.5,7.3,7.6,75,100,2023-07-17,Condicional,
+397,Gabriel,Delgado,21,M,Enfermería,6,gabriel.delgado@universidad.edu,555-0397,5.09,60,4,24,Bajo,1,5.1,5.4,5.3,4.6,5.1,90,120,2023-01-18,En Riesgo,Pocas horas de estudio
+398,María,Castillo,26,F,Derecho,7,maría.castillo@universidad.edu,555-0398,9.8,53,1,21,Bajo,1,9.3,10.0,9.4,10.0,9.7,94,140,2022-07-17,En Riesgo,Pocas horas de estudio
+399,Sofía,Morales,18,F,Arquitectura,6,sofía.morales@universidad.edu,555-0399,8.46,100,3,23,Alto,0,8.5,8.8,8.1,8.3,8.4,90,120,2023-01-18,Activo,
+400,Cristóbal,Silva,21,M,Administración,2,cristóbal.silva@universidad.edu,555-0400,8.1,72,4,7,Bajo,0,8.1,8.0,8.6,7.8,8.1,30,40,2025-01-17,Activo,
+401,Andrés,Ramos,19,M,Medicina,3,andrés.ramos@universidad.edu,555-0401,4.72,96,4,12,Medio,0,5.0,4.9,4.3,4.5,4.7,31,60,2024-07-16,Condicional,
+402,Florencia,López,21,F,Enfermería,5,florencia.lópez@universidad.edu,555-0402,4.79,59,4,24,Medio,1,4.9,4.9,4.6,4.7,4.8,50,100,2023-07-17,En Riesgo,Problemas familiares
+403,Lucía,Martínez,24,F,Derecho,7,lucía.martínez@universidad.edu,555-0403,7.41,77,5,24,Alto,0,7.7,7.2,7.0,7.0,7.2,86,140,2022-07-17,Condicional,
+404,Andrés,Guerrero,25,M,Psicología,1,andrés.guerrero@universidad.edu,555-0404,4.88,73,1,23,Medio,1,5.3,5.3,5.2,4.9,5.2,15,20,2025-07-16,En Riesgo,Bajo rendimiento académico
+405,Carlos,Romero,19,M,Medicina,5,carlos.romero@universidad.edu,555-0405,5.13,58,5,1,Bajo,1,5.1,4.7,4.8,4.8,4.9,75,100,2023-07-17,En Riesgo,Problemas económicos
+406,Carlos,Guerrero,23,M,Economía,8,carlos.guerrero@universidad.edu,555-0406,7.4,51,4,23,Alto,0,7.8,7.2,7.1,7.3,7.4,120,160,2022-01-18,Condicional,
+407,Sofía,López,20,F,Medicina,2,sofía.lópez@universidad.edu,555-0407,7.82,82,1,10,Bajo,0,8.0,8.2,7.6,7.7,7.9,22,40,2025-01-17,Activo,
+408,Constanza,Martínez,22,F,Arquitectura,1,constanza.martínez@universidad.edu,555-0408,4.86,83,4,23,Medio,0,4.7,5.3,5.3,4.6,5.0,14,20,2025-07-16,Activo,
+409,Valeria,Moreno,23,F,Derecho,3,valeria.moreno@universidad.edu,555-0409,8.31,57,4,1,Medio,1,8.1,8.5,8.7,8.8,8.5,45,60,2024-07-16,En Riesgo,Bajo rendimiento académico
+410,Camila,Rojas,22,F,Psicología,4,camila.rojas@universidad.edu,555-0410,8.06,88,3,1,Medio,0,7.7,7.7,7.8,8.5,7.9,52,80,2024-01-18,Activo,
+411,Rodrigo,Vargas,18,M,Enfermería,7,rodrigo.vargas@universidad.edu,555-0411,8.32,88,5,18,Medio,0,8.5,8.0,8.7,8.0,8.3,105,140,2022-07-17,Condicional,
+412,Isidora,Rodríguez,19,F,Medicina,6,isidora.rodríguez@universidad.edu,555-0412,4.4,75,2,20,Medio,1,4.6,4.8,4.3,4.5,4.5,90,120,2023-01-18,En Riesgo,Problemas familiares
+413,Benjamín,Rodríguez,23,M,Economía,6,benjamín.rodríguez@universidad.edu,555-0413,7.63,61,2,4,Alto,1,7.5,7.6,7.4,7.2,7.4,67,120,2023-01-18,En Riesgo,Bajo rendimiento académico
+414,Isidora,Herrera,20,F,Ingeniería,3,isidora.herrera@universidad.edu,555-0414,6.24,52,2,13,Alto,1,6.6,6.0,6.4,6.1,6.3,45,60,2024-07-16,En Riesgo,Baja participación
+415,Andrés,Herrera,18,M,Enfermería,6,andrés.herrera@universidad.edu,555-0415,6.79,55,3,2,Alto,1,7.1,7.2,6.7,6.7,6.9,88,120,2023-01-18,En Riesgo,
+416,Valentina,Pérez,26,F,Educación,6,valentina.pérez@universidad.edu,555-0416,4.63,92,3,14,Alto,0,4.8,4.7,4.3,4.5,4.6,90,120,2023-01-18,Activo,
+417,Carmen,Ramos,19,F,Economía,5,carmen.ramos@universidad.edu,555-0417,6.9,59,4,21,Medio,0,6.5,6.9,6.4,6.5,6.6,74,100,2023-07-17,Activo,
+418,Esteban,Aguilar,22,M,Administración,5,esteban.aguilar@universidad.edu,555-0418,8.23,86,3,1,Alto,0,7.8,8.6,8.3,8.4,8.3,63,100,2023-07-17,Condicional,
+419,Esperanza,Moreno,18,F,Economía,1,esperanza.moreno@universidad.edu,555-0419,6.2,54,3,11,Alto,0,6.0,5.7,6.1,6.5,6.1,10,20,2025-07-16,Condicional,
+420,Tomás,Hernández,25,M,Derecho,1,tomás.hernández@universidad.edu,555-0420,4.51,74,1,11,Medio,1,4.6,4.5,4.4,4.5,4.5,10,20,2025-07-16,En Riesgo,Problemas familiares
+421,Carmen,Moreno,20,F,Derecho,4,carmen.moreno@universidad.edu,555-0421,7.54,76,4,12,Bajo,0,7.8,7.8,7.4,7.1,7.5,56,80,2024-01-18,Activo,
+422,Magdalena,Romero,25,F,Derecho,3,magdalena.romero@universidad.edu,555-0422,4.17,58,4,15,Alto,1,4.0,4.4,4.1,4.0,4.1,42,60,2024-07-16,En Riesgo,
+423,Isidora,Ortega,24,F,Arquitectura,2,isidora.ortega@universidad.edu,555-0423,7.78,77,5,11,Medio,0,7.8,7.5,7.7,7.3,7.6,28,40,2025-01-17,Activo,
+424,Isidora,Torres,22,F,Educación,1,isidora.torres@universidad.edu,555-0424,8.85,61,3,24,Alto,0,8.4,8.5,8.5,8.6,8.5,15,20,2025-07-16,Condicional,
+425,Cristóbal,Aguilar,23,M,Derecho,8,cristóbal.aguilar@universidad.edu,555-0425,8.59,52,5,22,Bajo,0,8.2,8.4,8.9,8.3,8.4,120,160,2022-01-18,Condicional,
+426,Regina,Aguilar,26,F,Administración,5,regina.aguilar@universidad.edu,555-0426,8.89,64,1,9,Alto,1,8.6,9.1,9.1,9.3,9.0,73,100,2023-07-17,En Riesgo,Baja participación
+427,Regina,Ortega,18,F,Administración,3,regina.ortega@universidad.edu,555-0427,4.42,77,3,8,Bajo,0,4.1,4.8,4.5,4.7,4.5,32,60,2024-07-16,Activo,
+428,Diego,Vargas,25,M,Psicología,3,diego.vargas@universidad.edu,555-0428,9.27,94,2,10,Bajo,0,9.2,9.8,8.8,9.4,9.3,45,60,2024-07-16,Condicional,
+429,Benjamín,Ruiz,24,M,Administración,8,benjamín.ruiz@universidad.edu,555-0429,7.17,99,5,22,Alto,0,6.7,7.3,7.5,6.8,7.1,95,160,2022-01-18,Condicional,
+430,Regina,Vargas,22,F,Economía,8,regina.vargas@universidad.edu,555-0430,5.7,67,5,14,Bajo,1,5.2,5.8,5.8,5.6,5.6,120,160,2022-01-18,En Riesgo,Baja asistencia
+431,Ignacio,Ortega,23,M,Economía,4,ignacio.ortega@universidad.edu,555-0431,8.55,85,2,13,Bajo,0,8.2,8.9,8.7,8.4,8.6,60,80,2024-01-18,Activo,
+432,Florencia,Silva,18,F,Derecho,8,florencia.silva@universidad.edu,555-0432,7.62,85,3,19,Bajo,0,8.1,7.9,7.4,7.5,7.7,105,160,2022-01-18,Condicional,
+433,Regina,Mendoza,25,F,Administración,6,regina.mendoza@universidad.edu,555-0433,8.81,83,4,5,Bajo,0,9.1,8.4,8.7,9.0,8.8,90,120,2023-01-18,Activo,
+434,Tomás,Rojas,20,M,Derecho,8,tomás.rojas@universidad.edu,555-0434,5.0,72,4,1,Medio,1,5.0,4.7,4.5,5.3,4.9,120,160,2022-01-18,En Riesgo,
+435,Ignacio,Ruiz,19,M,Derecho,1,ignacio.ruiz@universidad.edu,555-0435,8.27,71,5,21,Alto,0,8.5,8.5,8.0,8.4,8.3,15,20,2025-07-16,Condicional,
+436,Joaquín,Morales,26,M,Arte,4,joaquín.morales@universidad.edu,555-0436,7.52,87,5,16,Alto,0,7.9,7.7,7.7,7.5,7.7,41,80,2024-01-18,Activo,
+437,Constanza,Rodríguez,26,F,Ingeniería,3,constanza.rodríguez@universidad.edu,555-0437,4.13,96,1,18,Bajo,1,4.0,4.3,4.5,4.2,4.2,40,60,2024-07-16,En Riesgo,
+438,Gabriel,Rodríguez,26,M,Medicina,4,gabriel.rodríguez@universidad.edu,555-0438,9.3,63,1,25,Bajo,1,9.5,9.1,9.4,8.9,9.2,60,80,2024-01-18,En Riesgo,Baja participación
+439,Carmen,Ruiz,21,F,Medicina,7,carmen.ruiz@universidad.edu,555-0439,5.59,80,4,10,Alto,0,5.8,6.0,5.9,5.5,5.8,105,140,2022-07-17,Condicional,
+440,Patricia,Martínez,24,F,Psicología,3,patricia.martínez@universidad.edu,555-0440,6.51,99,5,10,Bajo,0,6.0,6.0,6.7,6.1,6.2,40,60,2024-07-16,Activo,
+441,Maximiliano,Guerrero,18,M,Ingeniería,3,maximiliano.guerrero@universidad.edu,555-0441,8.07,51,2,23,Medio,1,8.5,8.3,7.6,8.1,8.1,45,60,2024-07-16,En Riesgo,
+442,Diego,Torres,23,M,Psicología,2,diego.torres@universidad.edu,555-0442,6.81,82,4,20,Medio,0,7.0,6.6,7.1,7.3,7.0,30,40,2025-01-17,Activo,
+443,Joaquín,García,23,M,Enfermería,2,joaquín.garcía@universidad.edu,555-0443,8.71,50,3,12,Medio,0,8.3,8.3,8.3,9.1,8.5,28,40,2025-01-17,Activo,
+444,Camila,Sánchez,18,F,Ingeniería,6,camila.sánchez@universidad.edu,555-0444,7.97,51,1,13,Medio,1,8.1,7.8,8.4,8.3,8.1,70,120,2023-01-18,En Riesgo,Problemas familiares
+445,Natalia,Martínez,22,F,Educación,5,natalia.martínez@universidad.edu,555-0445,5.52,98,1,17,Alto,1,6.0,5.9,5.2,5.3,5.6,75,100,2023-07-17,En Riesgo,
+446,Santiago,Ortega,21,M,Medicina,5,santiago.ortega@universidad.edu,555-0446,9.21,90,5,17,Alto,0,9.0,9.4,9.1,9.7,9.3,75,100,2023-07-17,Condicional,
+447,Rodrigo,Ortega,24,M,Ingeniería,1,rodrigo.ortega@universidad.edu,555-0447,8.64,93,5,5,Medio,0,8.3,8.9,8.2,9.0,8.6,15,20,2025-07-16,Activo,
+448,Valentina,Aguilar,21,F,Enfermería,3,valentina.aguilar@universidad.edu,555-0448,8.78,94,2,5,Medio,0,8.9,8.8,9.1,8.8,8.9,37,60,2024-07-16,Activo,
+449,Tomás,Medina,19,M,Derecho,6,tomás.medina@universidad.edu,555-0449,8.36,99,4,7,Medio,0,8.7,8.0,8.4,7.9,8.2,86,120,2023-01-18,Activo,
+450,Lucía,Ruiz,21,F,Derecho,6,lucía.ruiz@universidad.edu,555-0450,9.77,56,2,10,Medio,1,9.8,9.3,10.0,9.4,9.6,90,120,2023-01-18,En Riesgo,Problemas familiares
+451,Cristóbal,García,25,M,Educación,2,cristóbal.garcía@universidad.edu,555-0451,4.66,66,2,9,Bajo,1,4.7,4.8,4.4,4.6,4.6,30,40,2025-01-17,En Riesgo,Bajo rendimiento académico
+452,Joaquín,Ruiz,20,M,Arquitectura,7,joaquín.ruiz@universidad.edu,555-0452,9.25,79,1,24,Bajo,0,9.0,9.2,8.9,9.7,9.2,103,140,2022-07-17,Activo,
+453,Maximiliano,Herrera,24,M,Medicina,7,maximiliano.herrera@universidad.edu,555-0453,6.21,93,3,20,Alto,0,6.4,6.0,5.9,6.0,6.1,105,140,2022-07-17,Activo,
+454,Constanza,Flores,19,F,Arte,8,constanza.flores@universidad.edu,555-0454,7.16,57,1,20,Medio,1,7.4,6.8,6.7,7.1,7.0,120,160,2022-01-18,En Riesgo,Bajo rendimiento académico
+455,Matías,Rodríguez,20,M,Economía,4,matías.rodríguez@universidad.edu,555-0455,8.39,71,2,18,Bajo,0,8.7,8.9,8.1,8.9,8.7,60,80,2024-01-18,Activo,
+456,Esperanza,Vega,22,F,Enfermería,7,esperanza.vega@universidad.edu,555-0456,8.54,92,3,8,Alto,0,8.5,8.9,8.2,8.9,8.6,102,140,2022-07-17,Activo,
+457,Vicente,Moreno,25,M,Derecho,6,vicente.moreno@universidad.edu,555-0457,9.54,99,3,23,Alto,0,9.8,9.3,9.4,9.4,9.5,84,120,2023-01-18,Condicional,
+458,Ignacio,Vargas,22,M,Arquitectura,1,ignacio.vargas@universidad.edu,555-0458,6.21,62,1,22,Bajo,1,6.3,6.5,6.1,5.7,6.1,15,20,2025-07-16,En Riesgo,Problemas económicos
+459,Vicente,Morales,22,M,Administración,1,vicente.morales@universidad.edu,555-0459,4.31,88,4,22,Bajo,0,4.0,4.6,4.0,4.1,4.2,14,20,2025-07-16,Activo,
+460,José,Torres,23,M,Educación,6,josé.torres@universidad.edu,555-0460,7.49,70,3,19,Alto,0,7.6,7.7,7.4,7.0,7.4,81,120,2023-01-18,Condicional,
+461,Esteban,Ruiz,23,M,Arte,5,esteban.ruiz@universidad.edu,555-0461,6.23,76,3,13,Medio,0,6.7,6.4,6.7,6.6,6.6,75,100,2023-07-17,Condicional,
+462,Alejandro,Flores,26,M,Educación,5,alejandro.flores@universidad.edu,555-0462,7.48,55,4,18,Alto,0,8.0,7.2,7.6,7.9,7.7,62,100,2023-07-17,Activo,
+463,Valentina,Ortega,24,F,Derecho,8,valentina.ortega@universidad.edu,555-0463,4.27,96,3,19,Bajo,0,4.7,4.2,4.1,4.7,4.4,120,160,2022-01-18,Condicional,
+464,Javiera,Jiménez,20,F,Medicina,3,javiera.jiménez@universidad.edu,555-0464,5.5,77,5,9,Bajo,0,5.4,5.6,5.6,5.3,5.5,45,60,2024-07-16,Condicional,
+465,José,Silva,24,M,Arte,8,josé.silva@universidad.edu,555-0465,8.57,77,2,7,Bajo,0,8.2,8.1,8.5,8.6,8.3,120,160,2022-01-18,Activo,
+466,Cristóbal,Vargas,23,M,Arquitectura,1,cristóbal.vargas@universidad.edu,555-0466,5.49,72,4,10,Medio,0,5.5,5.1,5.7,5.5,5.5,15,20,2025-07-16,Activo,
+467,Antonella,Castro,18,F,Economía,7,antonella.castro@universidad.edu,555-0467,9.99,75,2,20,Bajo,0,10.0,10.0,9.8,9.8,9.9,82,140,2022-07-17,Activo,
+468,Vicente,Mendoza,21,M,Arte,2,vicente.mendoza@universidad.edu,555-0468,9.89,71,4,18,Alto,0,9.6,9.8,10.0,10.0,9.8,21,40,2025-01-17,Activo,
+469,Joaquín,Mendoza,21,M,Enfermería,3,joaquín.mendoza@universidad.edu,555-0469,6.57,60,2,25,Alto,1,6.4,6.3,6.7,6.2,6.4,37,60,2024-07-16,En Riesgo,Pocas horas de estudio
+470,Esteban,Sánchez,23,M,Ingeniería,4,esteban.sánchez@universidad.edu,555-0470,5.21,54,1,8,Bajo,1,5.2,5.2,4.8,5.7,5.2,60,80,2024-01-18,En Riesgo,Baja participación
+471,Renata,Ramos,26,F,Economía,3,renata.ramos@universidad.edu,555-0471,4.81,76,2,7,Alto,1,4.8,4.4,4.4,5.0,4.7,35,60,2024-07-16,En Riesgo,Problemas familiares
+472,Valeria,Vargas,23,F,Arte,6,valeria.vargas@universidad.edu,555-0472,8.71,68,1,7,Bajo,1,8.7,8.6,8.8,8.7,8.7,67,120,2023-01-18,En Riesgo,Problemas familiares
+473,Julieta,Medina,18,F,Economía,7,julieta.medina@universidad.edu,555-0473,4.96,62,3,2,Medio,1,5.0,4.9,5.0,5.2,5.0,105,140,2022-07-17,En Riesgo,Pocas horas de estudio
+474,Laura,Castillo,22,F,Educación,8,laura.castillo@universidad.edu,555-0474,5.19,66,2,18,Alto,1,5.2,5.6,4.8,5.4,5.2,103,160,2022-01-18,En Riesgo,Bajo rendimiento académico
+475,Lucía,Ortega,26,F,Ingeniería,2,lucía.ortega@universidad.edu,555-0475,4.97,80,3,7,Alto,1,5.0,4.7,4.9,4.6,4.8,29,40,2025-01-17,En Riesgo,Bajo rendimiento académico
+476,Julieta,Ramos,25,F,Ingeniería,5,julieta.ramos@universidad.edu,555-0476,7.71,61,3,12,Alto,0,7.5,7.2,8.1,8.1,7.7,65,100,2023-07-17,Activo,
+477,Patricia,Moreno,24,F,Medicina,3,patricia.moreno@universidad.edu,555-0477,5.96,79,4,23,Alto,0,5.8,5.7,6.2,6.0,5.9,39,60,2024-07-16,Activo,
+478,Diego,Sánchez,26,M,Ingeniería,8,diego.sánchez@universidad.edu,555-0478,5.56,54,3,19,Medio,1,5.1,5.9,5.9,5.3,5.5,120,160,2022-01-18,En Riesgo,Baja asistencia
+479,Florencia,Martínez,20,F,Psicología,1,florencia.martínez@universidad.edu,555-0479,8.47,85,1,15,Medio,0,8.6,8.7,8.8,8.1,8.5,15,20,2025-07-16,Activo,
+480,Lucía,Rojas,19,F,Administración,8,lucía.rojas@universidad.edu,555-0480,6.37,98,5,10,Alto,0,6.3,6.7,6.2,6.7,6.5,95,160,2022-01-18,Activo,
+481,Renata,Pérez,18,F,Educación,3,renata.pérez@universidad.edu,555-0481,7.39,79,2,1,Alto,0,7.2,7.8,7.6,7.1,7.4,39,60,2024-07-16,Activo,
+482,Valentina,Vargas,19,F,Enfermería,5,valentina.vargas@universidad.edu,555-0482,5.04,65,5,4,Medio,1,5.4,5.1,4.9,5.3,5.2,63,100,2023-07-17,En Riesgo,Problemas económicos
+483,Antonella,Castro,19,F,Ingeniería,2,antonella.castro@universidad.edu,555-0483,4.77,70,2,16,Medio,1,5.2,4.4,4.6,5.0,4.8,30,40,2025-01-17,En Riesgo,Bajo rendimiento académico
+484,María,Aguilar,21,F,Derecho,1,maría.aguilar@universidad.edu,555-0484,8.22,85,2,9,Bajo,0,8.5,7.9,8.0,8.3,8.2,13,20,2025-07-16,Condicional,
+485,Laura,González,24,F,Derecho,6,laura.gonzález@universidad.edu,555-0485,5.84,84,3,2,Bajo,1,5.4,5.7,6.2,5.3,5.7,84,120,2023-01-18,En Riesgo,Pocas horas de estudio
+486,Isidora,Castro,24,F,Enfermería,5,isidora.castro@universidad.edu,555-0486,5.62,95,3,23,Medio,0,5.3,5.3,5.9,5.6,5.5,75,100,2023-07-17,Activo,
+487,Valeria,Vega,22,F,Derecho,4,valeria.vega@universidad.edu,555-0487,4.95,62,2,14,Alto,1,4.6,4.8,4.5,5.4,4.8,50,80,2024-01-18,En Riesgo,Baja asistencia
+488,Camila,García,24,F,Enfermería,4,camila.garcía@universidad.edu,555-0488,6.84,87,4,24,Bajo,0,7.0,6.5,6.9,6.9,6.8,43,80,2024-01-18,Activo,
+489,Javiera,Vargas,18,F,Psicología,2,javiera.vargas@universidad.edu,555-0489,7.86,92,1,24,Bajo,0,7.4,8.1,7.6,8.1,7.8,27,40,2025-01-17,Activo,
+490,Nicolás,Rojas,21,M,Educación,7,nicolás.rojas@universidad.edu,555-0490,7.49,71,2,9,Medio,0,7.3,7.3,7.2,7.9,7.4,105,140,2022-07-17,Activo,
+491,Miguel,Martínez,19,M,Derecho,6,miguel.martínez@universidad.edu,555-0491,9.73,64,2,1,Bajo,1,10.0,10.0,10.0,9.6,9.9,62,120,2023-01-18,En Riesgo,Bajo rendimiento académico
+492,Maximiliano,Martínez,19,M,Derecho,8,maximiliano.martínez@universidad.edu,555-0492,7.42,86,1,9,Alto,0,7.7,7.6,7.2,7.9,7.6,120,160,2022-01-18,Activo,
+493,Renata,Moreno,23,F,Economía,7,renata.moreno@universidad.edu,555-0493,7.24,60,2,14,Medio,1,7.7,7.5,6.8,7.5,7.4,85,140,2022-07-17,En Riesgo,Baja asistencia
+494,Carmen,Pérez,19,F,Administración,5,carmen.pérez@universidad.edu,555-0494,6.61,76,1,12,Alto,0,6.5,6.4,6.9,6.7,6.6,63,100,2023-07-17,Activo,
+495,Carlos,Pérez,25,M,Ingeniería,3,carlos.pérez@universidad.edu,555-0495,7.77,69,5,6,Medio,1,7.3,7.9,7.5,8.1,7.7,45,60,2024-07-16,En Riesgo,Baja participación
+496,Natalia,Mendoza,23,F,Enfermería,8,natalia.mendoza@universidad.edu,555-0496,9.6,51,3,9,Alto,0,9.1,9.2,9.6,9.3,9.3,120,160,2022-01-18,Activo,
+497,Ignacio,Guerrero,21,M,Arte,6,ignacio.guerrero@universidad.edu,555-0497,8.83,52,1,9,Alto,1,8.4,8.8,8.6,8.8,8.7,90,120,2023-01-18,En Riesgo,Problemas familiares
+498,Roberto,González,20,M,Administración,2,roberto.gonzález@universidad.edu,555-0498,6.41,91,1,22,Alto,0,6.2,6.4,6.1,6.0,6.2,30,40,2025-01-17,Condicional,
+499,Daniela,Hernández,21,F,Ingeniería,7,daniela.hernández@universidad.edu,555-0499,7.17,67,5,11,Medio,0,7.0,7.4,7.5,7.5,7.3,105,140,2022-07-17,Activo,
+500,José,Aguilar,22,M,Enfermería,8,josé.aguilar@universidad.edu,555-0500,7.96,83,5,21,Bajo,0,7.7,7.5,7.9,7.9,7.8,120,160,2022-01-18,Activo,
+501,Amparo,Herrera,21,F,Medicina,4,amparo.herrera@universidad.edu,555-0501,6.93,63,1,4,Medio,1,7.1,6.8,6.6,7.2,6.9,60,80,2024-01-18,En Riesgo,
+502,Rodrigo,Castro,18,M,Administración,5,rodrigo.castro@universidad.edu,555-0502,9.1,71,3,20,Medio,0,9.0,8.7,9.4,9.3,9.1,55,100,2023-07-17,Activo,
+503,Amparo,Ruiz,26,F,Ingeniería,8,amparo.ruiz@universidad.edu,555-0503,7.33,79,4,22,Alto,0,7.0,7.3,7.3,7.6,7.3,95,160,2022-01-18,Activo,
+504,Ignacio,Delgado,18,M,Psicología,1,ignacio.delgado@universidad.edu,555-0504,9.52,72,1,8,Medio,0,9.4,9.2,9.5,9.6,9.4,10,20,2025-07-16,Activo,
+505,Florencia,Sánchez,23,F,Arte,8,florencia.sánchez@universidad.edu,555-0505,6.7,77,2,8,Medio,0,6.4,6.9,6.3,7.1,6.7,82,160,2022-01-18,Activo,
+506,Mariana,Flores,24,F,Medicina,6,mariana.flores@universidad.edu,555-0506,8.0,52,5,14,Medio,0,7.6,8.2,8.0,8.2,8.0,90,120,2023-01-18,Activo,
+507,Regina,Aguilar,23,F,Enfermería,6,regina.aguilar@universidad.edu,555-0507,4.77,100,1,24,Bajo,1,4.8,4.3,4.5,4.4,4.5,89,120,2023-01-18,En Riesgo,Problemas familiares
+508,Camila,Herrera,19,F,Ingeniería,4,camila.herrera@universidad.edu,555-0508,8.62,73,5,22,Medio,0,8.8,8.2,8.4,8.9,8.6,45,80,2024-01-18,Activo,
+509,Renata,Vega,25,F,Psicología,4,renata.vega@universidad.edu,555-0509,8.71,80,4,1,Bajo,0,9.0,8.9,9.1,9.1,9.0,60,80,2024-01-18,Activo,
+510,Isabella,Castro,26,F,Arquitectura,2,isabella.castro@universidad.edu,555-0510,6.38,57,5,9,Alto,0,6.2,6.3,6.3,6.3,6.3,30,40,2025-01-17,Condicional,
+511,Florencia,Hernández,25,F,Economía,6,florencia.hernández@universidad.edu,555-0511,5.08,71,2,7,Bajo,1,4.9,5.4,4.7,4.8,5.0,80,120,2023-01-18,En Riesgo,Problemas económicos
+512,Agustín,Morales,26,M,Arte,2,agustín.morales@universidad.edu,555-0512,6.06,69,3,13,Bajo,0,6.0,5.8,5.8,6.0,5.9,30,40,2025-01-17,Activo,
+513,Renata,Hernández,25,F,Ingeniería,4,renata.hernández@universidad.edu,555-0513,6.85,92,2,14,Alto,0,7.1,7.1,7.2,7.2,7.1,41,80,2024-01-18,Activo,
+514,Valeria,Pérez,24,F,Educación,3,valeria.pérez@universidad.edu,555-0514,5.0,53,4,16,Medio,1,4.8,5.1,4.6,5.1,4.9,33,60,2024-07-16,En Riesgo,Problemas económicos
+515,Sebastián,Sánchez,22,M,Psicología,8,sebastián.sánchez@universidad.edu,555-0515,6.89,64,2,15,Medio,1,6.8,6.8,6.9,6.4,6.7,104,160,2022-01-18,En Riesgo,Problemas familiares
+516,Constanza,Sánchez,19,F,Medicina,5,constanza.sánchez@universidad.edu,555-0516,4.09,80,2,11,Medio,1,4.3,4.0,4.0,4.0,4.1,55,100,2023-07-17,En Riesgo,Baja asistencia
+517,Fernando,Ruiz,23,M,Educación,5,fernando.ruiz@universidad.edu,555-0517,4.82,55,3,4,Medio,1,4.5,4.9,5.0,5.0,4.8,68,100,2023-07-17,En Riesgo,Bajo rendimiento académico
+518,Daniela,Castro,21,F,Administración,4,daniela.castro@universidad.edu,555-0518,5.18,96,3,14,Alto,0,4.8,5.5,5.1,5.0,5.1,60,80,2024-01-18,Condicional,
+519,Constanza,García,23,F,Arte,7,constanza.garcía@universidad.edu,555-0519,9.36,72,5,20,Bajo,0,9.5,9.7,9.3,8.9,9.3,102,140,2022-07-17,Activo,
+520,Amparo,López,21,F,Arte,3,amparo.lópez@universidad.edu,555-0520,9.02,88,1,8,Medio,0,9.1,8.9,9.2,9.5,9.2,42,60,2024-07-16,Activo,
+521,Sofía,Pérez,26,F,Derecho,6,sofía.pérez@universidad.edu,555-0521,6.66,77,5,15,Bajo,0,6.7,6.5,6.5,6.3,6.5,90,120,2023-01-18,Activo,
+522,Cristóbal,Martínez,20,M,Medicina,7,cristóbal.martínez@universidad.edu,555-0522,4.23,87,5,18,Alto,0,4.6,4.0,4.6,4.6,4.4,98,140,2022-07-17,Activo,
+523,Carlos,Sánchez,21,M,Economía,1,carlos.sánchez@universidad.edu,555-0523,5.32,90,4,23,Medio,0,4.9,4.9,5.4,4.9,5.0,11,20,2025-07-16,Activo,
+524,Amparo,Martínez,25,F,Enfermería,1,amparo.martínez@universidad.edu,555-0524,4.12,87,2,21,Alto,1,4.0,4.1,4.0,4.0,4.0,15,20,2025-07-16,En Riesgo,
+525,Renata,Romero,25,F,Administración,4,renata.romero@universidad.edu,555-0525,8.63,80,2,3,Medio,0,8.9,8.2,8.8,8.2,8.5,60,80,2024-01-18,Activo,
+526,Agustín,Ramírez,24,M,Arte,7,agustín.ramírez@universidad.edu,555-0526,7.53,87,3,16,Medio,0,7.9,7.9,7.4,7.8,7.8,99,140,2022-07-17,Condicional,
+527,Ignacio,García,21,M,Economía,6,ignacio.garcía@universidad.edu,555-0527,6.69,50,1,23,Bajo,1,6.5,7.2,6.2,6.5,6.6,90,120,2023-01-18,En Riesgo,Bajo rendimiento académico
+528,Carlos,Mendoza,20,M,Arte,7,carlos.mendoza@universidad.edu,555-0528,4.29,57,3,20,Medio,1,4.2,4.0,4.0,4.0,4.0,105,140,2022-07-17,En Riesgo,Baja participación
+529,José,Delgado,21,M,Educación,4,josé.delgado@universidad.edu,555-0529,9.49,60,2,14,Alto,1,9.2,9.4,9.8,9.5,9.5,60,80,2024-01-18,En Riesgo,Bajo rendimiento académico
+530,Laura,Hernández,26,F,Educación,6,laura.hernández@universidad.edu,555-0530,8.65,71,3,12,Medio,0,8.4,9.0,9.1,8.7,8.8,83,120,2023-01-18,Activo,
+531,Amparo,Herrera,19,F,Enfermería,7,amparo.herrera@universidad.edu,555-0531,8.53,94,5,18,Medio,0,8.7,8.3,8.1,8.9,8.5,78,140,2022-07-17,Condicional,
+532,Maximiliano,Hernández,24,M,Administración,1,maximiliano.hernández@universidad.edu,555-0532,9.36,74,2,7,Medio,0,9.2,9.7,9.2,9.2,9.3,15,20,2025-07-16,Activo,
+533,Camila,Herrera,22,F,Enfermería,4,camila.herrera@universidad.edu,555-0533,6.85,50,1,22,Medio,1,6.4,7.3,7.1,7.2,7.0,60,80,2024-01-18,En Riesgo,
+534,Miguel,Ramírez,20,M,Arquitectura,6,miguel.ramírez@universidad.edu,555-0534,7.49,97,3,23,Bajo,0,7.7,7.1,7.8,7.3,7.5,90,120,2023-01-18,Activo,
+535,Rodrigo,Jiménez,18,M,Arte,6,rodrigo.jiménez@universidad.edu,555-0535,9.2,74,3,7,Medio,0,9.7,9.4,9.1,9.2,9.4,74,120,2023-01-18,Condicional,
+536,Sebastián,Hernández,21,M,Arquitectura,4,sebastián.hernández@universidad.edu,555-0536,6.67,87,4,1,Medio,0,6.7,6.9,6.3,6.6,6.6,60,80,2024-01-18,Activo,
+537,Isidora,García,19,F,Administración,3,isidora.garcía@universidad.edu,555-0537,4.45,99,1,18,Alto,1,4.7,4.0,4.6,4.7,4.5,45,60,2024-07-16,En Riesgo,
+538,Laura,Vega,22,F,Medicina,4,laura.vega@universidad.edu,555-0538,5.55,80,3,17,Alto,0,5.2,5.3,5.1,5.3,5.2,51,80,2024-01-18,Activo,
+539,Natalia,Hernández,20,F,Enfermería,7,natalia.hernández@universidad.edu,555-0539,8.84,66,1,10,Alto,1,8.7,9.1,8.9,8.9,8.9,105,140,2022-07-17,En Riesgo,Pocas horas de estudio
+540,Mateo,Herrera,22,M,Ingeniería,7,mateo.herrera@universidad.edu,555-0540,9.59,57,1,5,Alto,1,9.9,9.3,9.2,9.4,9.5,105,140,2022-07-17,En Riesgo,Bajo rendimiento académico
+541,Isidora,Rodríguez,21,F,Derecho,1,isidora.rodríguez@universidad.edu,555-0541,8.75,56,1,17,Medio,1,8.4,9.0,8.6,8.6,8.7,15,20,2025-07-16,En Riesgo,Baja participación
+542,Magdalena,Castro,25,F,Derecho,6,magdalena.castro@universidad.edu,555-0542,6.6,85,2,21,Medio,0,6.8,6.5,6.5,6.5,6.6,90,120,2023-01-18,Condicional,
+543,Ignacio,García,21,M,Educación,3,ignacio.garcía@universidad.edu,555-0543,8.42,94,3,8,Bajo,0,8.7,8.3,8.1,8.8,8.5,38,60,2024-07-16,Activo,
+544,Maximiliano,Delgado,26,M,Psicología,3,maximiliano.delgado@universidad.edu,555-0544,4.23,62,1,13,Alto,1,4.0,4.0,4.7,4.4,4.3,45,60,2024-07-16,En Riesgo,Problemas familiares
+545,Mariana,Ruiz,22,F,Ingeniería,4,mariana.ruiz@universidad.edu,555-0545,9.66,51,5,3,Alto,1,9.8,9.2,9.9,9.4,9.6,46,80,2024-01-18,En Riesgo,Baja asistencia
+546,Valentina,García,19,F,Arte,4,valentina.garcía@universidad.edu,555-0546,7.06,91,1,20,Bajo,0,7.4,6.8,7.3,7.4,7.2,56,80,2024-01-18,Activo,
+547,Natalia,Ramírez,19,F,Medicina,7,natalia.ramírez@universidad.edu,555-0547,7.33,94,1,19,Bajo,0,7.3,7.8,7.4,7.7,7.5,77,140,2022-07-17,Condicional,
+548,José,Guerrero,18,M,Medicina,6,josé.guerrero@universidad.edu,555-0548,5.41,52,1,1,Alto,1,5.7,5.4,5.8,5.1,5.5,90,120,2023-01-18,En Riesgo,Problemas familiares
+549,Florencia,Flores,20,F,Ingeniería,3,florencia.flores@universidad.edu,555-0549,7.77,98,4,14,Bajo,0,7.8,7.8,7.9,7.3,7.7,44,60,2024-07-16,Activo,
+550,Alejandro,González,25,M,Ingeniería,1,alejandro.gonzález@universidad.edu,555-0550,5.25,50,5,6,Medio,1,5.6,4.8,5.0,5.7,5.3,10,20,2025-07-16,En Riesgo,Problemas familiares
+551,Rodrigo,Flores,25,M,Medicina,8,rodrigo.flores@universidad.edu,555-0551,6.62,95,5,6,Medio,0,6.1,6.5,6.3,6.9,6.4,120,160,2022-01-18,Activo,
+552,Esperanza,Medina,23,F,Psicología,4,esperanza.medina@universidad.edu,555-0552,5.55,93,3,7,Medio,1,6.0,5.7,5.7,5.3,5.7,60,80,2024-01-18,En Riesgo,Baja asistencia
+553,José,Ortega,26,M,Psicología,4,josé.ortega@universidad.edu,555-0553,9.1,93,3,6,Bajo,0,9.2,8.9,9.5,8.8,9.1,60,80,2024-01-18,Activo,
+554,Mateo,Ruiz,22,M,Educación,2,mateo.ruiz@universidad.edu,555-0554,4.84,86,4,10,Medio,0,4.7,5.0,4.9,4.9,4.9,30,40,2025-01-17,Activo,
+555,Andrés,González,24,M,Psicología,8,andrés.gonzález@universidad.edu,555-0555,5.66,64,1,12,Medio,1,5.8,6.0,5.3,5.7,5.7,89,160,2022-01-18,En Riesgo,Baja participación
+556,Natalia,González,25,F,Administración,5,natalia.gonzález@universidad.edu,555-0556,7.73,78,3,13,Medio,0,7.6,8.2,8.2,7.8,8.0,75,100,2023-07-17,Activo,
+557,Sofía,López,18,F,Ingeniería,8,sofía.lópez@universidad.edu,555-0557,9.5,77,5,4,Medio,0,9.2,9.2,9.2,9.8,9.3,95,160,2022-01-18,Activo,
+558,Benjamín,Mendoza,24,M,Ingeniería,5,benjamín.mendoza@universidad.edu,555-0558,7.23,69,4,17,Medio,0,7.3,6.9,7.5,7.1,7.2,52,100,2023-07-17,Condicional,
+559,Lucía,Ramírez,24,F,Derecho,1,lucía.ramírez@universidad.edu,555-0559,4.81,97,2,16,Bajo,1,4.6,4.7,4.5,5.2,4.8,10,20,2025-07-16,En Riesgo,
+560,Maximiliano,Pérez,22,M,Psicología,5,maximiliano.pérez@universidad.edu,555-0560,4.91,95,4,3,Medio,1,5.1,5.3,4.7,4.6,4.9,75,100,2023-07-17,En Riesgo,Problemas familiares
+561,Fernando,Aguilar,18,M,Derecho,3,fernando.aguilar@universidad.edu,555-0561,5.46,71,2,22,Bajo,1,5.6,5.0,5.3,5.6,5.4,43,60,2024-07-16,En Riesgo,Bajo rendimiento académico
+562,Antonella,Vargas,26,F,Psicología,3,antonella.vargas@universidad.edu,555-0562,9.3,66,2,2,Medio,1,9.0,9.2,9.5,9.7,9.3,40,60,2024-07-16,En Riesgo,
+563,Regina,Castillo,26,F,Educación,6,regina.castillo@universidad.edu,555-0563,6.61,81,1,10,Bajo,0,7.0,6.3,6.6,6.3,6.5,90,120,2023-01-18,Activo,
+564,Andrés,Torres,25,M,Derecho,2,andrés.torres@universidad.edu,555-0564,6.76,62,2,18,Alto,1,6.5,7.1,7.2,7.2,7.0,23,40,2025-01-17,En Riesgo,Baja asistencia
+565,Rodrigo,Moreno,23,M,Ingeniería,3,rodrigo.moreno@universidad.edu,555-0565,4.63,60,5,1,Alto,1,4.9,4.6,5.0,4.8,4.8,36,60,2024-07-16,En Riesgo,
+566,Amparo,Ramírez,25,F,Derecho,7,amparo.ramírez@universidad.edu,555-0566,8.79,57,1,2,Medio,1,8.9,8.3,8.9,8.6,8.7,105,140,2022-07-17,En Riesgo,Bajo rendimiento académico
+567,Julieta,Rodríguez,21,F,Educación,1,julieta.rodríguez@universidad.edu,555-0567,5.04,99,2,8,Bajo,1,5.3,5.5,4.8,5.1,5.2,15,20,2025-07-16,En Riesgo,Baja participación
+568,Roberto,Jiménez,25,M,Derecho,1,roberto.jiménez@universidad.edu,555-0568,8.84,65,1,18,Bajo,1,8.9,9.3,8.6,9.2,9.0,15,20,2025-07-16,En Riesgo,Pocas horas de estudio
+569,Vicente,Torres,20,M,Arte,6,vicente.torres@universidad.edu,555-0569,6.3,83,2,18,Medio,0,5.9,6.7,6.0,5.9,6.1,90,120,2023-01-18,Activo,
+570,Renata,Ramírez,21,F,Arte,7,renata.ramírez@universidad.edu,555-0570,8.8,81,2,13,Alto,0,8.7,8.9,9.0,8.9,8.9,80,140,2022-07-17,Condicional,
+571,Sofía,Torres,18,F,Ingeniería,8,sofía.torres@universidad.edu,555-0571,8.75,92,2,4,Bajo,0,8.4,9.0,9.2,8.8,8.8,120,160,2022-01-18,Activo,
+572,Amparo,Rojas,24,F,Psicología,6,amparo.rojas@universidad.edu,555-0572,4.51,62,5,4,Alto,1,4.3,4.2,4.9,4.5,4.5,90,120,2023-01-18,En Riesgo,Baja participación
+573,Joaquín,Jiménez,23,M,Economía,4,joaquín.jiménez@universidad.edu,555-0573,5.8,64,4,24,Bajo,1,5.8,5.3,6.3,6.0,5.8,60,80,2024-01-18,En Riesgo,Bajo rendimiento académico
+574,Santiago,Hernández,19,M,Psicología,2,santiago.hernández@universidad.edu,555-0574,4.42,75,4,10,Alto,0,4.1,4.2,4.0,4.0,4.1,30,40,2025-01-17,Activo,
+575,Ana,Sánchez,22,F,Psicología,2,ana.sánchez@universidad.edu,555-0575,8.91,58,3,2,Medio,1,9.2,8.7,9.3,8.8,9.0,27,40,2025-01-17,En Riesgo,Bajo rendimiento académico
+576,Laura,Ramos,24,F,Administración,2,laura.ramos@universidad.edu,555-0576,7.99,71,3,16,Medio,0,8.2,7.9,7.6,7.6,7.8,23,40,2025-01-17,Activo,
+577,Nicolás,Martínez,22,M,Derecho,3,nicolás.martínez@universidad.edu,555-0577,4.6,52,2,21,Medio,1,4.2,4.4,5.1,4.3,4.5,39,60,2024-07-16,En Riesgo,Problemas familiares
+578,Isabella,Hernández,22,F,Arte,2,isabella.hernández@universidad.edu,555-0578,4.7,83,4,10,Medio,0,5.2,5.1,4.8,5.0,5.0,27,40,2025-01-17,Condicional,
+579,Vicente,Ruiz,20,M,Arquitectura,1,vicente.ruiz@universidad.edu,555-0579,9.16,66,4,5,Bajo,1,9.3,8.7,9.0,9.5,9.1,15,20,2025-07-16,En Riesgo,Bajo rendimiento académico
+580,Maximiliano,Silva,22,M,Medicina,2,maximiliano.silva@universidad.edu,555-0580,4.01,60,2,6,Alto,1,4.0,4.0,4.0,4.1,4.0,21,40,2025-01-17,En Riesgo,Pocas horas de estudio
+581,Alejandro,González,21,M,Psicología,3,alejandro.gonzález@universidad.edu,555-0581,5.81,77,5,9,Alto,0,5.9,5.7,5.3,5.5,5.6,45,60,2024-07-16,Condicional,
+582,Constanza,Vargas,21,F,Ingeniería,2,constanza.vargas@universidad.edu,555-0582,7.17,83,4,3,Alto,0,7.2,7.5,7.0,6.8,7.1,23,40,2025-01-17,Activo,
+583,Renata,Ruiz,25,F,Derecho,6,renata.ruiz@universidad.edu,555-0583,8.19,90,5,6,Medio,0,8.6,8.2,8.5,8.0,8.3,90,120,2023-01-18,Activo,
+584,Valentina,Vargas,21,F,Enfermería,7,valentina.vargas@universidad.edu,555-0584,6.5,100,4,13,Bajo,0,6.5,6.8,6.9,6.3,6.6,75,140,2022-07-17,Condicional,
+585,Javiera,Herrera,24,F,Administración,6,javiera.herrera@universidad.edu,555-0585,5.73,97,1,7,Medio,1,5.3,5.9,5.7,5.4,5.6,90,120,2023-01-18,En Riesgo,Bajo rendimiento académico
+586,Esperanza,Guerrero,21,F,Enfermería,1,esperanza.guerrero@universidad.edu,555-0586,8.01,89,2,20,Medio,0,8.1,7.7,7.5,8.5,8.0,11,20,2025-07-16,Activo,
+587,Esteban,Rojas,19,M,Educación,4,esteban.rojas@universidad.edu,555-0587,6.64,72,2,23,Alto,0,6.9,6.2,6.8,6.3,6.6,43,80,2024-01-18,Condicional,
+588,Sebastián,Mendoza,22,M,Derecho,4,sebastián.mendoza@universidad.edu,555-0588,6.05,95,1,18,Medio,0,6.5,5.6,6.5,6.0,6.2,60,80,2024-01-18,Activo,
+589,Renata,Silva,25,F,Economía,8,renata.silva@universidad.edu,555-0589,4.1,60,4,3,Medio,1,4.2,4.0,4.3,4.4,4.2,114,160,2022-01-18,En Riesgo,Bajo rendimiento académico
+590,Roberto,Rojas,23,M,Economía,7,roberto.rojas@universidad.edu,555-0590,7.38,99,3,17,Alto,0,7.6,7.1,7.6,7.8,7.5,71,140,2022-07-17,Condicional,
+591,Isabella,Ramos,25,F,Administración,3,isabella.ramos@universidad.edu,555-0591,8.71,73,1,4,Medio,0,8.5,8.3,9.2,8.7,8.7,45,60,2024-07-16,Activo,
+592,Natalia,López,22,F,Arquitectura,8,natalia.lópez@universidad.edu,555-0592,8.96,56,4,4,Alto,1,9.0,9.0,9.0,8.7,8.9,85,160,2022-01-18,En Riesgo,Bajo rendimiento académico
+593,Benjamín,Romero,24,M,Psicología,4,benjamín.romero@universidad.edu,555-0593,7.84,55,1,18,Medio,1,7.6,7.5,7.6,8.1,7.7,42,80,2024-01-18,En Riesgo,Bajo rendimiento académico
+594,Laura,Herrera,24,F,Derecho,7,laura.herrera@universidad.edu,555-0594,5.31,80,5,24,Medio,0,5.7,5.2,5.2,5.0,5.3,97,140,2022-07-17,Activo,
+595,Florencia,Castillo,26,F,Educación,8,florencia.castillo@universidad.edu,555-0595,7.6,91,1,24,Bajo,0,7.3,7.5,7.4,7.2,7.4,114,160,2022-01-18,Condicional,
+596,Tomás,García,21,M,Ingeniería,1,tomás.garcía@universidad.edu,555-0596,6.72,79,1,13,Bajo,0,6.9,6.6,6.9,6.8,6.8,12,20,2025-07-16,Condicional,
+597,Constanza,Delgado,18,F,Derecho,5,constanza.delgado@universidad.edu,555-0597,4.46,60,2,13,Medio,1,4.8,4.2,4.0,4.6,4.4,68,100,2023-07-17,En Riesgo,Baja participación
+598,Nicolás,González,26,M,Derecho,2,nicolás.gonzález@universidad.edu,555-0598,7.16,72,4,1,Bajo,0,7.3,7.1,6.8,7.3,7.1,26,40,2025-01-17,Activo,
+599,Esteban,González,21,M,Economía,7,esteban.gonzález@universidad.edu,555-0599,4.46,50,1,23,Medio,1,4.8,4.9,4.6,5.0,4.8,80,140,2022-07-17,En Riesgo,Problemas económicos
+600,Roberto,Medina,18,M,Enfermería,1,roberto.medina@universidad.edu,555-0600,9.89,88,3,25,Bajo,0,10.0,10.0,10.0,9.6,9.9,15,20,2025-07-16,Condicional,
+601,Antonella,Martínez,22,F,Ingeniería,3,antonella.martínez@universidad.edu,555-0601,5.01,90,1,25,Alto,1,4.9,5.4,5.5,4.6,5.1,35,60,2024-07-16,En Riesgo,Problemas económicos
+602,Sofía,Delgado,24,F,Administración,8,sofía.delgado@universidad.edu,555-0602,9.4,69,1,9,Bajo,1,9.6,9.6,9.6,9.6,9.6,120,160,2022-01-18,En Riesgo,Problemas familiares
+603,Mariana,Vega,23,F,Arquitectura,7,mariana.vega@universidad.edu,555-0603,6.65,73,2,1,Alto,0,6.7,6.7,6.9,6.3,6.7,71,140,2022-07-17,Activo,
+604,José,González,20,M,Arte,8,josé.gonzález@universidad.edu,555-0604,4.9,77,4,12,Bajo,0,5.0,5.3,4.8,5.0,5.0,92,160,2022-01-18,Activo,
+605,Cristóbal,Martínez,26,M,Derecho,2,cristóbal.martínez@universidad.edu,555-0605,5.55,65,1,20,Bajo,1,5.3,5.9,5.4,5.1,5.4,30,40,2025-01-17,En Riesgo,
+606,Mateo,Silva,19,M,Psicología,8,mateo.silva@universidad.edu,555-0606,6.71,84,2,18,Bajo,0,6.4,6.5,7.1,6.2,6.5,87,160,2022-01-18,Activo,
+607,Maximiliano,Sánchez,18,M,Economía,4,maximiliano.sánchez@universidad.edu,555-0607,9.99,56,4,7,Medio,1,9.7,10.0,9.9,9.8,9.9,60,80,2024-01-18,En Riesgo,Baja asistencia
+608,Magdalena,Vargas,21,F,Arquitectura,5,magdalena.vargas@universidad.edu,555-0608,5.61,54,1,24,Alto,1,5.6,6.1,5.5,6.0,5.8,75,100,2023-07-17,En Riesgo,Problemas familiares
+609,Esperanza,Mendoza,19,F,Arquitectura,8,esperanza.mendoza@universidad.edu,555-0609,5.04,74,3,2,Bajo,1,5.1,4.9,5.2,5.1,5.1,120,160,2022-01-18,En Riesgo,Baja participación
+610,Carmen,Ortega,21,F,Economía,5,carmen.ortega@universidad.edu,555-0610,6.36,68,2,11,Bajo,1,6.1,6.0,6.0,6.2,6.1,75,100,2023-07-17,En Riesgo,Bajo rendimiento académico
+611,José,Rojas,25,M,Ingeniería,7,josé.rojas@universidad.edu,555-0611,9.33,66,1,22,Bajo,1,9.5,8.9,9.6,9.8,9.4,99,140,2022-07-17,En Riesgo,Problemas económicos
+612,Valentina,López,23,F,Educación,7,valentina.lópez@universidad.edu,555-0612,7.47,67,4,23,Medio,0,7.2,7.2,7.6,7.9,7.5,105,140,2022-07-17,Activo,
+613,Benjamín,Jiménez,20,M,Arte,1,benjamín.jiménez@universidad.edu,555-0613,5.48,57,2,18,Bajo,1,5.2,5.1,5.1,5.6,5.2,15,20,2025-07-16,En Riesgo,Baja participación
+614,Emilio,Flores,18,M,Ingeniería,6,emilio.flores@universidad.edu,555-0614,4.26,65,1,24,Alto,1,4.3,4.1,4.3,4.7,4.3,84,120,2023-01-18,En Riesgo,Baja participación
+615,Joaquín,Martínez,19,M,Medicina,2,joaquín.martínez@universidad.edu,555-0615,7.63,82,2,20,Alto,0,7.4,8.1,7.3,7.4,7.6,30,40,2025-01-17,Activo,
+616,Roberto,Sánchez,21,M,Medicina,2,roberto.sánchez@universidad.edu,555-0616,8.29,84,5,5,Bajo,0,7.9,8.6,8.5,8.1,8.3,21,40,2025-01-17,Activo,
+617,Nicolás,González,23,M,Ingeniería,1,nicolás.gonzález@universidad.edu,555-0617,8.81,76,3,24,Medio,0,9.2,8.7,8.7,9.2,8.9,13,20,2025-07-16,Activo,
+618,Tomás,Guerrero,22,M,Arte,2,tomás.guerrero@universidad.edu,555-0618,7.04,82,5,16,Alto,0,6.6,7.0,7.0,6.8,6.9,26,40,2025-01-17,Activo,
+619,Florencia,Martínez,20,F,Arte,3,florencia.martínez@universidad.edu,555-0619,9.3,93,1,3,Bajo,0,9.3,9.6,9.5,9.7,9.5,31,60,2024-07-16,Condicional,
+620,Sofía,Castro,23,F,Derecho,2,sofía.castro@universidad.edu,555-0620,4.32,68,1,19,Bajo,1,4.6,4.4,4.4,4.6,4.5,29,40,2025-01-17,En Riesgo,Problemas económicos
+621,Mateo,Ruiz,18,M,Enfermería,1,mateo.ruiz@universidad.edu,555-0621,9.1,96,5,3,Bajo,0,9.2,9.1,9.4,9.5,9.3,15,20,2025-07-16,Activo,
+622,Cristóbal,Vega,26,M,Derecho,5,cristóbal.vega@universidad.edu,555-0622,9.43,96,4,2,Medio,0,9.6,9.0,9.1,9.4,9.3,65,100,2023-07-17,Activo,
+623,Amparo,Guerrero,21,F,Economía,4,amparo.guerrero@universidad.edu,555-0623,7.99,51,5,9,Bajo,0,7.9,8.4,8.3,8.1,8.2,48,80,2024-01-18,Activo,
+624,Antonella,Herrera,18,F,Medicina,4,antonella.herrera@universidad.edu,555-0624,9.32,100,1,5,Medio,0,9.0,9.1,9.7,9.8,9.4,60,80,2024-01-18,Condicional,
+625,Renata,Rojas,26,F,Arquitectura,6,renata.rojas@universidad.edu,555-0625,7.95,54,1,19,Medio,1,8.2,7.7,7.5,8.0,7.8,90,120,2023-01-18,En Riesgo,Bajo rendimiento académico
+626,José,Torres,21,M,Medicina,1,josé.torres@universidad.edu,555-0626,5.23,50,3,5,Medio,1,5.1,5.5,4.9,4.8,5.1,12,20,2025-07-16,En Riesgo,
+627,Constanza,Ruiz,20,F,Educación,2,constanza.ruiz@universidad.edu,555-0627,5.44,76,1,8,Alto,1,5.0,5.0,5.1,5.4,5.1,21,40,2025-01-17,En Riesgo,Pocas horas de estudio
+628,Mariana,Aguilar,25,F,Arquitectura,4,mariana.aguilar@universidad.edu,555-0628,5.3,72,1,12,Alto,1,5.0,5.4,5.7,4.9,5.2,60,80,2024-01-18,En Riesgo,Problemas familiares
+629,Alejandro,Pérez,25,M,Psicología,1,alejandro.pérez@universidad.edu,555-0629,7.63,89,5,17,Bajo,0,7.7,7.8,7.5,7.3,7.6,14,20,2025-07-16,Activo,
+630,Roberto,Rodríguez,18,M,Derecho,8,roberto.rodríguez@universidad.edu,555-0630,4.46,97,3,4,Medio,1,4.3,4.9,4.9,4.7,4.7,120,160,2022-01-18,En Riesgo,Baja asistencia
+631,Amparo,Ramos,19,F,Derecho,8,amparo.ramos@universidad.edu,555-0631,5.45,88,5,15,Medio,0,5.2,5.1,5.1,5.0,5.1,94,160,2022-01-18,Activo,
+632,Carlos,Aguilar,25,M,Administración,3,carlos.aguilar@universidad.edu,555-0632,9.77,62,4,18,Bajo,0,10.0,9.9,9.9,9.8,9.9,45,60,2024-07-16,Activo,
+633,Mateo,González,18,M,Derecho,2,mateo.gonzález@universidad.edu,555-0633,5.57,60,1,15,Medio,1,5.6,5.8,5.8,5.2,5.6,26,40,2025-01-17,En Riesgo,Baja participación
+634,Carlos,Vargas,25,M,Enfermería,4,carlos.vargas@universidad.edu,555-0634,4.63,77,5,19,Medio,0,4.5,4.8,4.7,4.3,4.6,60,80,2024-01-18,Condicional,
+635,Laura,Mendoza,22,F,Arquitectura,1,laura.mendoza@universidad.edu,555-0635,9.5,75,3,7,Bajo,0,9.5,9.9,9.8,9.1,9.6,13,20,2025-07-16,Activo,
+636,Julieta,Flores,26,F,Enfermería,1,julieta.flores@universidad.edu,555-0636,9.84,50,4,19,Bajo,0,9.5,9.8,9.9,9.9,9.8,10,20,2025-07-16,Activo,
+637,Ana,Sánchez,24,F,Arquitectura,1,ana.sánchez@universidad.edu,555-0637,6.42,60,5,10,Medio,0,6.0,6.6,6.6,6.9,6.5,15,20,2025-07-16,Activo,
+638,Isidora,Ortega,22,F,Educación,7,isidora.ortega@universidad.edu,555-0638,9.34,85,4,3,Bajo,0,9.6,9.0,9.4,9.5,9.4,76,140,2022-07-17,Activo,
+639,Santiago,Flores,23,M,Arquitectura,8,santiago.flores@universidad.edu,555-0639,4.74,53,1,7,Medio,1,4.7,4.9,4.9,4.6,4.8,120,160,2022-01-18,En Riesgo,
+640,Nicolás,Medina,26,M,Ingeniería,2,nicolás.medina@universidad.edu,555-0640,7.07,70,3,16,Bajo,0,7.5,7.1,7.5,7.0,7.3,28,40,2025-01-17,Activo,
+641,Patricia,Vargas,19,F,Arquitectura,8,patricia.vargas@universidad.edu,555-0641,7.68,59,5,20,Medio,0,8.1,7.9,8.0,7.2,7.8,120,160,2022-01-18,Condicional,
+642,Renata,Jiménez,18,F,Psicología,6,renata.jiménez@universidad.edu,555-0642,7.52,85,2,4,Medio,0,8.0,7.4,7.9,7.5,7.7,69,120,2023-01-18,Condicional,
+643,Patricia,Herrera,26,F,Enfermería,3,patricia.herrera@universidad.edu,555-0643,4.53,98,5,11,Medio,0,4.1,4.5,4.5,4.6,4.4,45,60,2024-07-16,Activo,
+644,Carlos,Morales,26,M,Administración,3,carlos.morales@universidad.edu,555-0644,6.31,64,1,24,Bajo,1,6.4,6.5,6.3,5.9,6.3,35,60,2024-07-16,En Riesgo,Baja participación
+645,Antonella,Romero,25,F,Derecho,6,antonella.romero@universidad.edu,555-0645,6.5,65,3,16,Alto,0,6.7,6.6,6.7,7.0,6.8,63,120,2023-01-18,Activo,
+646,Joaquín,Ramírez,22,M,Arte,3,joaquín.ramírez@universidad.edu,555-0646,9.86,92,1,6,Bajo,0,9.7,9.9,9.9,10.0,9.9,45,60,2024-07-16,Activo,
+647,Mateo,Morales,24,M,Administración,4,mateo.morales@universidad.edu,555-0647,5.69,59,5,22,Alto,1,6.0,6.2,5.7,6.0,6.0,54,80,2024-01-18,En Riesgo,Problemas familiares
+648,Emilio,Romero,22,M,Derecho,2,emilio.romero@universidad.edu,555-0648,7.71,84,2,8,Medio,0,7.3,7.3,7.5,7.3,7.4,29,40,2025-01-17,Activo,
+649,Amparo,Romero,19,F,Economía,2,amparo.romero@universidad.edu,555-0649,4.37,53,2,9,Bajo,1,4.7,4.7,4.1,4.3,4.5,30,40,2025-01-17,En Riesgo,
+650,Julieta,Ramírez,18,F,Educación,2,julieta.ramírez@universidad.edu,555-0650,5.34,99,2,22,Bajo,1,5.5,5.5,4.9,5.6,5.4,28,40,2025-01-17,En Riesgo,Bajo rendimiento académico
+651,Rodrigo,García,21,M,Educación,6,rodrigo.garcía@universidad.edu,555-0651,4.65,92,4,18,Medio,0,4.9,4.9,4.3,5.1,4.8,90,120,2023-01-18,Condicional,
+652,Sofía,Castillo,24,F,Arquitectura,1,sofía.castillo@universidad.edu,555-0652,9.09,98,3,17,Bajo,0,8.9,9.4,8.8,8.9,9.0,15,20,2025-07-16,Activo,
+653,Valentina,Mendoza,18,F,Derecho,1,valentina.mendoza@universidad.edu,555-0653,4.55,98,2,6,Alto,1,4.2,4.3,4.3,4.9,4.4,13,20,2025-07-16,En Riesgo,Baja asistencia
+654,Sebastián,Rojas,18,M,Administración,1,sebastián.rojas@universidad.edu,555-0654,8.61,76,3,8,Bajo,0,8.4,8.7,8.4,8.6,8.5,15,20,2025-07-16,Activo,
+655,Renata,Mendoza,25,F,Economía,7,renata.mendoza@universidad.edu,555-0655,6.15,62,4,5,Bajo,1,6.1,6.0,6.3,6.1,6.1,76,140,2022-07-17,En Riesgo,Problemas económicos
+656,Agustín,Silva,26,M,Arte,4,agustín.silva@universidad.edu,555-0656,4.45,65,3,2,Alto,1,4.7,4.3,4.6,4.2,4.5,59,80,2024-01-18,En Riesgo,Pocas horas de estudio
+657,Fernando,García,23,M,Ingeniería,3,fernando.garcía@universidad.edu,555-0657,9.55,70,2,18,Alto,0,9.3,9.4,9.8,9.5,9.5,45,60,2024-07-16,Activo,
+658,Antonella,Martínez,22,F,Enfermería,2,antonella.martínez@universidad.edu,555-0658,7.39,59,5,17,Alto,0,7.7,7.1,7.4,7.7,7.5,25,40,2025-01-17,Activo,
+659,Joaquín,Rodríguez,23,M,Enfermería,2,joaquín.rodríguez@universidad.edu,555-0659,9.54,51,2,14,Alto,1,9.7,9.5,9.8,9.9,9.7,30,40,2025-01-17,En Riesgo,Pocas horas de estudio
+660,Lucía,Silva,24,F,Economía,5,lucía.silva@universidad.edu,555-0660,9.85,67,2,1,Alto,1,10.0,9.9,10.0,10.0,10.0,57,100,2023-07-17,En Riesgo,Problemas económicos
+661,Agustín,Ruiz,23,M,Administración,7,agustín.ruiz@universidad.edu,555-0661,4.82,91,4,8,Medio,0,4.9,5.2,4.4,4.6,4.8,74,140,2022-07-17,Activo,
+662,Regina,Romero,26,F,Ingeniería,3,regina.romero@universidad.edu,555-0662,8.96,68,1,17,Bajo,1,8.6,9.3,9.0,8.8,8.9,31,60,2024-07-16,En Riesgo,Baja participación
+663,Mariana,Ramos,24,F,Ingeniería,5,mariana.ramos@universidad.edu,555-0663,7.24,80,2,25,Medio,0,7.2,7.5,6.9,7.3,7.2,66,100,2023-07-17,Activo,
+664,Isidora,Guerrero,18,F,Educación,7,isidora.guerrero@universidad.edu,555-0664,9.56,51,5,12,Alto,0,9.6,9.4,9.5,9.8,9.6,105,140,2022-07-17,Activo,
+665,Laura,Jiménez,23,F,Enfermería,8,laura.jiménez@universidad.edu,555-0665,9.89,89,4,20,Medio,0,10.0,9.8,10.0,9.7,9.9,107,160,2022-01-18,Activo,
+666,Sofía,López,21,F,Arte,7,sofía.lópez@universidad.edu,555-0666,5.88,85,2,13,Alto,1,5.5,6.4,5.8,5.7,5.8,75,140,2022-07-17,En Riesgo,
+667,Agustín,Aguilar,18,M,Medicina,6,agustín.aguilar@universidad.edu,555-0667,4.17,53,1,5,Medio,1,4.4,4.3,4.5,4.6,4.4,82,120,2023-01-18,En Riesgo,
+668,Agustín,Castillo,21,M,Administración,2,agustín.castillo@universidad.edu,555-0668,8.03,69,1,7,Alto,1,7.9,7.8,8.3,7.6,7.9,22,40,2025-01-17,En Riesgo,Bajo rendimiento académico
+669,Fernando,Herrera,20,M,Medicina,3,fernando.herrera@universidad.edu,555-0669,7.31,65,4,3,Bajo,1,7.6,6.8,7.4,7.1,7.2,30,60,2024-07-16,En Riesgo,
+670,Gabriel,Moreno,21,M,Educación,4,gabriel.moreno@universidad.edu,555-0670,6.13,70,4,9,Alto,0,5.8,6.5,5.9,6.5,6.2,60,80,2024-01-18,Activo,
+671,Fernando,González,23,M,Arte,7,fernando.gonzález@universidad.edu,555-0671,7.07,71,2,1,Medio,0,6.7,6.8,6.9,7.5,7.0,94,140,2022-07-17,Activo,
+672,Isidora,Romero,25,F,Arquitectura,6,isidora.romero@universidad.edu,555-0672,7.55,81,1,9,Alto,0,7.1,7.8,7.1,8.0,7.5,90,120,2023-01-18,Activo,
+673,Andrés,López,23,M,Educación,2,andrés.lópez@universidad.edu,555-0673,4.01,60,2,15,Bajo,1,4.0,4.0,4.1,4.4,4.1,30,40,2025-01-17,En Riesgo,Baja asistencia
+674,Joaquín,Ramos,25,M,Arquitectura,3,joaquín.ramos@universidad.edu,555-0674,8.06,81,4,22,Medio,0,8.6,7.9,7.9,8.3,8.2,42,60,2024-07-16,Activo,
+675,Regina,Herrera,20,F,Educación,3,regina.herrera@universidad.edu,555-0675,5.93,97,2,10,Bajo,1,5.7,6.2,6.2,6.4,6.1,35,60,2024-07-16,En Riesgo,Pocas horas de estudio
+676,José,Ramos,20,M,Arquitectura,3,josé.ramos@universidad.edu,555-0676,5.61,53,1,2,Bajo,1,5.5,5.7,5.5,5.3,5.5,45,60,2024-07-16,En Riesgo,Problemas económicos
+677,Gabriel,Rodríguez,18,M,Administración,4,gabriel.rodríguez@universidad.edu,555-0677,5.64,63,2,9,Bajo,1,5.2,5.4,6.0,5.4,5.5,43,80,2024-01-18,En Riesgo,Problemas familiares
+678,Maximiliano,Flores,20,M,Enfermería,3,maximiliano.flores@universidad.edu,555-0678,7.42,65,5,7,Medio,1,7.0,7.2,7.8,7.6,7.4,45,60,2024-07-16,En Riesgo,Bajo rendimiento académico
+679,Tomás,Delgado,24,M,Ingeniería,2,tomás.delgado@universidad.edu,555-0679,5.99,97,4,14,Alto,0,5.5,5.7,5.8,6.2,5.8,30,40,2025-01-17,Activo,
+680,Magdalena,Vega,19,F,Educación,3,magdalena.vega@universidad.edu,555-0680,7.05,76,5,24,Bajo,0,7.1,6.9,6.8,7.1,7.0,42,60,2024-07-16,Condicional,
+681,Florencia,Morales,26,F,Arquitectura,3,florencia.morales@universidad.edu,555-0681,9.82,52,5,12,Alto,0,9.8,10.0,9.5,9.5,9.7,31,60,2024-07-16,Activo,
+682,Carlos,Sánchez,23,M,Arquitectura,6,carlos.sánchez@universidad.edu,555-0682,4.73,52,2,19,Medio,1,4.8,4.6,4.4,4.5,4.6,69,120,2023-01-18,En Riesgo,Problemas económicos
+683,Javiera,González,23,F,Medicina,4,javiera.gonzález@universidad.edu,555-0683,6.88,58,4,13,Medio,0,6.8,6.4,7.3,7.0,6.9,46,80,2024-01-18,Activo,
+684,Patricia,Ortega,20,F,Arquitectura,5,patricia.ortega@universidad.edu,555-0684,8.52,96,2,15,Alto,0,8.7,8.2,8.2,8.3,8.3,75,100,2023-07-17,Activo,
+685,Regina,Ortega,21,F,Administración,3,regina.ortega@universidad.edu,555-0685,7.07,99,1,5,Alto,0,7.3,6.9,7.1,7.3,7.1,39,60,2024-07-16,Condicional,
+686,Benjamín,Aguilar,19,M,Derecho,7,benjamín.aguilar@universidad.edu,555-0686,8.06,95,5,24,Bajo,0,7.6,7.8,8.4,8.2,8.0,94,140,2022-07-17,Activo,
+687,Laura,Hernández,23,F,Enfermería,3,laura.hernández@universidad.edu,555-0687,5.43,55,1,16,Medio,1,5.1,5.0,5.8,5.0,5.2,45,60,2024-07-16,En Riesgo,
+688,Ana,Pérez,19,F,Educación,1,ana.pérez@universidad.edu,555-0688,9.31,65,2,22,Medio,1,9.8,9.5,8.9,9.2,9.4,15,20,2025-07-16,En Riesgo,Baja asistencia
+689,Sofía,Mendoza,23,F,Arte,2,sofía.mendoza@universidad.edu,555-0689,5.13,98,4,18,Medio,0,5.1,5.6,5.3,5.4,5.3,29,40,2025-01-17,Activo,
+690,María,Torres,18,F,Economía,7,maría.torres@universidad.edu,555-0690,8.5,70,2,25,Bajo,0,8.5,8.2,8.7,8.1,8.4,105,140,2022-07-17,Activo,
+691,Mariana,Guerrero,25,F,Medicina,7,mariana.guerrero@universidad.edu,555-0691,6.59,52,4,4,Medio,1,6.4,6.3,6.5,6.7,6.5,93,140,2022-07-17,En Riesgo,Pocas horas de estudio
+692,Javiera,Silva,26,F,Ingeniería,7,javiera.silva@universidad.edu,555-0692,6.13,98,1,10,Alto,0,6.5,6.1,6.1,6.0,6.2,105,140,2022-07-17,Condicional,
+693,Amparo,Hernández,18,F,Medicina,4,amparo.hernández@universidad.edu,555-0693,5.0,77,4,1,Bajo,1,4.6,5.5,5.1,5.1,5.1,54,80,2024-01-18,En Riesgo,Problemas familiares
+694,Valentina,Ruiz,24,F,Medicina,6,valentina.ruiz@universidad.edu,555-0694,4.8,86,1,6,Bajo,1,4.7,4.3,4.4,5.0,4.6,90,120,2023-01-18,En Riesgo,
+695,Julieta,Hernández,22,F,Ingeniería,6,julieta.hernández@universidad.edu,555-0695,9.47,95,2,23,Medio,0,9.8,9.4,10.0,9.0,9.6,84,120,2023-01-18,Activo,
+696,Florencia,Pérez,23,F,Arquitectura,1,florencia.pérez@universidad.edu,555-0696,7.99,85,4,1,Medio,0,8.0,8.4,7.9,7.6,8.0,14,20,2025-07-16,Activo,
+697,Antonella,Torres,20,F,Medicina,3,antonella.torres@universidad.edu,555-0697,5.9,63,1,24,Alto,1,6.2,6.0,6.2,5.4,5.9,45,60,2024-07-16,En Riesgo,Bajo rendimiento académico
+698,Maximiliano,Vargas,26,M,Administración,1,maximiliano.vargas@universidad.edu,555-0698,9.11,97,2,25,Alto,0,8.7,9.6,9.1,9.3,9.2,15,20,2025-07-16,Activo,
+699,Florencia,Guerrero,25,F,Educación,2,florencia.guerrero@universidad.edu,555-0699,6.29,59,2,10,Bajo,1,6.1,6.8,6.2,6.5,6.4,30,40,2025-01-17,En Riesgo,Problemas familiares
+700,Mariana,Romero,19,F,Arte,4,mariana.romero@universidad.edu,555-0700,7.05,68,4,19,Bajo,0,7.2,7.5,7.5,6.7,7.2,57,80,2024-01-18,Activo,
+701,Emilio,Vega,25,M,Ingeniería,7,emilio.vega@universidad.edu,555-0701,8.83,81,5,13,Medio,0,9.1,9.3,8.5,9.3,9.1,86,140,2022-07-17,Activo,
+702,Patricia,Guerrero,26,F,Arquitectura,5,patricia.guerrero@universidad.edu,555-0702,5.35,86,3,1,Bajo,1,5.0,5.1,5.4,5.7,5.3,55,100,2023-07-17,En Riesgo,Pocas horas de estudio
+703,Renata,Morales,18,F,Psicología,4,renata.morales@universidad.edu,555-0703,7.87,73,4,5,Alto,0,8.3,7.9,8.3,7.7,8.1,60,80,2024-01-18,Activo,
+704,Nicolás,Jiménez,26,M,Administración,8,nicolás.jiménez@universidad.edu,555-0704,9.76,58,5,22,Bajo,0,9.7,10.0,9.4,9.9,9.8,120,160,2022-01-18,Condicional,
+705,Regina,Herrera,19,F,Enfermería,2,regina.herrera@universidad.edu,555-0705,5.39,98,1,10,Medio,1,5.0,5.7,5.5,5.3,5.4,28,40,2025-01-17,En Riesgo,Baja asistencia
+706,Ignacio,Pérez,25,M,Derecho,8,ignacio.pérez@universidad.edu,555-0706,8.3,91,1,1,Medio,0,8.1,8.2,8.2,8.6,8.3,120,160,2022-01-18,Activo,
+707,Valentina,Ramírez,22,F,Administración,8,valentina.ramírez@universidad.edu,555-0707,8.99,97,5,1,Bajo,0,9.4,9.5,9.4,9.0,9.3,120,160,2022-01-18,Activo,
+708,Florencia,García,25,F,Arte,3,florencia.garcía@universidad.edu,555-0708,4.49,72,3,19,Alto,0,4.5,4.1,4.7,4.5,4.5,45,60,2024-07-16,Activo,
+709,Camila,Mendoza,25,F,Arquitectura,5,camila.mendoza@universidad.edu,555-0709,7.37,97,5,13,Medio,0,7.0,7.3,7.7,7.6,7.4,70,100,2023-07-17,Activo,
+710,Vicente,Pérez,23,M,Ingeniería,6,vicente.pérez@universidad.edu,555-0710,6.52,51,2,21,Medio,1,7.0,6.7,6.4,7.0,6.8,81,120,2023-01-18,En Riesgo,Pocas horas de estudio
+711,Joaquín,Hernández,24,M,Educación,8,joaquín.hernández@universidad.edu,555-0711,4.35,51,3,15,Medio,1,4.5,4.1,4.0,4.6,4.3,100,160,2022-01-18,En Riesgo,Bajo rendimiento académico
+712,Sebastián,Ortega,22,M,Educación,1,sebastián.ortega@universidad.edu,555-0712,8.57,59,4,17,Alto,0,9.0,8.5,9.0,8.3,8.7,14,20,2025-07-16,Activo,
+713,Ana,Ruiz,23,F,Ingeniería,3,ana.ruiz@universidad.edu,555-0713,8.44,97,4,18,Alto,0,8.2,8.8,8.1,8.9,8.5,38,60,2024-07-16,Activo,
+714,Matías,Moreno,21,M,Arte,4,matías.moreno@universidad.edu,555-0714,5.18,63,3,17,Bajo,1,5.4,5.6,5.0,5.0,5.2,60,80,2024-01-18,En Riesgo,Baja participación
+715,Esteban,Rodríguez,23,M,Arquitectura,2,esteban.rodríguez@universidad.edu,555-0715,5.2,55,2,14,Medio,1,5.6,5.6,5.0,5.3,5.4,24,40,2025-01-17,En Riesgo,Baja participación
+716,Benjamín,Ruiz,23,M,Ingeniería,7,benjamín.ruiz@universidad.edu,555-0716,7.29,99,4,2,Bajo,0,7.0,7.0,7.8,7.3,7.3,88,140,2022-07-17,Activo,
+717,Nicolás,Vega,25,M,Derecho,4,nicolás.vega@universidad.edu,555-0717,5.42,63,2,15,Alto,1,5.3,5.7,5.9,5.1,5.5,60,80,2024-01-18,En Riesgo,Pocas horas de estudio
+718,Sebastián,Hernández,26,M,Psicología,5,sebastián.hernández@universidad.edu,555-0718,7.73,99,2,12,Alto,0,7.8,8.1,7.3,7.3,7.6,69,100,2023-07-17,Condicional,
+719,Mariana,García,23,F,Economía,8,mariana.garcía@universidad.edu,555-0719,7.57,83,4,8,Medio,0,7.3,7.4,7.5,7.7,7.5,120,160,2022-01-18,Activo,
+720,María,Vargas,21,F,Derecho,8,maría.vargas@universidad.edu,555-0720,8.7,82,4,4,Bajo,0,8.8,8.9,8.8,8.8,8.8,107,160,2022-01-18,Activo,
+721,Camila,Vargas,25,F,Derecho,7,camila.vargas@universidad.edu,555-0721,8.77,66,5,25,Bajo,0,8.4,8.9,8.9,8.7,8.7,105,140,2022-07-17,Activo,
+722,José,Flores,23,M,Arte,4,josé.flores@universidad.edu,555-0722,6.14,79,2,10,Alto,0,6.4,6.5,6.2,6.4,6.4,51,80,2024-01-18,Activo,
+723,Esteban,Ramírez,26,M,Derecho,8,esteban.ramírez@universidad.edu,555-0723,5.29,97,5,18,Alto,0,5.6,5.5,5.4,5.7,5.5,120,160,2022-01-18,Activo,
+724,Cristóbal,Moreno,21,M,Ingeniería,4,cristóbal.moreno@universidad.edu,555-0724,4.03,61,4,6,Bajo,1,4.4,4.0,4.2,4.4,4.2,60,80,2024-01-18,En Riesgo,Pocas horas de estudio
+725,Mariana,Guerrero,24,F,Medicina,4,mariana.guerrero@universidad.edu,555-0725,6.22,83,2,19,Alto,0,5.9,6.1,6.1,6.4,6.1,43,80,2024-01-18,Activo,
+726,Julieta,Flores,22,F,Psicología,6,julieta.flores@universidad.edu,555-0726,5.07,92,4,16,Bajo,0,5.4,5.0,5.0,5.1,5.1,90,120,2023-01-18,Activo,
+727,Benjamín,Silva,21,M,Educación,3,benjamín.silva@universidad.edu,555-0727,7.88,63,5,11,Medio,0,7.5,7.4,8.1,7.9,7.7,32,60,2024-07-16,Activo,
+728,Benjamín,Rodríguez,19,M,Enfermería,5,benjamín.rodríguez@universidad.edu,555-0728,6.84,63,2,16,Alto,1,7.1,6.8,6.9,6.5,6.8,75,100,2023-07-17,En Riesgo,Problemas económicos
+729,Miguel,Romero,23,M,Arte,4,miguel.romero@universidad.edu,555-0729,5.66,80,1,24,Medio,1,5.4,5.6,5.7,5.6,5.6,46,80,2024-01-18,En Riesgo,Problemas económicos
+730,Roberto,Pérez,21,M,Enfermería,3,roberto.pérez@universidad.edu,555-0730,6.57,60,2,23,Bajo,1,6.9,6.7,6.1,7.1,6.7,45,60,2024-07-16,En Riesgo,Baja asistencia
+731,Lucía,Vega,23,F,Arquitectura,3,lucía.vega@universidad.edu,555-0731,6.7,58,3,9,Bajo,0,6.3,6.9,6.3,6.5,6.5,43,60,2024-07-16,Condicional,
+732,Ignacio,Ruiz,24,M,Arte,1,ignacio.ruiz@universidad.edu,555-0732,5.58,79,1,4,Medio,1,5.8,5.1,5.8,5.8,5.6,15,20,2025-07-16,En Riesgo,Problemas familiares
+733,Joaquín,Castro,25,M,Ingeniería,3,joaquín.castro@universidad.edu,555-0733,4.25,94,5,5,Medio,1,4.0,4.3,4.0,4.0,4.1,45,60,2024-07-16,En Riesgo,Pocas horas de estudio
+734,Esteban,Medina,25,M,Psicología,6,esteban.medina@universidad.edu,555-0734,5.84,72,1,17,Alto,1,5.7,6.3,5.7,6.3,6.0,87,120,2023-01-18,En Riesgo,Pocas horas de estudio
+735,José,Ramírez,18,M,Ingeniería,7,josé.ramírez@universidad.edu,555-0735,8.25,76,1,8,Medio,0,8.5,8.6,8.3,7.8,8.3,74,140,2022-07-17,Activo,
+736,Laura,Morales,20,F,Arte,5,laura.morales@universidad.edu,555-0736,5.17,54,5,7,Alto,1,4.7,5.1,5.1,4.7,4.9,75,100,2023-07-17,En Riesgo,Problemas familiares
+737,Fernando,Herrera,23,M,Economía,6,fernando.herrera@universidad.edu,555-0737,8.44,57,3,13,Bajo,0,8.1,8.1,8.7,8.0,8.2,80,120,2023-01-18,Activo,
+738,Ana,Castillo,25,F,Economía,1,ana.castillo@universidad.edu,555-0738,8.1,77,3,16,Medio,0,8.3,8.4,7.7,7.8,8.1,15,20,2025-07-16,Activo,
+739,Mariana,Hernández,22,F,Ingeniería,3,mariana.hernández@universidad.edu,555-0739,6.16,68,1,22,Alto,1,5.9,5.8,6.2,6.6,6.1,34,60,2024-07-16,En Riesgo,Baja participación
+740,Fernando,Silva,22,M,Derecho,7,fernando.silva@universidad.edu,555-0740,6.42,91,4,24,Bajo,0,6.2,6.9,6.6,6.7,6.6,105,140,2022-07-17,Activo,
+741,Santiago,Ramos,18,M,Administración,7,santiago.ramos@universidad.edu,555-0741,9.09,81,1,11,Medio,0,9.0,9.2,9.0,8.7,9.0,105,140,2022-07-17,Condicional,
+742,Lucía,Sánchez,21,F,Medicina,5,lucía.sánchez@universidad.edu,555-0742,6.92,64,3,10,Alto,0,7.1,7.1,6.9,7.2,7.1,75,100,2023-07-17,Activo,
+743,Natalia,Jiménez,25,F,Arte,4,natalia.jiménez@universidad.edu,555-0743,6.43,55,2,6,Alto,1,6.0,6.4,6.9,6.1,6.3,47,80,2024-01-18,En Riesgo,Baja asistencia
+744,José,González,24,M,Educación,1,josé.gonzález@universidad.edu,555-0744,5.04,54,4,6,Bajo,1,5.4,4.9,4.7,5.0,5.0,15,20,2025-07-16,En Riesgo,Bajo rendimiento académico
+745,Mariana,Ramos,22,F,Derecho,7,mariana.ramos@universidad.edu,555-0745,6.76,94,2,10,Medio,0,6.8,7.0,7.0,6.6,6.8,105,140,2022-07-17,Activo,
+746,Alejandro,Delgado,26,M,Derecho,1,alejandro.delgado@universidad.edu,555-0746,4.56,63,2,3,Bajo,1,4.4,4.7,4.9,4.9,4.7,15,20,2025-07-16,En Riesgo,Baja asistencia
+747,Natalia,Delgado,18,F,Educación,8,natalia.delgado@universidad.edu,555-0747,8.01,51,3,4,Medio,1,8.3,8.4,8.0,7.8,8.1,94,160,2022-01-18,En Riesgo,Bajo rendimiento académico
+748,Rodrigo,Castro,23,M,Derecho,7,rodrigo.castro@universidad.edu,555-0748,6.75,97,5,25,Alto,0,7.1,7.0,7.1,6.7,7.0,105,140,2022-07-17,Activo,
+749,Julieta,Flores,22,F,Derecho,7,julieta.flores@universidad.edu,555-0749,4.52,96,1,9,Bajo,1,4.9,4.8,4.6,4.1,4.6,105,140,2022-07-17,En Riesgo,Bajo rendimiento académico
+750,Vicente,Flores,18,M,Ingeniería,2,vicente.flores@universidad.edu,555-0750,6.28,91,1,24,Medio,0,6.1,6.7,6.3,5.9,6.2,30,40,2025-01-17,Activo,
+751,Ignacio,Flores,25,M,Administración,3,ignacio.flores@universidad.edu,555-0751,9.89,59,4,5,Alto,1,10.0,10.0,10.0,10.0,10.0,39,60,2024-07-16,En Riesgo,Baja asistencia
+752,Carlos,Castro,20,M,Educación,1,carlos.castro@universidad.edu,555-0752,7.38,66,5,4,Medio,1,7.0,7.8,6.9,7.4,7.3,14,20,2025-07-16,En Riesgo,Bajo rendimiento académico
+753,Emilio,Ramírez,19,M,Educación,1,emilio.ramírez@universidad.edu,555-0753,4.73,67,1,9,Alto,1,4.9,4.3,4.4,5.0,4.7,10,20,2025-07-16,En Riesgo,
+754,Lucía,Sánchez,26,F,Economía,6,lucía.sánchez@universidad.edu,555-0754,6.34,58,4,12,Bajo,0,6.8,6.0,6.2,6.0,6.2,90,120,2023-01-18,Activo,
+755,Esperanza,Vega,20,F,Derecho,6,esperanza.vega@universidad.edu,555-0755,6.26,97,5,18,Medio,0,6.1,6.7,5.9,6.1,6.2,90,120,2023-01-18,Condicional,
+756,Constanza,Delgado,20,F,Enfermería,2,constanza.delgado@universidad.edu,555-0756,4.43,96,5,7,Bajo,1,4.5,4.2,4.1,4.1,4.2,30,40,2025-01-17,En Riesgo,Baja asistencia
+757,José,Guerrero,25,M,Economía,7,josé.guerrero@universidad.edu,555-0757,6.54,71,4,10,Alto,0,7.0,6.9,6.2,6.9,6.8,105,140,2022-07-17,Activo,
+758,Joaquín,Moreno,23,M,Ingeniería,2,joaquín.moreno@universidad.edu,555-0758,4.61,61,4,5,Bajo,1,4.1,4.1,4.8,4.2,4.3,23,40,2025-01-17,En Riesgo,
+759,Sebastián,García,18,M,Derecho,6,sebastián.garcía@universidad.edu,555-0759,4.65,66,3,17,Alto,1,4.6,5.0,4.9,4.3,4.7,90,120,2023-01-18,En Riesgo,
+760,María,Pérez,22,F,Ingeniería,3,maría.pérez@universidad.edu,555-0760,4.3,80,2,18,Bajo,1,4.2,4.4,4.4,4.0,4.2,45,60,2024-07-16,En Riesgo,
+761,María,Romero,22,F,Ingeniería,5,maría.romero@universidad.edu,555-0761,8.25,88,4,15,Medio,0,8.5,7.9,8.1,8.0,8.1,61,100,2023-07-17,Activo,
+762,Esperanza,Castro,25,F,Educación,8,esperanza.castro@universidad.edu,555-0762,9.61,64,2,14,Medio,1,9.5,9.2,9.6,10.0,9.6,87,160,2022-01-18,En Riesgo,Pocas horas de estudio
+763,Mariana,Rojas,25,F,Arte,3,mariana.rojas@universidad.edu,555-0763,9.43,70,5,20,Medio,0,9.3,9.4,9.5,9.0,9.3,45,60,2024-07-16,Condicional,
+764,Maximiliano,Aguilar,21,M,Medicina,6,maximiliano.aguilar@universidad.edu,555-0764,4.88,68,5,16,Medio,1,4.7,4.8,4.5,4.9,4.7,82,120,2023-01-18,En Riesgo,Baja participación
+765,Alejandro,Ramos,19,M,Enfermería,7,alejandro.ramos@universidad.edu,555-0765,8.76,96,4,19,Alto,0,9.1,8.8,8.3,8.9,8.8,84,140,2022-07-17,Activo,
+766,Lucía,Flores,20,F,Medicina,3,lucía.flores@universidad.edu,555-0766,9.87,85,1,18,Medio,0,10.0,10.0,10.0,9.8,9.9,45,60,2024-07-16,Activo,
+767,Benjamín,Aguilar,19,M,Economía,7,benjamín.aguilar@universidad.edu,555-0767,6.73,51,5,8,Bajo,0,6.4,7.1,7.2,7.0,6.9,105,140,2022-07-17,Activo,
+768,Santiago,Flores,23,M,Educación,2,santiago.flores@universidad.edu,555-0768,7.08,51,5,8,Alto,0,7.4,6.8,6.7,7.4,7.1,26,40,2025-01-17,Activo,
+769,Rodrigo,Castillo,22,M,Ingeniería,6,rodrigo.castillo@universidad.edu,555-0769,4.89,86,2,22,Alto,1,5.3,4.9,4.9,4.6,4.9,90,120,2023-01-18,En Riesgo,Baja participación
+770,Fernando,Vargas,23,M,Educación,6,fernando.vargas@universidad.edu,555-0770,7.91,90,4,17,Bajo,0,7.8,7.8,7.9,8.4,8.0,85,120,2023-01-18,Activo,
+771,Constanza,Aguilar,25,F,Derecho,4,constanza.aguilar@universidad.edu,555-0771,9.1,97,2,11,Alto,0,9.4,9.0,8.7,9.6,9.2,42,80,2024-01-18,Condicional,
+772,Isabella,Ramírez,26,F,Educación,6,isabella.ramírez@universidad.edu,555-0772,6.27,54,2,20,Alto,1,6.0,6.3,6.6,6.0,6.2,66,120,2023-01-18,En Riesgo,Baja asistencia
+773,Esperanza,Ramírez,24,F,Administración,5,esperanza.ramírez@universidad.edu,555-0773,8.75,74,2,13,Bajo,0,9.2,8.4,9.0,8.9,8.9,67,100,2023-07-17,Activo,
+774,Mariana,Ramos,19,F,Arquitectura,7,mariana.ramos@universidad.edu,555-0774,8.13,95,1,12,Alto,0,8.5,8.4,8.0,8.4,8.3,105,140,2022-07-17,Activo,
+775,Vicente,Ortega,25,M,Educación,7,vicente.ortega@universidad.edu,555-0775,5.04,66,5,17,Bajo,1,5.0,4.7,4.7,5.5,5.0,105,140,2022-07-17,En Riesgo,Problemas económicos
+776,Isidora,Castillo,19,F,Arte,2,isidora.castillo@universidad.edu,555-0776,4.13,84,3,22,Bajo,0,4.5,4.2,4.0,4.5,4.3,24,40,2025-01-17,Activo,
+777,Patricia,Hernández,18,F,Economía,1,patricia.hernández@universidad.edu,555-0777,6.53,54,4,4,Medio,1,6.7,6.7,6.2,7.0,6.7,14,20,2025-07-16,En Riesgo,Bajo rendimiento académico
+778,Javiera,Mendoza,20,F,Derecho,3,javiera.mendoza@universidad.edu,555-0778,7.22,94,3,20,Medio,0,6.8,7.1,7.4,7.6,7.2,39,60,2024-07-16,Activo,
+779,Isabella,García,22,F,Enfermería,1,isabella.garcía@universidad.edu,555-0779,8.93,53,2,6,Medio,1,8.7,9.2,8.8,9.1,8.9,15,20,2025-07-16,En Riesgo,Pocas horas de estudio
+780,Antonella,Rojas,19,F,Psicología,3,antonella.rojas@universidad.edu,555-0780,7.95,68,2,1,Medio,1,7.5,7.5,7.7,7.5,7.5,45,60,2024-07-16,En Riesgo,Pocas horas de estudio
+781,Miguel,Herrera,21,M,Economía,8,miguel.herrera@universidad.edu,555-0781,5.03,51,1,13,Bajo,1,5.0,4.9,5.4,4.8,5.0,106,160,2022-01-18,En Riesgo,
+782,Cristóbal,Vargas,21,M,Derecho,6,cristóbal.vargas@universidad.edu,555-0782,9.21,72,5,24,Medio,0,8.9,9.6,9.0,9.1,9.2,90,120,2023-01-18,Activo,
+783,Ignacio,Medina,21,M,Derecho,5,ignacio.medina@universidad.edu,555-0783,6.67,52,2,1,Alto,1,6.9,6.8,7.1,6.6,6.8,75,100,2023-07-17,En Riesgo,Baja asistencia
+784,Isabella,Medina,18,F,Economía,7,isabella.medina@universidad.edu,555-0784,9.51,82,1,2,Medio,0,9.5,9.4,9.2,9.7,9.4,76,140,2022-07-17,Condicional,
+785,Diego,Delgado,24,M,Administración,6,diego.delgado@universidad.edu,555-0785,8.36,55,4,25,Alto,0,8.4,7.9,8.0,8.4,8.2,90,120,2023-01-18,Activo,
+786,Benjamín,Jiménez,26,M,Derecho,4,benjamín.jiménez@universidad.edu,555-0786,8.87,67,2,15,Medio,1,8.8,8.5,8.7,8.8,8.7,50,80,2024-01-18,En Riesgo,
+787,Fernando,Castillo,19,M,Arte,7,fernando.castillo@universidad.edu,555-0787,6.5,73,2,18,Bajo,0,6.8,6.7,6.0,6.6,6.5,73,140,2022-07-17,Activo,
+788,Emilio,Pérez,18,M,Derecho,8,emilio.pérez@universidad.edu,555-0788,8.01,84,4,11,Medio,0,7.6,7.6,7.9,8.4,7.9,120,160,2022-01-18,Activo,
+789,Santiago,Vega,19,M,Ingeniería,5,santiago.vega@universidad.edu,555-0789,6.45,73,3,16,Alto,0,6.0,6.2,6.5,6.4,6.3,52,100,2023-07-17,Activo,
+790,Nicolás,Flores,22,M,Arquitectura,4,nicolás.flores@universidad.edu,555-0790,8.91,56,1,20,Bajo,1,9.0,9.2,8.8,8.7,8.9,60,80,2024-01-18,En Riesgo,
+791,Antonella,Romero,21,F,Derecho,5,antonella.romero@universidad.edu,555-0791,6.93,52,3,4,Medio,1,7.3,7.0,7.4,7.0,7.2,72,100,2023-07-17,En Riesgo,Problemas familiares
+792,Carmen,López,20,F,Derecho,4,carmen.lópez@universidad.edu,555-0792,5.2,61,4,22,Medio,1,5.6,5.6,5.6,5.6,5.6,60,80,2024-01-18,En Riesgo,Bajo rendimiento académico
+793,Vicente,Martínez,25,M,Ingeniería,8,vicente.martínez@universidad.edu,555-0793,6.65,97,3,11,Bajo,0,6.3,6.3,6.5,6.3,6.4,96,160,2022-01-18,Condicional,
+794,Nicolás,Romero,19,M,Psicología,3,nicolás.romero@universidad.edu,555-0794,7.15,66,3,25,Bajo,0,7.6,7.0,7.3,7.2,7.3,40,60,2024-07-16,Activo,
+795,Florencia,Rojas,25,F,Derecho,2,florencia.rojas@universidad.edu,555-0795,6.82,63,4,11,Bajo,0,6.9,7.2,6.7,6.6,6.8,30,40,2025-01-17,Activo,
+796,Mateo,Castillo,25,M,Arquitectura,5,mateo.castillo@universidad.edu,555-0796,4.38,73,5,14,Medio,0,4.1,4.2,4.1,4.2,4.2,75,100,2023-07-17,Activo,
+797,Carmen,Delgado,19,F,Psicología,2,carmen.delgado@universidad.edu,555-0797,8.84,59,1,22,Medio,1,9.2,8.5,9.1,8.4,8.8,24,40,2025-01-17,En Riesgo,Pocas horas de estudio
+798,Isidora,Aguilar,21,F,Educación,3,isidora.aguilar@universidad.edu,555-0798,7.5,89,2,18,Bajo,0,7.8,7.7,8.0,7.2,7.7,34,60,2024-07-16,Condicional,
+799,Constanza,Vega,23,F,Economía,2,constanza.vega@universidad.edu,555-0799,6.27,76,5,20,Medio,0,6.0,6.1,6.2,6.3,6.2,30,40,2025-01-17,Activo,
+800,Isabella,González,22,F,Enfermería,2,isabella.gonzález@universidad.edu,555-0800,8.75,81,2,1,Bajo,0,9.0,8.5,8.8,8.4,8.7,30,40,2025-01-17,Activo,
+801,Santiago,López,22,M,Economía,2,santiago.lópez@universidad.edu,555-0801,5.62,73,3,1,Bajo,1,5.8,5.8,5.7,5.9,5.8,30,40,2025-01-17,En Riesgo,Pocas horas de estudio
+802,Vicente,Rodríguez,24,M,Enfermería,3,vicente.rodríguez@universidad.edu,555-0802,5.0,76,1,14,Bajo,1,5.2,4.7,4.6,5.5,5.0,45,60,2024-07-16,En Riesgo,Problemas económicos
+803,Valeria,Rojas,22,F,Medicina,1,valeria.rojas@universidad.edu,555-0803,6.35,81,1,10,Medio,0,6.8,6.6,6.4,6.0,6.4,15,20,2025-07-16,Activo,
+804,Camila,Castro,18,F,Ingeniería,4,camila.castro@universidad.edu,555-0804,5.73,58,5,17,Bajo,1,6.0,5.8,5.9,5.7,5.9,60,80,2024-01-18,En Riesgo,Pocas horas de estudio
+805,Lucía,Morales,20,F,Economía,1,lucía.morales@universidad.edu,555-0805,6.41,58,5,9,Medio,0,6.4,6.7,6.7,6.0,6.5,15,20,2025-07-16,Activo,
+806,Cristóbal,Morales,20,M,Arquitectura,7,cristóbal.morales@universidad.edu,555-0806,9.09,62,5,13,Alto,0,9.0,8.8,9.3,9.0,9.0,105,140,2022-07-17,Activo,
+807,Agustín,Vargas,25,M,Ingeniería,4,agustín.vargas@universidad.edu,555-0807,8.6,74,2,21,Bajo,0,8.1,8.7,8.4,8.5,8.4,60,80,2024-01-18,Activo,
+808,Daniela,Mendoza,20,F,Medicina,2,daniela.mendoza@universidad.edu,555-0808,8.65,67,1,22,Medio,1,8.5,8.2,8.9,8.8,8.6,22,40,2025-01-17,En Riesgo,Baja asistencia
+809,Florencia,Guerrero,20,F,Ingeniería,7,florencia.guerrero@universidad.edu,555-0809,4.48,79,2,17,Alto,1,4.9,4.2,4.1,4.8,4.5,82,140,2022-07-17,En Riesgo,Problemas familiares
+810,Renata,García,24,F,Derecho,1,renata.garcía@universidad.edu,555-0810,8.78,65,4,24,Bajo,0,8.7,9.1,9.1,9.1,9.0,11,20,2025-07-16,Activo,
+811,Isidora,Ortega,24,F,Medicina,2,isidora.ortega@universidad.edu,555-0811,4.01,79,2,25,Alto,1,4.0,4.1,4.4,4.1,4.2,30,40,2025-01-17,En Riesgo,Bajo rendimiento académico
+812,Carlos,Pérez,21,M,Administración,6,carlos.pérez@universidad.edu,555-0812,6.19,90,2,13,Medio,0,6.0,6.1,6.5,6.0,6.2,90,120,2023-01-18,Activo,
+813,Gabriel,Rojas,23,M,Derecho,5,gabriel.rojas@universidad.edu,555-0813,4.67,79,1,12,Bajo,1,4.5,4.6,5.0,4.8,4.7,75,100,2023-07-17,En Riesgo,Pocas horas de estudio
+814,Miguel,Rodríguez,18,M,Arte,1,miguel.rodríguez@universidad.edu,555-0814,4.12,57,4,7,Medio,1,4.2,4.6,4.0,4.1,4.2,14,20,2025-07-16,En Riesgo,Baja asistencia
+815,Ignacio,Morales,26,M,Arquitectura,3,ignacio.morales@universidad.edu,555-0815,5.51,95,3,14,Medio,0,5.4,5.6,5.6,5.7,5.6,32,60,2024-07-16,Condicional,
+816,Carlos,Moreno,18,M,Enfermería,5,carlos.moreno@universidad.edu,555-0816,9.58,54,1,8,Alto,1,9.9,9.9,9.5,9.1,9.6,70,100,2023-07-17,En Riesgo,Baja participación
+817,Regina,Rojas,20,F,Medicina,6,regina.rojas@universidad.edu,555-0817,8.82,65,2,24,Medio,1,9.2,8.5,8.7,8.8,8.8,84,120,2023-01-18,En Riesgo,Problemas económicos
+818,Joaquín,Guerrero,20,M,Medicina,1,joaquín.guerrero@universidad.edu,555-0818,9.12,80,3,24,Medio,0,8.7,9.4,9.3,8.7,9.0,11,20,2025-07-16,Activo,
+819,Joaquín,Castillo,23,M,Ingeniería,4,joaquín.castillo@universidad.edu,555-0819,9.45,67,3,19,Bajo,0,9.9,9.8,9.3,9.5,9.6,40,80,2024-01-18,Condicional,
+820,Regina,Ramírez,23,F,Arquitectura,6,regina.ramírez@universidad.edu,555-0820,9.29,64,2,12,Bajo,1,8.8,9.2,9.2,9.0,9.1,90,120,2023-01-18,En Riesgo,Baja participación
+821,Sebastián,Aguilar,25,M,Psicología,2,sebastián.aguilar@universidad.edu,555-0821,5.88,90,2,16,Alto,1,6.1,6.1,5.5,5.7,5.8,28,40,2025-01-17,En Riesgo,Bajo rendimiento académico
+822,Ana,Delgado,26,F,Enfermería,5,ana.delgado@universidad.edu,555-0822,6.25,66,4,11,Medio,0,6.7,6.5,5.8,5.9,6.2,75,100,2023-07-17,Activo,
+823,Magdalena,Medina,25,F,Economía,7,magdalena.medina@universidad.edu,555-0823,6.35,58,3,19,Medio,0,6.8,6.3,6.4,6.0,6.4,89,140,2022-07-17,Activo,
+824,Carlos,Guerrero,23,M,Enfermería,4,carlos.guerrero@universidad.edu,555-0824,9.32,98,5,20,Bajo,0,9.5,8.9,9.6,9.0,9.2,60,80,2024-01-18,Condicional,
+825,Fernando,Moreno,23,M,Ingeniería,3,fernando.moreno@universidad.edu,555-0825,4.32,62,5,21,Bajo,1,4.5,4.5,4.4,4.2,4.4,45,60,2024-07-16,En Riesgo,Baja asistencia
+826,Diego,Castillo,19,M,Administración,7,diego.castillo@universidad.edu,555-0826,4.08,60,2,10,Bajo,1,4.0,4.3,4.0,4.0,4.1,86,140,2022-07-17,En Riesgo,
+827,Joaquín,Castro,25,M,Arquitectura,5,joaquín.castro@universidad.edu,555-0827,8.08,56,2,2,Alto,1,7.9,7.7,8.5,7.8,8.0,55,100,2023-07-17,En Riesgo,Baja asistencia
+828,Constanza,Ruiz,19,F,Enfermería,2,constanza.ruiz@universidad.edu,555-0828,8.46,66,4,11,Bajo,0,8.1,8.5,8.9,8.6,8.5,26,40,2025-01-17,Activo,
+829,Maximiliano,Martínez,25,M,Ingeniería,7,maximiliano.martínez@universidad.edu,555-0829,6.53,80,3,7,Medio,0,6.6,6.2,6.1,6.2,6.3,105,140,2022-07-17,Condicional,
+830,Javiera,López,23,F,Arte,8,javiera.lópez@universidad.edu,555-0830,7.31,67,2,11,Alto,1,7.3,7.7,7.7,7.7,7.6,120,160,2022-01-18,En Riesgo,Baja participación
+831,Ana,Rodríguez,25,F,Economía,4,ana.rodríguez@universidad.edu,555-0831,5.1,71,1,9,Bajo,1,5.0,5.1,5.0,5.3,5.1,60,80,2024-01-18,En Riesgo,Bajo rendimiento académico
+832,Renata,Vargas,26,F,Educación,8,renata.vargas@universidad.edu,555-0832,9.41,96,2,14,Medio,0,9.0,9.0,9.0,9.7,9.2,120,160,2022-01-18,Activo,
+833,Maximiliano,Mendoza,22,M,Derecho,7,maximiliano.mendoza@universidad.edu,555-0833,7.61,81,2,19,Alto,0,7.6,7.9,7.6,7.4,7.6,86,140,2022-07-17,Activo,
+834,Santiago,Ruiz,23,M,Enfermería,2,santiago.ruiz@universidad.edu,555-0834,9.75,96,5,15,Medio,0,10.0,9.3,10.0,9.8,9.8,30,40,2025-01-17,Condicional,
+835,Esteban,Romero,19,M,Medicina,8,esteban.romero@universidad.edu,555-0835,4.97,51,1,15,Medio,1,4.5,5.1,5.3,5.2,5.0,93,160,2022-01-18,En Riesgo,
+836,Mateo,Castillo,25,M,Economía,4,mateo.castillo@universidad.edu,555-0836,7.29,90,2,14,Medio,0,7.4,7.1,6.9,7.5,7.2,60,80,2024-01-18,Condicional,
+837,Joaquín,Delgado,18,M,Administración,4,joaquín.delgado@universidad.edu,555-0837,8.98,62,2,12,Bajo,1,8.8,9.2,9.3,9.1,9.1,51,80,2024-01-18,En Riesgo,Pocas horas de estudio
+838,Carmen,Silva,19,F,Administración,4,carmen.silva@universidad.edu,555-0838,8.51,91,1,7,Bajo,0,8.8,8.3,8.7,8.2,8.5,60,80,2024-01-18,Activo,
+839,Camila,Hernández,18,F,Enfermería,2,camila.hernández@universidad.edu,555-0839,8.14,80,1,10,Bajo,0,7.7,8.4,8.1,7.9,8.0,30,40,2025-01-17,Activo,
+840,Isidora,Herrera,23,F,Ingeniería,6,isidora.herrera@universidad.edu,555-0840,8.57,100,5,4,Alto,0,8.3,8.4,8.4,8.6,8.4,90,120,2023-01-18,Activo,
+841,José,Ruiz,26,M,Economía,4,josé.ruiz@universidad.edu,555-0841,5.37,60,1,10,Bajo,1,5.8,5.1,5.2,5.6,5.4,43,80,2024-01-18,En Riesgo,Baja asistencia
+842,Rodrigo,Delgado,20,M,Medicina,7,rodrigo.delgado@universidad.edu,555-0842,5.55,75,5,14,Medio,0,6.1,5.1,5.3,5.6,5.5,105,140,2022-07-17,Activo,
+843,Joaquín,Rojas,19,M,Psicología,8,joaquín.rojas@universidad.edu,555-0843,4.42,87,2,22,Bajo,1,4.4,4.7,4.7,4.7,4.6,108,160,2022-01-18,En Riesgo,Baja asistencia
+844,Isidora,Pérez,22,F,Arte,4,isidora.pérez@universidad.edu,555-0844,4.93,63,1,8,Alto,1,4.5,5.2,5.1,4.7,4.9,57,80,2024-01-18,En Riesgo,Baja participación
+845,Roberto,Rodríguez,21,M,Arquitectura,2,roberto.rodríguez@universidad.edu,555-0845,5.11,96,3,16,Bajo,0,4.9,4.7,5.4,4.7,4.9,23,40,2025-01-17,Activo,
+846,Lucía,Guerrero,23,F,Arquitectura,7,lucía.guerrero@universidad.edu,555-0846,9.72,55,2,24,Alto,1,10.0,9.2,10.0,10.0,9.8,105,140,2022-07-17,En Riesgo,Pocas horas de estudio
+847,Camila,Ramírez,18,F,Ingeniería,7,camila.ramírez@universidad.edu,555-0847,7.73,70,3,10,Alto,0,8.0,8.2,7.8,8.1,8.0,105,140,2022-07-17,Condicional,
+848,Mateo,Rojas,18,M,Administración,7,mateo.rojas@universidad.edu,555-0848,8.27,53,4,18,Alto,0,8.7,7.8,8.5,8.4,8.3,98,140,2022-07-17,Condicional,
+849,Mariana,Hernández,26,F,Enfermería,2,mariana.hernández@universidad.edu,555-0849,8.46,91,4,12,Alto,0,8.7,8.7,8.8,8.8,8.8,23,40,2025-01-17,Condicional,
+850,Esteban,Mendoza,22,M,Psicología,4,esteban.mendoza@universidad.edu,555-0850,8.09,54,4,9,Alto,0,8.1,7.7,7.9,7.8,7.9,52,80,2024-01-18,Condicional,
+851,Matías,Aguilar,26,M,Enfermería,5,matías.aguilar@universidad.edu,555-0851,4.87,77,5,13,Alto,0,5.1,4.6,4.6,4.9,4.8,63,100,2023-07-17,Activo,
+852,Camila,Pérez,21,F,Derecho,4,camila.pérez@universidad.edu,555-0852,6.91,52,2,17,Bajo,1,7.2,7.4,6.7,7.3,7.2,60,80,2024-01-18,En Riesgo,Problemas familiares
+853,Nicolás,Delgado,19,M,Arte,1,nicolás.delgado@universidad.edu,555-0853,5.59,94,1,24,Medio,1,5.8,5.6,5.9,6.0,5.8,15,20,2025-07-16,En Riesgo,Problemas familiares
+854,Florencia,Ortega,21,F,Arquitectura,1,florencia.ortega@universidad.edu,555-0854,9.86,61,2,23,Medio,1,9.6,9.5,10.0,10.0,9.8,15,20,2025-07-16,En Riesgo,Problemas económicos
+855,José,Ortega,19,M,Medicina,1,josé.ortega@universidad.edu,555-0855,5.64,82,1,4,Alto,1,5.2,5.3,5.3,5.6,5.3,13,20,2025-07-16,En Riesgo,Baja participación
+856,Benjamín,Vega,25,M,Arquitectura,7,benjamín.vega@universidad.edu,555-0856,5.19,67,3,3,Medio,1,5.0,4.9,4.9,5.3,5.0,96,140,2022-07-17,En Riesgo,Problemas familiares
+857,Isabella,Vega,18,F,Arquitectura,7,isabella.vega@universidad.edu,555-0857,8.02,87,5,10,Bajo,0,8.0,7.6,8.5,7.9,8.0,105,140,2022-07-17,Activo,
+858,Patricia,Rojas,23,F,Medicina,1,patricia.rojas@universidad.edu,555-0858,8.29,60,2,8,Alto,1,8.2,8.1,8.3,8.6,8.3,15,20,2025-07-16,En Riesgo,Baja participación
+859,Carlos,Sánchez,20,M,Psicología,2,carlos.sánchez@universidad.edu,555-0859,8.77,62,2,5,Alto,1,8.5,8.7,8.6,8.4,8.5,30,40,2025-01-17,En Riesgo,Problemas familiares
+860,Amparo,Torres,19,F,Medicina,5,amparo.torres@universidad.edu,555-0860,6.88,70,3,14,Alto,0,6.6,6.9,7.3,6.4,6.8,75,100,2023-07-17,Activo,
+861,Sebastián,Pérez,21,M,Administración,5,sebastián.pérez@universidad.edu,555-0861,8.48,56,4,8,Alto,0,8.0,8.9,8.5,8.7,8.5,75,100,2023-07-17,Activo,
+862,Maximiliano,García,26,M,Educación,5,maximiliano.garcía@universidad.edu,555-0862,4.22,85,2,19,Alto,1,4.2,4.0,4.0,4.0,4.0,50,100,2023-07-17,En Riesgo,Pocas horas de estudio
+863,Agustín,Pérez,22,M,Ingeniería,3,agustín.pérez@universidad.edu,555-0863,5.89,52,3,13,Medio,1,5.9,6.1,6.2,5.7,6.0,45,60,2024-07-16,En Riesgo,Bajo rendimiento académico
+864,Isidora,Ortega,25,F,Enfermería,1,isidora.ortega@universidad.edu,555-0864,5.47,93,1,17,Alto,1,5.4,5.9,5.2,5.1,5.4,15,20,2025-07-16,En Riesgo,Problemas económicos
+865,Sofía,García,24,F,Derecho,3,sofía.garcía@universidad.edu,555-0865,5.1,67,5,7,Alto,1,4.8,5.5,5.0,4.7,5.0,44,60,2024-07-16,En Riesgo,Problemas económicos
+866,Esperanza,Silva,18,F,Enfermería,1,esperanza.silva@universidad.edu,555-0866,8.4,65,4,14,Medio,0,8.7,8.4,8.6,8.1,8.5,15,20,2025-07-16,Activo,
+867,Florencia,Medina,22,F,Ingeniería,1,florencia.medina@universidad.edu,555-0867,6.92,71,1,12,Medio,0,7.2,6.6,6.7,7.4,7.0,15,20,2025-07-16,Activo,
+868,Isidora,García,21,F,Arte,8,isidora.garcía@universidad.edu,555-0868,6.26,72,3,10,Medio,0,6.2,6.2,6.7,6.0,6.3,120,160,2022-01-18,Activo,
+869,Florencia,Jiménez,24,F,Enfermería,3,florencia.jiménez@universidad.edu,555-0869,4.59,76,3,7,Alto,1,4.4,4.4,4.3,4.3,4.4,30,60,2024-07-16,En Riesgo,
+870,Valentina,Torres,21,F,Ingeniería,6,valentina.torres@universidad.edu,555-0870,5.19,62,4,19,Medio,1,4.9,5.4,5.5,5.4,5.3,90,120,2023-01-18,En Riesgo,Problemas familiares
+871,Sofía,Jiménez,24,F,Arte,1,sofía.jiménez@universidad.edu,555-0871,5.93,83,1,3,Bajo,1,5.5,5.5,5.9,5.5,5.6,11,20,2025-07-16,En Riesgo,Baja asistencia
+872,Sebastián,Romero,18,M,Administración,7,sebastián.romero@universidad.edu,555-0872,4.82,79,1,16,Medio,1,4.7,5.0,4.9,4.4,4.8,105,140,2022-07-17,En Riesgo,Baja participación
+873,Esperanza,González,25,F,Arte,5,esperanza.gonzález@universidad.edu,555-0873,7.85,99,3,1,Alto,0,8.2,7.5,7.8,8.0,7.9,70,100,2023-07-17,Activo,
+874,Rodrigo,Ruiz,25,M,Arte,4,rodrigo.ruiz@universidad.edu,555-0874,8.68,82,1,7,Alto,0,8.9,8.6,9.1,8.4,8.8,48,80,2024-01-18,Condicional,
+875,Emilio,Ramírez,26,M,Economía,5,emilio.ramírez@universidad.edu,555-0875,8.95,96,2,23,Alto,0,9.2,8.8,9.2,9.1,9.1,75,100,2023-07-17,Activo,
+876,Sofía,López,26,F,Derecho,6,sofía.lópez@universidad.edu,555-0876,6.72,95,3,25,Bajo,0,6.8,6.6,7.0,6.4,6.7,87,120,2023-01-18,Activo,
+877,María,Romero,21,F,Administración,7,maría.romero@universidad.edu,555-0877,8.88,72,3,22,Bajo,0,8.9,9.3,8.7,8.6,8.9,105,140,2022-07-17,Activo,
+878,Sofía,Jiménez,24,F,Psicología,2,sofía.jiménez@universidad.edu,555-0878,4.92,74,5,4,Medio,1,5.4,4.6,5.4,5.1,5.1,30,40,2025-01-17,En Riesgo,Problemas familiares
+879,Valentina,Mendoza,22,F,Enfermería,1,valentina.mendoza@universidad.edu,555-0879,9.8,73,1,21,Bajo,0,9.6,9.9,10.0,9.6,9.8,11,20,2025-07-16,Activo,
+880,Camila,Medina,26,F,Administración,1,camila.medina@universidad.edu,555-0880,7.62,58,5,13,Bajo,0,7.8,7.9,7.9,7.9,7.9,15,20,2025-07-16,Activo,
+881,Valeria,Romero,26,F,Enfermería,6,valeria.romero@universidad.edu,555-0881,6.82,66,1,2,Alto,1,6.7,6.7,6.8,6.6,6.7,90,120,2023-01-18,En Riesgo,Pocas horas de estudio
+882,Andrés,Medina,23,M,Economía,2,andrés.medina@universidad.edu,555-0882,9.52,54,3,24,Alto,0,9.7,9.3,9.6,9.1,9.4,30,40,2025-01-17,Activo,
+883,Rodrigo,Medina,24,M,Arquitectura,3,rodrigo.medina@universidad.edu,555-0883,4.6,72,5,25,Medio,0,4.7,5.1,4.9,4.5,4.8,42,60,2024-07-16,Activo,
+884,José,Moreno,22,M,Educación,7,josé.moreno@universidad.edu,555-0884,7.03,70,4,13,Medio,0,7.0,7.3,7.4,7.1,7.2,105,140,2022-07-17,Activo,
+885,Nicolás,Ramírez,21,M,Arte,8,nicolás.ramírez@universidad.edu,555-0885,5.81,75,4,4,Medio,1,5.6,5.8,6.3,5.4,5.8,120,160,2022-01-18,En Riesgo,Problemas familiares
+886,Florencia,Pérez,25,F,Medicina,1,florencia.pérez@universidad.edu,555-0886,7.72,68,1,3,Medio,1,7.4,7.3,7.9,8.0,7.7,11,20,2025-07-16,En Riesgo,Pocas horas de estudio
+887,Florencia,Vega,19,F,Educación,5,florencia.vega@universidad.edu,555-0887,6.99,71,2,8,Alto,0,6.6,7.2,7.0,7.5,7.1,74,100,2023-07-17,Activo,
+888,Carmen,Herrera,24,F,Economía,5,carmen.herrera@universidad.edu,555-0888,9.1,72,4,11,Bajo,0,8.7,9.4,9.3,8.7,9.0,75,100,2023-07-17,Activo,
+889,Javiera,Ruiz,21,F,Medicina,8,javiera.ruiz@universidad.edu,555-0889,5.69,100,5,12,Alto,0,5.8,5.5,6.2,5.2,5.7,120,160,2022-01-18,Activo,
+890,Valentina,Vega,25,F,Enfermería,3,valentina.vega@universidad.edu,555-0890,9.29,98,5,8,Medio,0,9.4,9.4,9.6,9.8,9.6,45,60,2024-07-16,Activo,
+891,Mariana,Hernández,21,F,Medicina,3,mariana.hernández@universidad.edu,555-0891,9.83,70,3,1,Medio,0,10.0,9.8,9.9,9.8,9.9,45,60,2024-07-16,Activo,
+892,Daniela,García,21,F,Educación,3,daniela.garcía@universidad.edu,555-0892,4.05,85,3,5,Alto,1,4.0,4.0,4.2,4.0,4.0,45,60,2024-07-16,En Riesgo,Bajo rendimiento académico
+893,Laura,Torres,21,F,Educación,6,laura.torres@universidad.edu,555-0893,7.59,82,2,12,Bajo,0,7.3,7.6,7.8,7.3,7.5,90,120,2023-01-18,Activo,
+894,Magdalena,Castillo,24,F,Educación,2,magdalena.castillo@universidad.edu,555-0894,4.03,62,3,3,Medio,1,4.1,4.4,4.2,4.4,4.3,30,40,2025-01-17,En Riesgo,Baja participación
+895,Constanza,García,19,F,Economía,4,constanza.garcía@universidad.edu,555-0895,4.87,62,2,8,Alto,1,5.0,4.7,4.5,4.9,4.8,60,80,2024-01-18,En Riesgo,Problemas familiares
+896,Camila,Castro,22,F,Arquitectura,4,camila.castro@universidad.edu,555-0896,8.65,78,2,4,Alto,0,8.3,8.6,9.0,9.0,8.7,60,80,2024-01-18,Activo,
+897,Vicente,Castillo,25,M,Derecho,7,vicente.castillo@universidad.edu,555-0897,5.15,89,1,10,Medio,1,4.9,5.5,5.4,5.1,5.2,105,140,2022-07-17,En Riesgo,Pocas horas de estudio
+898,Sofía,Ortega,18,F,Derecho,5,sofía.ortega@universidad.edu,555-0898,6.28,79,4,6,Alto,0,6.4,6.5,6.5,6.1,6.4,75,100,2023-07-17,Condicional,
+899,Gabriel,Herrera,19,M,Arte,5,gabriel.herrera@universidad.edu,555-0899,5.17,99,1,15,Alto,1,4.7,4.8,4.8,4.7,4.8,58,100,2023-07-17,En Riesgo,Problemas económicos
+900,Sebastián,Herrera,24,M,Administración,6,sebastián.herrera@universidad.edu,555-0900,8.93,83,5,22,Bajo,0,9.2,8.5,9.4,9.0,9.0,87,120,2023-01-18,Activo,
+901,Regina,Vargas,21,F,Economía,7,regina.vargas@universidad.edu,555-0901,8.84,79,4,3,Alto,0,9.1,9.1,8.5,8.8,8.9,91,140,2022-07-17,Activo,
+902,Joaquín,Rojas,22,M,Administración,3,joaquín.rojas@universidad.edu,555-0902,5.45,72,3,8,Bajo,0,5.6,5.4,5.0,5.4,5.3,41,60,2024-07-16,Activo,
+903,Constanza,Delgado,24,F,Administración,5,constanza.delgado@universidad.edu,555-0903,6.78,51,2,19,Medio,1,7.1,6.4,6.7,6.9,6.8,62,100,2023-07-17,En Riesgo,Baja participación
+904,Emilio,Castillo,24,M,Ingeniería,4,emilio.castillo@universidad.edu,555-0904,4.34,52,2,1,Medio,1,4.5,4.3,4.8,4.3,4.5,60,80,2024-01-18,En Riesgo,Bajo rendimiento académico
+905,Lucía,Morales,24,F,Derecho,6,lucía.morales@universidad.edu,555-0905,6.2,68,5,6,Alto,1,6.7,6.6,5.8,5.8,6.2,90,120,2023-01-18,En Riesgo,Pocas horas de estudio
+906,Constanza,García,22,F,Psicología,4,constanza.garcía@universidad.edu,555-0906,7.24,75,5,8,Alto,0,6.9,6.9,7.3,7.0,7.0,56,80,2024-01-18,Activo,
+907,Gabriel,Romero,24,M,Psicología,4,gabriel.romero@universidad.edu,555-0907,8.31,66,2,4,Bajo,1,8.1,8.4,8.2,8.8,8.4,56,80,2024-01-18,En Riesgo,Bajo rendimiento académico
+908,Emilio,Flores,23,M,Arte,3,emilio.flores@universidad.edu,555-0908,9.49,78,5,15,Alto,0,9.5,9.8,9.1,9.3,9.4,45,60,2024-07-16,Activo,
+909,Patricia,Guerrero,20,F,Derecho,7,patricia.guerrero@universidad.edu,555-0909,7.19,98,4,19,Medio,0,7.4,7.7,7.3,7.0,7.4,105,140,2022-07-17,Activo,
+910,Maximiliano,Aguilar,26,M,Ingeniería,4,maximiliano.aguilar@universidad.edu,555-0910,4.51,86,5,10,Alto,0,4.4,4.3,5.0,5.0,4.7,60,80,2024-01-18,Activo,
+911,Ignacio,Silva,19,M,Medicina,8,ignacio.silva@universidad.edu,555-0911,6.95,79,3,17,Alto,0,7.3,7.1,6.5,6.9,6.9,113,160,2022-01-18,Activo,
+912,Isidora,Ortega,25,F,Arquitectura,7,isidora.ortega@universidad.edu,555-0912,4.42,76,1,21,Medio,1,4.5,4.7,4.2,4.9,4.6,85,140,2022-07-17,En Riesgo,Problemas económicos
+913,María,Ortega,23,F,Educación,6,maría.ortega@universidad.edu,555-0913,4.64,72,4,7,Alto,1,5.1,4.6,4.3,5.1,4.8,90,120,2023-01-18,En Riesgo,Problemas económicos
+914,Valeria,Castro,26,F,Ingeniería,8,valeria.castro@universidad.edu,555-0914,8.66,70,5,14,Medio,0,8.7,8.4,8.6,8.7,8.6,88,160,2022-01-18,Condicional,
+915,Magdalena,Vega,26,F,Educación,4,magdalena.vega@universidad.edu,555-0915,9.91,84,4,10,Medio,0,10.0,10.0,9.9,9.8,9.9,42,80,2024-01-18,Condicional,
+916,Santiago,González,18,M,Enfermería,3,santiago.gonzález@universidad.edu,555-0916,9.51,91,3,4,Bajo,0,9.5,9.3,9.9,9.4,9.5,45,60,2024-07-16,Activo,
+917,Regina,Ruiz,25,F,Psicología,6,regina.ruiz@universidad.edu,555-0917,9.69,68,2,15,Alto,1,10.0,9.9,9.7,9.9,9.9,90,120,2023-01-18,En Riesgo,Baja asistencia
+918,Cristóbal,Ramos,21,M,Educación,7,cristóbal.ramos@universidad.edu,555-0918,8.32,92,3,11,Medio,0,8.5,7.9,8.7,7.9,8.2,105,140,2022-07-17,Activo,
+919,Natalia,Flores,20,F,Enfermería,6,natalia.flores@universidad.edu,555-0919,7.3,93,3,2,Alto,0,7.3,7.1,7.2,7.4,7.2,68,120,2023-01-18,Activo,
+920,Fernando,García,25,M,Enfermería,1,fernando.garcía@universidad.edu,555-0920,4.2,88,1,14,Alto,1,4.0,4.4,4.0,4.3,4.2,15,20,2025-07-16,En Riesgo,Problemas económicos
+921,Vicente,González,24,M,Educación,5,vicente.gonzález@universidad.edu,555-0921,7.93,61,5,17,Bajo,0,7.5,7.4,8.1,8.3,7.8,58,100,2023-07-17,Activo,
+922,Valentina,González,24,F,Enfermería,5,valentina.gonzález@universidad.edu,555-0922,6.43,59,5,7,Alto,1,6.7,6.8,6.8,5.9,6.6,52,100,2023-07-17,En Riesgo,Baja asistencia
+923,Julieta,Silva,26,F,Administración,6,julieta.silva@universidad.edu,555-0923,6.78,53,3,13,Medio,0,7.0,6.3,6.9,6.8,6.8,81,120,2023-01-18,Activo,
+924,Natalia,Silva,22,F,Arte,3,natalia.silva@universidad.edu,555-0924,6.42,52,3,12,Bajo,0,6.1,6.0,6.7,6.8,6.4,45,60,2024-07-16,Activo,
+925,José,Vega,21,M,Educación,1,josé.vega@universidad.edu,555-0925,8.46,93,3,9,Medio,0,8.5,8.1,8.9,8.7,8.6,15,20,2025-07-16,Activo,
+926,Roberto,Torres,24,M,Educación,4,roberto.torres@universidad.edu,555-0926,4.78,59,3,21,Alto,1,4.6,5.1,4.3,4.4,4.6,60,80,2024-01-18,En Riesgo,Pocas horas de estudio
+927,Gabriel,Moreno,20,M,Derecho,3,gabriel.moreno@universidad.edu,555-0927,6.96,97,2,9,Bajo,0,7.3,7.2,7.0,7.3,7.2,45,60,2024-07-16,Activo,
+928,Roberto,Guerrero,26,M,Enfermería,8,roberto.guerrero@universidad.edu,555-0928,5.87,88,4,12,Bajo,0,5.7,5.6,5.4,5.7,5.6,120,160,2022-01-18,Condicional,
+929,Mateo,Guerrero,19,M,Administración,1,mateo.guerrero@universidad.edu,555-0929,7.98,60,5,16,Alto,0,8.4,8.3,7.8,7.5,8.0,12,20,2025-07-16,Activo,
+930,Florencia,Rojas,24,F,Psicología,2,florencia.rojas@universidad.edu,555-0930,9.97,85,4,19,Alto,0,10.0,10.0,9.6,10.0,9.9,30,40,2025-01-17,Activo,
+931,Natalia,Ramos,25,F,Administración,4,natalia.ramos@universidad.edu,555-0931,7.95,69,1,15,Alto,1,8.0,8.4,7.7,8.1,8.0,53,80,2024-01-18,En Riesgo,Baja participación
+932,Matías,Aguilar,25,M,Enfermería,4,matías.aguilar@universidad.edu,555-0932,9.59,56,2,16,Medio,1,10.0,10.0,9.2,9.8,9.8,43,80,2024-01-18,En Riesgo,
+933,Fernando,Vega,22,M,Enfermería,2,fernando.vega@universidad.edu,555-0933,5.07,70,1,12,Bajo,1,4.8,5.1,5.5,5.3,5.2,25,40,2025-01-17,En Riesgo,Baja asistencia
+934,Santiago,Mendoza,26,M,Educación,1,santiago.mendoza@universidad.edu,555-0934,5.36,85,2,8,Alto,1,5.5,4.9,4.9,5.2,5.1,13,20,2025-07-16,En Riesgo,Baja participación
+935,Natalia,Ramírez,23,F,Arquitectura,4,natalia.ramírez@universidad.edu,555-0935,5.55,98,5,1,Medio,1,5.7,5.9,5.8,5.8,5.8,44,80,2024-01-18,En Riesgo,
+936,Alejandro,Pérez,18,M,Arte,6,alejandro.pérez@universidad.edu,555-0936,9.01,91,5,23,Medio,0,9.4,8.8,9.4,8.6,9.1,76,120,2023-01-18,Activo,
+937,Carlos,Moreno,19,M,Educación,4,carlos.moreno@universidad.edu,555-0937,9.87,74,2,16,Alto,0,9.8,10.0,9.6,9.7,9.8,60,80,2024-01-18,Activo,
+938,Antonella,Vargas,19,F,Medicina,1,antonella.vargas@universidad.edu,555-0938,6.92,76,5,16,Bajo,0,6.7,6.6,6.5,6.6,6.6,10,20,2025-07-16,Activo,
+939,Fernando,Herrera,23,M,Arquitectura,3,fernando.herrera@universidad.edu,555-0939,5.2,54,4,7,Bajo,1,5.6,5.0,5.3,5.4,5.3,30,60,2024-07-16,En Riesgo,Pocas horas de estudio
+940,Andrés,Castillo,22,M,Medicina,5,andrés.castillo@universidad.edu,555-0940,8.5,54,4,11,Alto,0,8.0,8.1,8.9,8.5,8.4,75,100,2023-07-17,Activo,
+941,Valeria,Romero,26,F,Medicina,4,valeria.romero@universidad.edu,555-0941,7.58,94,4,12,Alto,0,7.2,7.8,7.2,7.6,7.4,47,80,2024-01-18,Activo,
+942,Nicolás,Pérez,23,M,Psicología,7,nicolás.pérez@universidad.edu,555-0942,7.43,64,2,21,Alto,1,7.5,7.5,7.3,7.9,7.6,105,140,2022-07-17,En Riesgo,
+943,Matías,Castillo,20,M,Derecho,1,matías.castillo@universidad.edu,555-0943,7.73,88,4,19,Bajo,0,7.7,7.8,7.9,7.8,7.8,15,20,2025-07-16,Activo,
+944,Valeria,Moreno,25,F,Enfermería,1,valeria.moreno@universidad.edu,555-0944,6.0,82,3,25,Medio,0,5.8,5.9,6.1,5.9,5.9,15,20,2025-07-16,Condicional,
+945,Magdalena,Guerrero,26,F,Enfermería,5,magdalena.guerrero@universidad.edu,555-0945,5.81,69,5,10,Bajo,1,5.4,5.4,6.1,5.8,5.7,75,100,2023-07-17,En Riesgo,
+946,Esperanza,Castillo,18,F,Economía,1,esperanza.castillo@universidad.edu,555-0946,9.67,54,5,20,Medio,0,9.4,9.4,9.8,9.4,9.5,15,20,2025-07-16,Activo,
+947,Miguel,Guerrero,20,M,Economía,8,miguel.guerrero@universidad.edu,555-0947,9.95,63,2,22,Medio,1,9.5,9.8,9.9,10.0,9.8,120,160,2022-01-18,En Riesgo,Baja asistencia
+948,Emilio,Aguilar,19,M,Enfermería,3,emilio.aguilar@universidad.edu,555-0948,5.65,57,3,7,Medio,1,6.1,5.2,5.5,5.9,5.7,35,60,2024-07-16,En Riesgo,Baja participación
+949,Patricia,Mendoza,22,F,Arquitectura,2,patricia.mendoza@universidad.edu,555-0949,5.04,52,4,1,Medio,1,5.0,4.9,4.8,5.3,5.0,30,40,2025-01-17,En Riesgo,Pocas horas de estudio
+950,Amparo,Ramos,26,F,Medicina,4,amparo.ramos@universidad.edu,555-0950,4.6,60,5,21,Medio,1,4.8,4.8,4.2,4.4,4.6,53,80,2024-01-18,En Riesgo,
+951,Valeria,Jiménez,19,F,Educación,3,valeria.jiménez@universidad.edu,555-0951,8.46,70,5,3,Alto,0,8.7,8.5,8.2,8.4,8.4,34,60,2024-07-16,Activo,
+952,Magdalena,Flores,26,F,Ingeniería,1,magdalena.flores@universidad.edu,555-0952,4.52,79,3,5,Alto,1,4.7,4.9,4.9,4.2,4.7,15,20,2025-07-16,En Riesgo,Bajo rendimiento académico
+953,Diego,Castro,25,M,Ingeniería,2,diego.castro@universidad.edu,555-0953,9.35,70,1,22,Alto,0,9.1,9.4,9.3,9.6,9.3,24,40,2025-01-17,Activo,
+954,Diego,Medina,19,M,Psicología,2,diego.medina@universidad.edu,555-0954,5.15,69,5,9,Bajo,1,4.8,5.0,5.6,5.3,5.2,23,40,2025-01-17,En Riesgo,Baja asistencia
+955,Mateo,Jiménez,22,M,Educación,1,mateo.jiménez@universidad.edu,555-0955,6.2,55,3,4,Alto,1,6.2,6.7,5.9,6.2,6.2,15,20,2025-07-16,En Riesgo,Bajo rendimiento académico
+956,Esperanza,Jiménez,20,F,Arquitectura,2,esperanza.jiménez@universidad.edu,555-0956,4.56,89,3,11,Medio,0,4.2,5.0,4.6,4.2,4.5,23,40,2025-01-17,Activo,
+957,Cristóbal,Silva,25,M,Medicina,8,cristóbal.silva@universidad.edu,555-0957,8.14,72,5,3,Alto,0,7.8,8.3,8.2,8.0,8.1,95,160,2022-01-18,Condicional,
+958,Santiago,Mendoza,24,M,Arquitectura,6,santiago.mendoza@universidad.edu,555-0958,6.6,61,5,14,Alto,0,6.6,6.3,6.6,6.5,6.5,73,120,2023-01-18,Activo,
+959,Julieta,Ramos,20,F,Derecho,8,julieta.ramos@universidad.edu,555-0959,6.6,73,5,20,Bajo,0,6.6,6.9,7.0,6.8,6.8,107,160,2022-01-18,Activo,
+960,Mariana,Torres,25,F,Ingeniería,8,mariana.torres@universidad.edu,555-0960,4.61,77,3,10,Alto,0,4.3,4.2,4.7,4.5,4.4,112,160,2022-01-18,Activo,
+961,Lucía,Herrera,26,F,Ingeniería,8,lucía.herrera@universidad.edu,555-0961,4.53,62,1,22,Bajo,1,4.4,4.1,4.7,4.1,4.3,120,160,2022-01-18,En Riesgo,Problemas familiares
+962,Ana,Morales,18,F,Enfermería,4,ana.morales@universidad.edu,555-0962,7.94,94,5,4,Alto,0,8.4,8.1,7.6,8.2,8.1,43,80,2024-01-18,Activo,
+963,Joaquín,Castillo,18,M,Medicina,2,joaquín.castillo@universidad.edu,555-0963,6.31,54,2,8,Bajo,1,6.3,6.7,6.2,6.2,6.3,30,40,2025-01-17,En Riesgo,Pocas horas de estudio
+964,Vicente,García,18,M,Psicología,4,vicente.garcía@universidad.edu,555-0964,6.12,88,3,14,Bajo,0,6.1,6.6,6.3,6.0,6.2,55,80,2024-01-18,Activo,
+965,Laura,López,23,F,Arquitectura,8,laura.lópez@universidad.edu,555-0965,4.43,62,2,21,Medio,1,4.9,4.1,4.7,4.3,4.5,120,160,2022-01-18,En Riesgo,Problemas familiares
+966,María,Moreno,22,F,Medicina,5,maría.moreno@universidad.edu,555-0966,5.89,59,1,10,Medio,1,5.7,5.9,6.0,5.8,5.9,75,100,2023-07-17,En Riesgo,Problemas económicos
+967,Ignacio,Morales,25,M,Economía,3,ignacio.morales@universidad.edu,555-0967,5.47,76,5,22,Medio,0,5.6,5.9,5.4,5.8,5.7,45,60,2024-07-16,Activo,
+968,Alejandro,Herrera,21,M,Ingeniería,5,alejandro.herrera@universidad.edu,555-0968,5.65,81,2,9,Bajo,1,5.9,5.4,6.0,5.8,5.8,75,100,2023-07-17,En Riesgo,Problemas familiares
+969,Emilio,Morales,20,M,Derecho,2,emilio.morales@universidad.edu,555-0969,9.95,78,1,15,Medio,0,10.0,9.9,9.6,10.0,9.9,25,40,2025-01-17,Activo,
+970,Laura,Hernández,26,F,Psicología,2,laura.hernández@universidad.edu,555-0970,5.02,99,2,5,Bajo,1,4.6,5.2,4.7,5.1,4.9,22,40,2025-01-17,En Riesgo,
+971,Antonella,Martínez,25,F,Administración,7,antonella.martínez@universidad.edu,555-0971,4.41,97,5,1,Medio,1,4.4,4.9,4.1,4.2,4.4,97,140,2022-07-17,En Riesgo,Pocas horas de estudio
+972,José,Delgado,19,M,Educación,3,josé.delgado@universidad.edu,555-0972,5.44,95,5,13,Bajo,0,5.1,5.9,5.3,5.2,5.4,43,60,2024-07-16,Activo,
+973,Natalia,Castro,18,F,Medicina,2,natalia.castro@universidad.edu,555-0973,6.39,92,5,13,Alto,0,6.6,6.7,6.1,6.7,6.5,28,40,2025-01-17,Activo,
+974,Fernando,López,22,M,Enfermería,2,fernando.lópez@universidad.edu,555-0974,5.73,76,3,10,Alto,0,5.6,5.4,5.8,5.3,5.5,24,40,2025-01-17,Activo,
+975,Esteban,Rodríguez,19,M,Psicología,8,esteban.rodríguez@universidad.edu,555-0975,5.85,96,3,7,Alto,1,5.5,5.4,5.6,6.2,5.7,120,160,2022-01-18,En Riesgo,Problemas económicos
+976,Matías,Guerrero,18,M,Psicología,2,matías.guerrero@universidad.edu,555-0976,6.67,75,1,19,Alto,0,6.9,6.9,6.3,6.4,6.6,30,40,2025-01-17,Activo,
+977,Esperanza,Rodríguez,19,F,Enfermería,6,esperanza.rodríguez@universidad.edu,555-0977,4.16,81,2,18,Alto,1,4.1,4.5,4.6,4.0,4.3,90,120,2023-01-18,En Riesgo,Baja asistencia
+978,Ignacio,Herrera,22,M,Psicología,4,ignacio.herrera@universidad.edu,555-0978,4.55,92,1,1,Medio,1,4.6,4.4,4.3,4.4,4.4,60,80,2024-01-18,En Riesgo,Pocas horas de estudio
+979,Lucía,Rodríguez,26,F,Economía,8,lucía.rodríguez@universidad.edu,555-0979,8.34,84,5,19,Medio,0,8.0,7.8,8.7,8.1,8.2,120,160,2022-01-18,Condicional,
+980,Lucía,Martínez,21,F,Arquitectura,1,lucía.martínez@universidad.edu,555-0980,5.68,95,5,15,Alto,0,5.2,5.6,5.6,6.1,5.6,15,20,2025-07-16,Activo,
+981,Constanza,Mendoza,24,F,Ingeniería,3,constanza.mendoza@universidad.edu,555-0981,7.03,72,4,1,Medio,0,7.0,7.0,6.8,7.3,7.0,45,60,2024-07-16,Condicional,
+982,Laura,Vargas,24,F,Psicología,3,laura.vargas@universidad.edu,555-0982,7.23,99,4,10,Medio,0,6.9,7.0,6.9,7.1,7.0,45,60,2024-07-16,Activo,
+983,Benjamín,Medina,25,M,Enfermería,7,benjamín.medina@universidad.edu,555-0983,7.35,84,3,21,Bajo,0,7.1,7.6,7.5,7.8,7.5,95,140,2022-07-17,Activo,
+984,Fernando,Guerrero,19,M,Enfermería,6,fernando.guerrero@universidad.edu,555-0984,7.22,94,1,25,Bajo,0,6.8,6.8,6.9,6.8,6.8,88,120,2023-01-18,Condicional,
+985,Lucía,Romero,22,F,Medicina,1,lucía.romero@universidad.edu,555-0985,6.89,71,2,16,Medio,0,6.5,6.8,7.2,6.7,6.8,15,20,2025-07-16,Activo,
+986,Ana,Ruiz,26,F,Enfermería,2,ana.ruiz@universidad.edu,555-0986,5.93,61,5,2,Bajo,1,5.7,5.5,6.3,6.3,6.0,27,40,2025-01-17,En Riesgo,Baja asistencia
+987,Florencia,Castro,23,F,Economía,1,florencia.castro@universidad.edu,555-0987,8.6,63,5,20,Alto,0,9.0,8.7,8.8,9.0,8.9,15,20,2025-07-16,Activo,
+988,Ana,Guerrero,19,F,Derecho,5,ana.guerrero@universidad.edu,555-0988,4.57,73,5,13,Medio,0,4.3,5.0,4.2,4.2,4.4,68,100,2023-07-17,Activo,
+989,Carmen,Castro,25,F,Enfermería,5,carmen.castro@universidad.edu,555-0989,8.05,53,1,6,Medio,1,8.5,8.1,7.7,7.8,8.0,62,100,2023-07-17,En Riesgo,Baja asistencia
+990,Javiera,Ramos,25,F,Ingeniería,3,javiera.ramos@universidad.edu,555-0990,9.41,92,1,22,Alto,0,9.5,9.2,9.3,9.3,9.3,45,60,2024-07-16,Activo,
+991,Julieta,Vargas,26,F,Medicina,4,julieta.vargas@universidad.edu,555-0991,5.94,67,5,13,Alto,1,5.6,6.2,5.6,5.9,5.8,60,80,2024-01-18,En Riesgo,Baja asistencia
+992,Rodrigo,Delgado,26,M,Arte,6,rodrigo.delgado@universidad.edu,555-0992,8.54,92,5,1,Bajo,0,8.7,8.8,9.0,8.1,8.7,63,120,2023-01-18,Condicional,
+993,Isidora,Delgado,21,F,Administración,2,isidora.delgado@universidad.edu,555-0993,5.66,70,3,17,Medio,0,6.1,5.4,5.2,5.8,5.6,20,40,2025-01-17,Activo,
+994,Lucía,Silva,26,F,Enfermería,7,lucía.silva@universidad.edu,555-0994,9.75,100,5,12,Medio,0,9.6,10.0,9.8,9.8,9.8,105,140,2022-07-17,Activo,
+995,Julieta,González,19,F,Derecho,1,julieta.gonzález@universidad.edu,555-0995,5.63,96,1,12,Bajo,1,5.9,5.6,5.8,5.6,5.7,15,20,2025-07-16,En Riesgo,Pocas horas de estudio
+996,Valentina,Herrera,24,F,Medicina,1,valentina.herrera@universidad.edu,555-0996,6.18,66,1,9,Medio,1,6.5,5.9,5.9,6.4,6.2,12,20,2025-07-16,En Riesgo,Problemas económicos
+997,Isabella,Sánchez,26,F,Medicina,7,isabella.sánchez@universidad.edu,555-0997,6.64,80,4,4,Alto,0,6.6,6.6,6.8,6.4,6.6,78,140,2022-07-17,Activo,
+998,Ana,Ortega,26,F,Ingeniería,6,ana.ortega@universidad.edu,555-0998,8.34,99,2,18,Alto,0,8.4,7.9,7.9,8.1,8.1,90,120,2023-01-18,Activo,
+999,Sofía,Jiménez,18,F,Arte,6,sofía.jiménez@universidad.edu,555-0999,6.5,66,3,11,Medio,0,6.2,6.7,6.7,6.8,6.6,65,120,2023-01-18,Activo,
+1000,María,Vargas,26,F,Ingeniería,6,maría.vargas@universidad.edu,555-1000,5.51,59,4,16,Medio,1,5.8,5.4,5.9,5.8,5.7,86,120,2023-01-18,En Riesgo,Baja asistencia

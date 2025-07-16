@@ -36,3 +36,9 @@ joblib>=1.1.0
 # Optional: For PDF generation (if needed later)
 # reportlab>=3.6.0
 # weasyprint>=56.0
+
+# IA Conversational Assistant
+flask>=2.0.0
+flask-cors>=3.0.0
+requests>=2.28.0
+python-dotenv>=0.19.0

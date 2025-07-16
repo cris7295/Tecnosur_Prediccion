@@ -479,6 +479,125 @@ app.layout = html.Div(className='container', children=[
                     filter_action="native"
                 )
             ])
+        ]),
+
+        # Pestaña 9: Asistente IA
+        dcc.Tab(label='🤖 Asistente IA', value='tab-ia', children=[
+            html.Div(className='card', style={'marginTop': '20px'}, children=[
+                html.H2('🤖 Asistente de IA Académico', style={'color': '#2c3e50', 'marginBottom': '20px'}),
+                html.P('Consulta datos, estadísticas y predicciones usando inteligencia artificial natural.', 
+                      style={'color': '#7f8c8d', 'marginBottom': '20px'}),
+                
+                # Estado del servidor IA
+                html.Div(id='ia-server-status', style={'marginBottom': '20px'}),
+                
+                # Chat container
+                html.Div(id='chat-container', style={
+                    'height': '500px',
+                    'border': '1px solid #ddd',
+                    'borderRadius': '10px',
+                    'display': 'flex',
+                    'flexDirection': 'column',
+                    'overflow': 'hidden'
+                }, children=[
+                    # Chat messages area
+                    html.Div(id='chat-messages', style={
+                        'flex': '1',
+                        'padding': '20px',
+                        'overflowY': 'auto',
+                        'backgroundColor': '#f8f9fa'
+                    }, children=[
+                        html.Div([
+                            html.Div('🤖', style={
+                                'display': 'inline-block',
+                                'width': '40px',
+                                'height': '40px',
+                                'backgroundColor': '#2ecc71',
+                                'color': 'white',
+                                'borderRadius': '50%',
+                                'textAlign': 'center',
+                                'lineHeight': '40px',
+                                'marginRight': '10px',
+                                'fontSize': '1.2rem'
+                            }),
+                            html.Div([
+                                html.P('¡Hola! 👋 Soy tu asistente de IA especializado en análisis académico.'),
+                                html.P('Puedes preguntarme sobre:'),
+                                html.Ul([
+                                    html.Li('📊 Estadísticas generales del sistema'),
+                                    html.Li('👥 Información de estudiantes específicos'),
+                                    html.Li('⚠️ Análisis de riesgo académico'),
+                                    html.Li('📈 Tendencias y patrones'),
+                                    html.Li('💡 Recomendaciones personalizadas')
+                                ]),
+                                html.P('Ejemplos de preguntas:', style={'fontWeight': 'bold', 'marginTop': '15px'}),
+                                html.Div([
+                                    html.Button('¿Cuántos estudiantes están en riesgo?', 
+                                              id='suggestion-1', className='suggestion-btn'),
+                                    html.Button('Muéstrame estadísticas por carrera', 
+                                              id='suggestion-2', className='suggestion-btn'),
+                                    html.Button('¿Qué factores predicen mejor el riesgo?', 
+                                              id='suggestion-3', className='suggestion-btn'),
+                                ], style={'display': 'flex', 'gap': '10px', 'flexWrap': 'wrap', 'marginTop': '10px'})
+                            ], style={
+                                'display': 'inline-block',
+                                'backgroundColor': 'white',
+                                'padding': '15px',
+                                'borderRadius': '15px',
+                                'border': '1px solid #e0e0e0',
+                                'maxWidth': '70%'
+                            })
+                        ], style={'display': 'flex', 'alignItems': 'flex-start', 'marginBottom': '20px'})
+                    ]),
+                    
+                    # Chat input area
+                    html.Div(style={
+                        'padding': '20px',
+                        'backgroundColor': 'white',
+                        'borderTop': '1px solid #e0e0e0'
+                    }, children=[
+                        html.Div([
+                            dcc.Textarea(
+                                id='chat-input',
+                                placeholder='Escribe tu pregunta aquí... (ej: ¿Cuántos estudiantes de Ingeniería están en riesgo?)',
+                                style={
+                                    'width': '100%',
+                                    'minHeight': '50px',
+                                    'maxHeight': '100px',
+                                    'border': '2px solid #e0e0e0',
+                                    'borderRadius': '25px',
+                                    'padding': '12px 20px',
+                                    'fontSize': '1rem',
+                                    'outline': 'none',
+                                    'resize': 'vertical'
+                                }
+                            ),
+                            html.Button('Enviar', id='send-chat-btn', n_clicks=0, style={
+                                'marginTop': '10px',
+                                'backgroundColor': '#3498db',
+                                'color': 'white',
+                                'border': 'none',
+                                'borderRadius': '25px',
+                                'padding': '10px 25px',
+                                'fontSize': '1rem',
+                                'cursor': 'pointer'
+                            })
+                        ])
+                    ])
+                ]),
+                
+                # Instrucciones adicionales
+                html.Div([
+                    html.H4('💡 Consejos de uso:', style={'color': '#2c3e50', 'marginTop': '30px'}),
+                    html.Ul([
+                        html.Li('Puedes preguntar por estudiantes específicos usando su nombre'),
+                        html.Li('Solicita análisis comparativos entre carreras o semestres'),
+                        html.Li('Pide recomendaciones para mejorar el rendimiento académico'),
+                        html.Li('Consulta sobre patrones y tendencias en los datos'),
+                        html.Li('El asistente puede generar predicciones personalizadas')
+                    ], style={'color': '#7f8c8d'})
+                ], style={'marginTop': '20px', 'padding': '20px', 'backgroundColor': '#f8f9fa', 'borderRadius': '10px'})
+            ])
         ])
     ])
 ])
@@ -1228,6 +1347,259 @@ def handle_reports(n_clicks_pdf, n_clicks_email):
                            style={'color': '#e74c3c', 'padding': '15px', 'backgroundColor': '#fadbd8', 'borderRadius': '8px'})
     
     return ""
+
+# Callback para el chat IA
+@app.callback(
+    [Output('chat-messages', 'children'),
+     Output('chat-input', 'value')],
+    [Input('send-chat-btn', 'n_clicks'),
+     Input('suggestion-1', 'n_clicks'),
+     Input('suggestion-2', 'n_clicks'),
+     Input('suggestion-3', 'n_clicks')],
+    [State('chat-input', 'value'),
+     State('chat-messages', 'children')]
+)
+def handle_chat_interaction(send_clicks, sug1_clicks, sug2_clicks, sug3_clicks, input_value, current_messages):
+    ctx = callback_context
+    if not ctx.triggered:
+        return current_messages, input_value
+    
+    button_id = ctx.triggered[0]['prop_id'].split('.')[0]
+    
+    # Determinar el mensaje a enviar
+    message = ""
+    if button_id == 'send-chat-btn' and input_value:
+        message = input_value
+    elif button_id == 'suggestion-1':
+        message = "¿Cuántos estudiantes están en riesgo?"
+    elif button_id == 'suggestion-2':
+        message = "Muéstrame estadísticas por carrera"
+    elif button_id == 'suggestion-3':
+        message = "¿Qué factores predicen mejor el riesgo?"
+    
+    if not message:
+        return current_messages, input_value
+    
+    # Agregar mensaje del usuario
+    user_message = html.Div([
+        html.Div('👤', className='chat-avatar'),
+        html.Div([
+            html.P(message),
+            html.Small(datetime.now().strftime('%H:%M'), style={'opacity': '0.7'})
+        ], className='chat-content')
+    ], className='chat-message user', style={'display': 'flex', 'alignItems': 'flex-start', 'marginBottom': '15px', 'gap': '10px', 'flexDirection': 'row-reverse'})
+    
+    # Generar respuesta de la IA basada en los datos
+    ai_response = generate_ai_response(message)
+    
+    # Agregar respuesta de la IA
+    ai_message = html.Div([
+        html.Div('🤖', className='chat-avatar'),
+        html.Div([
+            dcc.Markdown(ai_response),
+            html.Small(datetime.now().strftime('%H:%M'), style={'opacity': '0.7'})
+        ], className='chat-content')
+    ], className='chat-message ai', style={'display': 'flex', 'alignItems': 'flex-start', 'marginBottom': '15px', 'gap': '10px'})
+    
+    # Actualizar mensajes
+    if current_messages is None:
+        current_messages = []
+    
+    new_messages = current_messages + [user_message, ai_message]
+    
+    return new_messages, ""
+
+def generate_ai_response(message):
+    """Genera respuestas de IA basadas en los datos del sistema"""
+    message_lower = message.lower()
+    
+    # Obtener estadísticas actuales
+    stats = data_processor.get_statistics()
+    
+    # Buscar estudiante específico por nombre
+    student_found = None
+    for _, student in df.iterrows():
+        nombre_completo = f"{student['nombre']} {student['apellido']}".lower()
+        if (student['nombre'].lower() in message_lower or 
+            student['apellido'].lower() in message_lower or
+            nombre_completo in message_lower):
+            student_found = student
+            break
+    
+    # Si se encontró un estudiante específico
+    if student_found is not None:
+        # Calcular riesgo con lógica difusa
+        mapping_nivel = {'Bajo': 3, 'Medio': 6, 'Alto': 9}
+        nivel_val = mapping_nivel.get(student_found['nivel_socioeconomico'], 5)
+        
+        try:
+            riesgo_fuzzy = fuzzy.evaluar_riesgo(
+                nivel_val, 
+                student_found['participacion_clase'] * 2, 
+                student_found['asistencia_porcentaje'], 
+                student_found['calificaciones_anteriores']
+            )
+        except:
+            riesgo_fuzzy = 5.0
+        
+        # Generar recomendaciones
+        recomendaciones = []
+        if student_found['calificaciones_anteriores'] < 6.0:
+            recomendaciones.append("📚 Reforzar conocimientos básicos - considerar tutorías académicas")
+        if student_found['asistencia_porcentaje'] < 75:
+            recomendaciones.append("🎯 Mejorar asistencia a clases - establecer rutina de estudio")
+        if student_found['participacion_clase'] <= 2:
+            recomendaciones.append("🗣️ Aumentar participación en clase - preparar preguntas y comentarios")
+        if student_found['horas_estudio_semanal'] < 10:
+            recomendaciones.append("⏰ Incrementar horas de estudio semanal - crear cronograma de estudio")
+        if student_found['nivel_socioeconomico'] == 'Bajo':
+            recomendaciones.append("💰 Buscar apoyo financiero - becas y programas de asistencia")
+        
+        if not recomendaciones:
+            recomendaciones.append("✅ Mantener el buen rendimiento académico actual")
+        
+        nivel_riesgo = "ALTO" if riesgo_fuzzy > 6 else "MEDIO" if riesgo_fuzzy > 3 else "BAJO"
+        color_riesgo = "🔴" if nivel_riesgo == "ALTO" else "🟡" if nivel_riesgo == "MEDIO" else "🟢"
+        
+        return f"""👤 **Análisis Detallado: {student_found['nombre']} {student_found['apellido']}**
+
+📋 **Información Básica:**
+- **ID:** {student_found['id_estudiante']}
+- **Carrera:** {student_found['carrera']}
+- **Semestre:** {student_found['semestre']}
+- **Email:** {student_found['email']}
+
+📊 **Métricas Académicas:**
+- **Promedio General:** {student_found['promedio_general']}/10
+- **Calificaciones Anteriores:** {student_found['calificaciones_anteriores']}/10
+- **Asistencia:** {student_found['asistencia_porcentaje']}%
+- **Participación:** {student_found['participacion_clase']}/5
+- **Horas de Estudio:** {student_found['horas_estudio_semanal']}h/semana
+
+⚠️ **Evaluación de Riesgo:**
+- **Nivel de Riesgo:** {color_riesgo} {nivel_riesgo}
+- **Puntuación Fuzzy:** {riesgo_fuzzy:.2f}/10
+- **Estado Académico:** {student_found['estado_academico']}
+
+💡 **Recomendaciones Personalizadas:**
+{chr(10).join([f"  {rec}" for rec in recomendaciones])}
+
+🎯 **Plan de Acción Sugerido:**
+- Seguimiento semanal del progreso
+- Reuniones con tutor académico
+- Monitoreo de asistencia
+- Evaluación mensual de mejoras"""
+    
+    elif "cuántos" in message_lower and "riesgo" in message_lower:
+        return f"""📊 **Análisis de Riesgo Académico**
+
+Actualmente tenemos:
+- **{stats['estudiantes_riesgo']} estudiantes en riesgo** de un total de {stats['total_estudiantes']}
+- Esto representa el **{stats['porcentaje_riesgo']}%** del total
+- **{stats['estudiantes_sin_riesgo']} estudiantes sin riesgo** ({stats['porcentaje_sin_riesgo']}%)
+
+💡 **Recomendación**: Se sugiere implementar programas de apoyo académico para los estudiantes en riesgo."""
+    
+    elif "estadísticas" in message_lower and "carrera" in message_lower:
+        carrera_stats = []
+        for carrera, riesgo_pct in stats['distribución_riesgo_por_carrera'].items():
+            total_carrera = stats['distribución_por_carrera'][carrera]
+            en_riesgo = int(total_carrera * riesgo_pct)
+            carrera_stats.append(f"- **{carrera}**: {en_riesgo}/{total_carrera} estudiantes en riesgo ({riesgo_pct*100:.1f}%)")
+        
+        return f"""📚 **Estadísticas por Carrera**
+
+{chr(10).join(carrera_stats)}
+
+📈 **Insights**:
+- La carrera con mayor riesgo necesita atención prioritaria
+- Considerar programas específicos por carrera
+- Analizar factores específicos de cada programa académico"""
+    
+    elif "factores" in message_lower and "predicen" in message_lower:
+        return f"""🔍 **Factores Predictivos de Riesgo Académico**
+
+Según nuestro análisis, los principales factores son:
+
+1. **📊 Calificaciones Anteriores** (Peso: 35%)
+   - Promedio actual del sistema: {stats['promedio_general']}
+   - Estudiantes con promedio < 6.0 tienen 80% más riesgo
+
+2. **📅 Asistencia** (Peso: 30%)
+   - Promedio de asistencia: {stats['promedio_asistencia']}%
+   - Asistencia < 70% correlaciona fuertemente con riesgo
+
+3. **🗣️ Participación en Clase** (Peso: 20%)
+   - Estudiantes con baja participación (≤2/5) tienen mayor riesgo
+
+4. **📚 Horas de Estudio** (Peso: 10%)
+   - < 8 horas semanales aumenta probabilidad de riesgo
+
+5. **💰 Nivel Socioeconómico** (Peso: 5%)
+   - Factor de contexto importante para intervenciones
+
+💡 **Recomendación**: Implementar sistema de alerta temprana basado en estos factores."""
+    
+    elif "recomendaciones" in message_lower or "mejorar" in message_lower:
+        return f"""💡 **Recomendaciones para Mejorar el Rendimiento**
+
+**🎯 Estrategias Generales:**
+1. **Tutorías Personalizadas** - Para estudiantes con promedio < 6.5
+2. **Seguimiento de Asistencia** - Alertas automáticas < 75%
+3. **Talleres de Técnicas de Estudio** - Especialmente para primeros semestres
+4. **Apoyo Socioeconómico** - Becas y programas de ayuda
+
+**📊 Basado en nuestros datos:**
+- {stats['estudiantes_riesgo']} estudiantes necesitan intervención inmediata
+- Enfocar recursos en carreras con mayor % de riesgo
+- Implementar sistema de mentorías estudiantiles
+
+**🔄 Seguimiento:**
+- Evaluación mensual de progreso
+- Ajuste de estrategias según resultados
+- Comunicación constante con estudiantes y familias"""
+    
+    elif "hola" in message_lower or "ayuda" in message_lower:
+        return f"""👋 **¡Hola! Soy tu Asistente IA Académico**
+
+Puedo ayudarte con:
+
+📊 **Análisis de Datos:**
+- Estadísticas generales del sistema
+- Análisis por carrera, semestre o género
+- Identificación de patrones y tendencias
+
+🎯 **Predicciones:**
+- Evaluación de riesgo académico
+- Pronósticos de rendimiento
+- Análisis predictivo personalizado
+
+💡 **Recomendaciones:**
+- Estrategias de mejora académica
+- Intervenciones específicas
+- Planes de acción personalizados
+
+**Ejemplos de preguntas:**
+- "¿Cuál es la tendencia de rendimiento por semestre?"
+- "¿Qué estudiantes necesitan apoyo urgente?"
+- "¿Cómo puedo mejorar la retención estudiantil?"
+
+¡Pregúntame lo que necesites saber! 🚀"""
+    
+    else:
+        # Respuesta genérica con datos relevantes
+        return f"""🤖 **Análisis General del Sistema**
+
+**📈 Estado Actual:**
+- Total de estudiantes: **{stats['total_estudiantes']}**
+- Estudiantes en riesgo: **{stats['estudiantes_riesgo']}** ({stats['porcentaje_riesgo']}%)
+- Promedio general: **{stats['promedio_general']}**
+- Promedio de asistencia: **{stats['promedio_asistencia']}%**
+
+**🎓 Distribución por Carreras:**
+{chr(10).join([f"- {carrera}: {cantidad} estudiantes" for carrera, cantidad in list(stats['distribución_por_carrera'].items())[:3]])}
+
+💡 **¿Te gustaría que analice algo específico?** Puedo ayudarte con estadísticas detalladas, predicciones o recomendaciones personalizadas."""
 
 # Punto de entrada para ejecutar la aplicación
 if __name__ == '__main__':

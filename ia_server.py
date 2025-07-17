@@ -62,7 +62,7 @@ def get_academic_context():
         return f"Error al cargar contexto académico: {str(e)}"
 
 def find_student_by_name(search_name):
-    """Busca un estudiante por nombre de manera flexible"""
+    """Busca un estudiante por nombre de manera flexible y precisa"""
     try:
         df = data_processor.df
         if df is None or df.empty:
@@ -70,7 +70,29 @@ def find_student_by_name(search_name):
         
         search_name = search_name.lower().strip()
         
-        # Buscar por nombre completo, nombre o apellido
+        # Prioridad 1: Búsqueda exacta de nombre completo
+        for _, student in df.iterrows():
+            nombre = student['nombre'].lower()
+            apellido = student['apellido'].lower()
+            nombre_completo = f"{nombre} {apellido}"
+            
+            if search_name == nombre_completo:
+                return student.to_dict()
+        
+        # Prioridad 2: Búsqueda exacta de nombre y apellido por separado
+        search_parts = search_name.split()
+        if len(search_parts) >= 2:
+            search_nombre = search_parts[0]
+            search_apellido = search_parts[1]
+            
+            for _, student in df.iterrows():
+                nombre = student['nombre'].lower()
+                apellido = student['apellido'].lower()
+                
+                if nombre == search_nombre and apellido == search_apellido:
+                    return student.to_dict()
+        
+        # Prioridad 3: Búsqueda parcial (contiene)
         for _, student in df.iterrows():
             nombre = student['nombre'].lower()
             apellido = student['apellido'].lower()
@@ -78,9 +100,15 @@ def find_student_by_name(search_name):
             
             if (search_name in nombre_completo or 
                 search_name in nombre or 
-                search_name in apellido or
-                nombre in search_name or
-                apellido in search_name):
+                search_name in apellido):
+                return student.to_dict()
+        
+        # Prioridad 4: Búsqueda inversa (nombre/apellido contiene búsqueda)
+        for _, student in df.iterrows():
+            nombre = student['nombre'].lower()
+            apellido = student['apellido'].lower()
+            
+            if (nombre in search_name or apellido in search_name):
                 return student.to_dict()
         
         return None
@@ -494,10 +522,41 @@ def generate_intelligent_ai_response(prompt, api_key):
             }
         }
         
-        # Agregar muestra de estudiantes de forma segura
+        # Buscar estudiante específico si se menciona un nombre en el prompt
+        student_specific_data = None
+        prompt_words = prompt.lower().split()
+        
+        # Buscar nombres mencionados en el prompt
+        for i, word in enumerate(prompt_words):
+            if i < len(prompt_words) - 1:
+                potential_name = f"{word} {prompt_words[i+1]}"
+                student_found = find_student_by_name(potential_name)
+                if student_found:
+                    student_specific_data = {
+                        "nombre_completo": f"{student_found['nombre']} {student_found['apellido']}",
+                        "carrera": student_found['carrera'],
+                        "semestre": student_found['semestre'],
+                        "promedio": float(student_found.get('promedio_general', student_found.get('calificaciones_anteriores', 0))),
+                        "asistencia": int(student_found['asistencia_porcentaje']),
+                        "participacion": int(student_found['participacion_clase']),
+                        "horas_estudio": int(student_found['horas_estudio_semanal']),
+                        "nivel_socioeconomico": student_found['nivel_socioeconomico'],
+                        "riesgo": int(student_found['rendimiento_riesgo']),
+                        "estado_academico": student_found['estado_academico'],
+                        "motivo_riesgo": student_found.get('motivo_riesgo', ''),
+                        "edad": int(student_found['edad']),
+                        "genero": student_found['genero'],
+                        "email": student_found['email']
+                    }
+                    print(f"✅ ESTUDIANTE ENCONTRADO: {student_specific_data['nombre_completo']}")
+                    break
+
+        # Agregar muestra representativa de estudiantes de forma segura
         try:
             sample_data = []
-            for _, student in df.head(5).iterrows():
+            # Tomar una muestra más amplia y representativa (50 estudiantes aleatorios)
+            sample_df = df.sample(n=min(50, len(df)), random_state=42)
+            for _, student in sample_df.iterrows():
                 student_dict = {
                     "nombre": str(student['nombre']),
                     "apellido": str(student['apellido']),
@@ -509,6 +568,27 @@ def generate_intelligent_ai_response(prompt, api_key):
                 }
                 sample_data.append(student_dict)
             contexto_academico["muestra_estudiantes"] = sample_data
+            
+            # Agregar información adicional para búsquedas específicas
+            contexto_academico["todos_los_nombres"] = [
+                f"{row['nombre']} {row['apellido']}" for _, row in df.iterrows()
+            ]
+            
+            # Agregar información del estudiante específico si se encontró
+            if student_specific_data:
+                contexto_academico["estudiante_consultado"] = student_specific_data
+            
+            # Agregar estadísticas por carrera más detalladas
+            contexto_academico["estadisticas_por_carrera"] = {}
+            for carrera in stats['carreras']:
+                carrera_df = df[df['carrera'] == carrera]
+                contexto_academico["estadisticas_por_carrera"][carrera] = {
+                    "total": len(carrera_df),
+                    "en_riesgo": len(carrera_df[carrera_df['rendimiento_riesgo'] == 1]),
+                    "promedio_calificaciones": float(carrera_df['calificaciones_anteriores'].mean()),
+                    "promedio_asistencia": float(carrera_df['asistencia_porcentaje'].mean())
+                }
+                
         except Exception as e:
             print(f"Error agregando muestra de estudiantes: {e}")
             contexto_academico["muestra_estudiantes"] = []
@@ -526,8 +606,7 @@ INSTRUCCIONES IMPORTANTES:
 - Si te saludan, saluda de vuelta de manera natural y pregunta cómo puedes ayudar
 - Sé directo y claro, pero mantén un tono amigable
 - Cuando des números o estadísticas, hazlo de manera natural en el texto
-- Si te preguntan por un estudiante, busca en los datos y responde de manera natural y ofreciendo recomendaciones en base a su situación
-
+- Si te preguntan por un estudiante, busca en los datos y responde de manera natural y dá recomendaciones en base a la situación del estudiante
 EJEMPLOS DE CÓMO DEBES RESPONDER:
 - "¡Hola! Todo bien por aquí, trabajando con los datos de nuestros estudiantes. ¿En qué puedo ayudarte hoy?"
 - "Carlos sí está en riesgo académico. Su promedio es de 5.2 y solo asiste al 65% de las clases, lo cual me preocupa bastante."
